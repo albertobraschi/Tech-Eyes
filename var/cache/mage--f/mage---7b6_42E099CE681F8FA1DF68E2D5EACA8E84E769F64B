@@ -15,7 +15,7 @@
 	<div class="footer-main mclear">
     	<div class="footer-main-top clearer">
             <div class="footer-main-top-left">
-            	                     <div class="footer-social-wrapper"><div class="custom-content image-hover"><a title="Join us on Facebook" href="http://facebook.com/techeyes" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/facebook.png" alt="facebook" /> </a> <a title="Follow us on Twitter" href="https://twitter.com/#!/techeyesllc" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/twitter.png" alt="twitter" /> </a><a title="Join us on Google Plus" href="https://plus.google.com/113165839235743315644/posts" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/googleplus.png" alt="google" /> </a><a title="Pinterest" href="http://pinterest.com/techeyes" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/pinterest.png" alt="pinterest" /> </a> <!--<a title="Watch us on YouTube" href="http://www.youtube.com/user/TechEyesVideos/feed" _mce_href="http://www.youtube.com/user/TechEyesVideos/feed" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/youtube.png" _mce_src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/youtube.png" alt="youtube" /> </a>--></div></div>
+            	                     <div class="footer-social-wrapper"><div class="custom-content image-hover"><a title="Join us on Facebook" href="http://facebook.com/techeyes" target="_blank"> <img src="http://localhost:8888/techeyes/media//infortis/site/social/facebook.png" alt="facebook" /> </a> <a title="Follow us on Twitter" href="https://twitter.com/#!/techeyesllc" target="_blank"> <img src="http://localhost:8888/techeyes/media//infortis/site/social/twitter.png" alt="twitter" /> </a><a title="Join us on Google Plus" href="https://plus.google.com/113165839235743315644/posts" target="_blank"> <img src="http://localhost:8888/techeyes/media//infortis/site/social/googleplus.png" alt="google" /> </a><a title="Pinterest" href="http://pinterest.com/techeyes" target="_blank"> <img src="http://localhost:8888/techeyes/media//infortis/site/social/pinterest.png" alt="pinterest" /> </a> <!--<a title="Watch us on YouTube" href="http://www.youtube.com/user/TechEyesVideos/feed" _mce_href="http://www.youtube.com/user/TechEyesVideos/feed" target="_blank"> <img src="http://localhost:8888/techeyes/media//infortis/site/social/youtube.png" _mce_src="http://localhost:8888/techeyes/media//infortis/site/social/youtube.png" alt="youtube" /> </a>--></div></div>
                             </div>
             <div class="footer-main-top-right">
                 <div id="subscribe-form" class="clearer">
@@ -82,7 +82,7 @@
                     </div>
                     
                                                     <div class="footer-item narrow last" style="min-height:120px;">
-                        <div class="footer-company-wrapper"><p><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/footer-logo_4.png" alt="" /></p></div>
+                        <div class="footer-company-wrapper"><p><img src="http://localhost:8888/techeyes/media/wysiwyg/footer-logo_4.png" alt="" /></p></div>
                     </div>
                     
             </div> <!-- end: footer-main-bottom -->
@@ -94,7 +94,7 @@
     				Demo by <a href="http://www.artio.net/magento-extensions/m-turbo-accelerator" title="MTurbo Accelerator">
     				Magento speed</a> up by ARTIO</p>
         <div class="store-switcher"></div>
-		         	<div class="footer-payment-wrapper"><p><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/payments_1.png" alt="Payments" /></p></div>
+		         	<div class="footer-payment-wrapper"><p><img src="http://localhost:8888/techeyes/media/wysiwyg/payments_1.png" alt="Payments" /></p></div>
                 <div class="clearer"></div>
     </div> <!-- end: footer-bottom -->
     
@@ -112,7 +112,7 @@ var ANS_customer_id="825d0b6e-156c-4189-8479-d62f7227c42d";
 <script src="https://seal.godaddy.com/getSeal?sealID=9fSGum1sHbHSZiTtavd0D5RftAWxC2boBQB2DGwZmICX10JWxQt" type="text/javascript"></script>
 </span></li>
 <!-- (c) 2005, 2012. Authorize.Net is a registered trademark of CyberSource Corporation -->
-<li id="rapid"><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/RapidSSL_SEAL-90x50.gif" alt="" /></li>
+<li id="rapid"><img src="http://localhost:8888/techeyes/media/wysiwyg/RapidSSL_SEAL-90x50.gif" alt="" /></li>
 </ul>
 </div></div> <!-- end: footer-below-bottom-wrapper -->
         <div class="clearer"></div>
