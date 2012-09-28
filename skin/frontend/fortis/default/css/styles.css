@@ -4135,6 +4135,28 @@ width: 327px;
 .cms-page-top-wrapper { margin:5px 0 15px; }
 .cms-page-bottom-wrapper { margin:15px 0 0; }
 
+/* Contact Form
+%%%%%%%%%%%%%*/
+#contactinfo{
+	width: 260px;
+	margin-bottom: 50px;
+}
+#contactinfo ul{
+	font-family: 'Open Sans';
+	font-size: 16px;
+}
+#contactinfo li{
+	padding-top: 20px;
+}
+#contactinfo li p{
+	float:left;
+	margin-left: 110px;
+	margin-top: -18px;
+}
+
+#contactinfo span{
+	color: #CE001A;
+}
 
 /* CMS pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
