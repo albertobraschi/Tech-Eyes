@@ -2,7 +2,7 @@
 
 .ordershare h2 {
    margin:10px 0 20px;
-   color: #c2c2c2;
+   color: #FF0000;
    text-align: center;
 }
 
@@ -10,8 +10,7 @@
    float:left;
    margin:10px 18px;
    width: 200px;
-   border: 3px ridge #FF7E00;
-   background: #333333;
+   border: 3px ridge #FF0000;
 }
 
 .ordershare .product img{
@@ -33,7 +32,7 @@
    height:46px;
    margin:0 20px 0 0;
 }
-.ordershare h3{ color: #FFFFFF; text-align: center;}
+.ordershare h3{ color: #000000; text-align: center;}
 
 
 .ordershare .product ul li a {
