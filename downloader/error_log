@@ -1,0 +1,4 @@
+[21-Sep-2012 17:19:49 UTC] PHP Fatal error:  Call to undefined method Mage_Core_Model_Config::getResourceHelper() in /home/techey5/public_html/app/Mage.php on line 531
+[21-Sep-2012 17:19:54 UTC] PHP Fatal error:  Call to undefined method Mage_Core_Model_Config::getResourceHelper() in /home/techey5/public_html/app/Mage.php on line 531
+[21-Sep-2012 17:19:58 UTC] PHP Fatal error:  Call to undefined method Mage_Core_Model_Config::getResourceHelper() in /home/techey5/public_html/app/Mage.php on line 531
+[21-Sep-2012 17:19:59 UTC] PHP Fatal error:  Call to undefined method Mage_Core_Model_Config::getResourceHelper() in /home/techey5/public_html/app/Mage.php on line 531

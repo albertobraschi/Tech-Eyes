@@ -1,0 +1,437 @@
+
+<!-- menu start -->
+
+<!-- menu end -->
+<div class="nav-bar">
+    <ul id="nav">
+                <li  class="   level0"> <a href="http://localhost:8888/techeyes/index.php/devadmin/dashboard/index/key/$dashboard/index$/"   class=""><span>Dashboard</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Sales</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_order/index/key/$sales_order/index$/"   class=""><span>Orders</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_invoice/index/key/$sales_invoice/index$/"   class=""><span>Invoices</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_shipment/index/key/$sales_shipment/index$/"   class=""><span>Shipments</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_creditmemo/index/key/$sales_creditmemo/index$/"   class=""><span>Credit Memos</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_transactions/index/key/$sales_transactions/index$/"   class=""><span>Transactions</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_recurring_profile/index/key/$sales_recurring_profile/index$/"   class=""><span>Recurring Profiles (beta)</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_billing_agreement/index/key/$sales_billing_agreement/index$/"   class=""><span>Billing Agreements</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/checkout_agreement/index/key/$checkout_agreement/index$/"   class=""><span>Terms and conditions</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent last level1"> <a href="#"  onclick="return false" class=""><span>Tax</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tax_rule/index/key/$tax_rule/index$/"   class=""><span>Manage Tax Rules</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tax_rate/index/key/$tax_rate/index$/"   class=""><span>Manage Tax Zones & Rates</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tax_rate/importExport/key/$tax_rate/importExport$/"   class=""><span>Import / Export Tax Rates</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tax_class_customer/index/key/$tax_class_customer/index$/"   class=""><span>Customer Tax Classes</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tax_class_product/index/key/$tax_class_product/index$/"   class=""><span>Product Tax Classes</span></a>
+                    </li>
+            </ul>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Catalog</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/enhancedgrid/catalog_product/index/key/$catalog_product/index$/"   class=""><span>Manage Products*</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_category/index/key/$catalog_category/index$/"   class=""><span>Manage Categories</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Attributes</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_product_attribute/index/key/$catalog_product_attribute/index$/"   class=""><span>Manage Attributes</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_product_set/index/key/$catalog_product_set/index$/"   class=""><span>Manage Attribute Sets</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/urlrewrite/index/key/$urlrewrite/index$/"   class=""><span>URL Rewrite Management</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_search/index/key/$catalog_search/index$/"   class=""><span>Search Terms</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Reviews and Ratings</span></a>
+                                <ul >
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level2"> <a href="#"  onclick="return false" class=""><span>Customer Reviews</span></a>
+                                <ul >
+                <li  class="   level3"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_product_review/pending/key/$catalog_product_review/pending$/"   class=""><span>Pending Reviews</span></a>
+                    </li>
+                <li  class="   last level3"> <a href="http://localhost:8888/techeyes/index.php/devadmin/catalog_product_review/index/key/$catalog_product_review/index$/"   class=""><span>All Reviews</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/rating/index/key/$rating/index$/"   class=""><span>Manage Ratings</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Tags</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tag/index/key/$tag/index$/"   class=""><span>All Tags</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/tag/pending/key/$tag/pending$/"   class=""><span>Pending Tags</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Google Content</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/googleshopping_types/index/key/$googleshopping_types/index$/"   class=""><span>Manage Attributes</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/googleshopping_items/index/key/$googleshopping_items/index$/"   class=""><span>Manage Items</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sitemap/index/key/$sitemap/index$/"   class=""><span>Google Sitemap</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Mobile</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/mobile/index/key/$mobile/index$/"   class=""><span>Manage Apps</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/mobile/history/key/$mobile/history$/"   class=""><span>Submission History</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/mobile/template/key/$mobile/template$/"   class=""><span>Message Templates</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/mobile/queue/key/$mobile/queue$/"   class=""><span>Message Queue</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Customers</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/customer/index/key/$customer/index$/"   class=""><span>Manage Customers</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/customer_group/index/key/$customer_group/index$/"   class=""><span>Customer Groups</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/customer_online/index/key/$customer_online/index$/"   class=""><span>Online Customers</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Promotions</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/promo_catalog/index/key/$promo_catalog/index$/"   class=""><span>Catalog Price Rules</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/promo_quote/index/key/$promo_quote/index$/"   class=""><span>Shopping Cart Price Rules</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/powershare/adminhtml_powershare/index/key/$adminhtml_powershare/index$/"   class=""><span>Zizio Power Share</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Newsletter</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/newsletter_template/index/key/$newsletter_template/index$/"   class=""><span>Newsletter Templates</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/newsletter_queue/index/key/$newsletter_queue/index$/"   class=""><span>Newsletter Queue</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/newsletter_subscriber/index/key/$newsletter_subscriber/index$/"   class=""><span>Newsletter Subscribers</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/newsletter_problem/index/key/$newsletter_problem/index$/"   class=""><span>Newsletter Problem Reports</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>CMS</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/cms_page/index/key/$cms_page/index$/"   class=""><span>Pages</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/cms_block/index/key/$cms_block/index$/"   class=""><span>Static Blocks</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/widget_instance/index/key/$widget_instance/index$/"   class=""><span>Widgets</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/poll/index/key/$poll/index$/"   class=""><span>Polls</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Magentothem</span></a>
+                                <ul >
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>New Products</span></a>
+                                <ul >
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/newproduct/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Featured Products Slider</span></a>
+                                <ul >
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/featuredproductslider/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Prozoom</span></a>
+                                <ul >
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/prozoom/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Banner4</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/banner4/adminhtml_banner4/index/key/$adminhtml_banner4/index$/"   class=""><span>Manage Items</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/banner4/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Brandslider</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/brandslider/adminhtml_brandslider/index/key/$adminhtml_brandslider/index$/"   class=""><span>Manage Items</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/brandslider/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Vertical Menu</span></a>
+                                <ul >
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/verticalmenu/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent last level1"> <a href="#"  onclick="return false" class=""><span>BestSeller Product Vertical Scroller</span></a>
+                                <ul >
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/edit/section/bestsellerproductvertscroller/key/$system_config/edit$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>eBay</span></a>
+                                <ul >
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Manage Listings</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_listing/index/key/$adminhtml_listing/index$/"   class=""><span>Listings</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_listingOther/index/key/$adminhtml_listingOther/index$/"   class=""><span>3rd Party Listings</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Sales</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_order/index/key/$adminhtml_order/index$/"   class=""><span>Orders</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_analytic/index/key/$adminhtml_analytic/index$/"   class=""><span>Analytics</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Communication</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_ebay_feedback/index/key/$adminhtml_ebay_feedback/index$/"   class=""><span>Feedbacks</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_ebay_message/index/key/$adminhtml_ebay_message/index$/"   class=""><span>My Messages</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Templates</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_template_sellingFormat/index/key/$adminhtml_template_sellingFormat/index$/"   class=""><span>Selling Format Templates</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_template_description/index/key/$adminhtml_template_description/index$/"   class=""><span>Description Templates</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_template_general/index/key/$adminhtml_template_general/index$/"   class=""><span>General Templates</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_template_synchronization/index/key/$adminhtml_template_synchronization/index$/"   class=""><span>Synchronization Templates</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Activity Logs</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_log/listing/key/$adminhtml_log/listing$/"   class=""><span>Listings Log</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_log/listingOther/key/$adminhtml_log/listingOther$/"   class=""><span>3rd Party Listings Log</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_log/synchronization/key/$adminhtml_log/synchronization$/"   class=""><span>Synchronization Log</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Configuration</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_account/index/key/$adminhtml_account/index$/"   class=""><span>Accounts</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_marketplace/index/key/$adminhtml_marketplace/index$/"   class=""><span>Marketplaces</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_synchronization/index/key/$adminhtml_synchronization/index$/"   class=""><span>Synchronization</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_logCleaning/index/key/$adminhtml_logCleaning/index$/"   class=""><span>Logs Clearing</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_settings/index/key/$adminhtml_settings/index$/"   class=""><span>Settings</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_license/index/key/$adminhtml_license/index$/"   class=""><span>License</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent last level1"> <a href="#"  onclick="return false" class=""><span>Help</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://docs.m2epro.com/display/m2eproV32/M2E+Pro"  onclick="window.open(this.href, 'M2ePro Documentation ' + this.href); return false;" class=""><span>Documentation</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_support/index/key/$adminhtml_support/index$/"   class=""><span>Support</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/M2ePro/adminhtml_about/index/key/$adminhtml_about/index$/"   class=""><span>About</span></a>
+                    </li>
+            </ul>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>MANAdev</span></a>
+                                <ul >
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/mana_filters/index/key/$mana_filters/index$/"   class=""><span>Layered Navigation</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level0"> <a href="#"  onclick="return false" class=""><span>Reports</span></a>
+                                <ul >
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Sales</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/sales/key/$report_sales/sales$/"   class=""><span>Orders</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/tax/key/$report_sales/tax$/"   class=""><span>Tax</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/invoiced/key/$report_sales/invoiced$/"   class=""><span>Invoiced</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/shipping/key/$report_sales/shipping$/"   class=""><span>Shipping</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/refunded/key/$report_sales/refunded$/"   class=""><span>Refunds</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/coupons/key/$report_sales/coupons$/"   class=""><span>Coupons</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/paypal_reports/index/key/$paypal_reports/index$/"   class=""><span>PayPal Settlement Reports</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Shopping Cart</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_shopcart/product/key/$report_shopcart/product$/"   class=""><span>Products in carts</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_shopcart/abandoned/key/$report_shopcart/abandoned$/"   class=""><span>Abandoned carts</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Products</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_sales/bestsellers/key/$report_sales/bestsellers$/"   class=""><span>Bestsellers</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_product/sold/key/$report_product/sold$/"   class=""><span>Products Ordered</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_product/viewed/key/$report_product/viewed$/"   class=""><span>Most Viewed</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_product/lowstock/key/$report_product/lowstock$/"   class=""><span>Low stock</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_product/downloads/key/$report_product/downloads$/"   class=""><span>Downloads</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Customers</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_customer/accounts/key/$report_customer/accounts$/"   class=""><span>New Accounts</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_customer/totals/key/$report_customer/totals$/"   class=""><span>Customers by orders total</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_customer/orders/key/$report_customer/orders$/"   class=""><span>Customers by number of orders</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Tags</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_tag/customer/key/$report_tag/customer$/"   class=""><span>Customers</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_tag/product/key/$report_tag/product$/"   class=""><span>Products</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_tag/popular/key/$report_tag/popular$/"   class=""><span>Popular</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Reviews</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_review/customer/key/$report_review/customer$/"   class=""><span>Customers Reviews</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_review/product/key/$report_review/product$/"   class=""><span>Products Reviews</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report/search/key/$report/search$/"   class=""><span>Search Terms</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/report_statistics/index/key/$report_statistics/index$/"   class=""><span>Refresh Statistics</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  active  parent level0"> <a href="#"  onclick="return false" class="active"><span>System</span></a>
+                                <ul >
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_account/index/key/$system_account/index$/"   class=""><span>My Account</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/notification/index/key/$notification/index$/"   class=""><span>Notifications</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Tools</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_backup/index/key/$system_backup/index$/"   class=""><span>Backups</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/compiler_process/index/key/$compiler_process/index$/"   class=""><span>Compilation</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Web Services</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/api_user/index/key/$api_user/index$/"   class=""><span>Users</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/api_role/index/key/$api_role/index$/"   class=""><span>Roles</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_design/index/key/$system_design/index$/"   class=""><span>Design</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Import/Export</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/import/index/key/$import/index$/"   class=""><span>Import</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/export/index/key/$export/index$/"   class=""><span>Export</span></a>
+                    </li>
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_convert_gui/index/key/$system_convert_gui/index$/"   class=""><span>Dataflow - Profiles</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_convert_profile/index/key/$system_convert_profile/index$/"   class=""><span>Dataflow - Advanced Profiles</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_currency/index/key/$system_currency/index$/"   class=""><span>Manage Currency Rates</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_email_template/index/key/$system_email_template/index$/"   class=""><span>Transactional Emails</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_variable/index/key/$system_variable/index$/"   class=""><span>Custom Variables</span></a>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Permissions</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/permissions_user/index/key/$permissions_user/index$/"   class=""><span>Users</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/permissions_role/index/key/$permissions_role/index$/"   class=""><span>Roles</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="   parent level1"> <a href="#"  onclick="return false" class=""><span>Magento Connect</span></a>
+                                <ul >
+                <li  class="   level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/extension_local/index/key/$extension_local/index$/"   class=""><span>Magento Connect Manager</span></a>
+                    </li>
+                <li  class="   last level2"> <a href="http://localhost:8888/techeyes/index.php/devadmin/extension_custom/index/key/$extension_custom/index$/"   class=""><span>Package Extensions</span></a>
+                    </li>
+            </ul>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/cache/index/key/$cache/index$/"   class=""><span>Cache Management</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/mturbo/adminhtml_check/index/key/$adminhtml_check/index$/"   class=""><span>M-Turbo Management</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/process/list/key/$process/list$/"   class=""><span>Index Management</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_store/index/key/$system_store/index$/"   class=""><span>Manage Stores</span></a>
+                    </li>
+                <li  class="   level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/sales_order_status/index/key/$sales_order_status/index$/"   class=""><span>Order Statuses</span></a>
+                    </li>
+                <li  class="   last level1"> <a href="http://localhost:8888/techeyes/index.php/devadmin/system_config/index/key/$system_config/index$/"   class=""><span>Configuration</span></a>
+                    </li>
+            </ul>
+                    </li>
+            </ul>
+
+    <a id="page-help-link" href="http://www.magentocommerce.com/gethelp/en_US/Mage_Adminhtml/cache/index/">Get help for this page</a>
+    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script>
+
+</div>
+

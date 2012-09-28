@@ -1,0 +1,205 @@
+<config>
+    <tabs>
+        <tbtall translate="label" module="bss">
+            <label>WDCA Extensions</label>
+            <sort_order>100</sort_order>
+        </tbtall>
+    </tabs>
+   <sections>
+        <bss translate="label" module="bss">
+            <label>Better Store Search</label>
+            <tab>tbtall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <about translate="label">
+                    <label>About This Extension</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>         
+                        <notice translate="label">
+                            <label>Extension Developed By WWW.WDCA.CA</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bss/system_html</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </notice>          
+                    </fields>
+                </about>
+                <aw translate="label">
+                    <label>Attribute Weightings</label>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>          
+                        <name translate="label">
+                            <label>Name Match Weight Modifier</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </name>  
+                        <sku translate="label">
+                            <label>Sku Match Weight Modifier</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sku>              
+                    </fields>
+                </aw>
+                <dym translate="label">
+                    <label><![CDATA["Did You Mean" Feature]]></label>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>          
+                        <is_enabled translate="label comment">
+                            <label>Is Enabled</label>                            
+                            <comment><![CDATA[This feature is only compatible with Magento 1.4+ and any Enterprise/Professional Editions.  You'll need to rebuild your search indexes to use the 'Did You Mean ___?' feature.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_enabled>  
+                        <use_rewrite translate="label comment">
+                            <label>Use Results Block Rewrite</label>                            
+                            <comment><![CDATA[Specifying YES will programmatically append the "Did You Mean" feature code at the bottom of the search result box when no results are found. If you choose NO, you should integrate the component yourself using the installation instructions.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_rewrite> 
+                    </fields>
+                </dym>
+                <dev translate="label">
+                    <label><![CDATA[Developers]]></label>
+                    <sort_order>400</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>          
+                        <profiler translate="label comment">
+                            <label>Enable Profiler</label>                            
+                            <comment><![CDATA[If enabled this will show a numeric table at the bottom of your catalog search page that will explain the results of the search.  This option is subject to the Developer Client Restrictions option found in the core Magento 'Developer' section.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </profiler>  
+                    </fields>
+                </dev>
+                <special translate="label">
+                	<label><![CDATA[Special features]]></label>
+                	<sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>          
+                        <hyphen translate="label comment">
+                            <label>Expand Hyphen Search</label>                            
+                            <comment><![CDATA[If enabled, the system will try to find more products that have similar hyphen placements.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hyphen>
+                        <plural translate="label comment">
+                            <label>Pluralization Recognition</label>                            
+                            <comment><![CDATA[If enabled, plural words will also match their singular form.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </plural>    
+                    </fields>
+                </special>
+                <!-- @nelkaake: I couldn't get this to work properly for BSS 3.1.1 so I commented it out :s
+                <special translate="label">
+                    <label><![CDATA[Special Character Rules]]></label>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>          
+                        <hyphen translate="label comment">
+                            <label>Expand Hyphen Search</label>                            
+                            <comment><![CDATA[If yes, the system will try to find more products that have similar hyphen placements.]]></comment>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hyphen>  
+                    </fields>
+                </special>
+                 -->
+            	<help translate="label">
+                    <label><![CDATA[Diagnostics & Support Tools]]></label>
+                    <sort_order>800</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment><![CDATA[<i>Please Note: You should only run these functions if you really know what you're doing or you are advised by a Better Store Search representative.</i>]]></comment>
+                    <fields>
+                        <reinstalldb translate="label comment">
+                            <label>Re-run Database Scripts</label>
+                            <comment><![CDATA[When clicked, this will attempt to remove Magento's memory of the Better Store Search's database components ever being installed. Magento will then attempt to re-install the database from scratch upon next access.  This may help resolve issues with an abnormal installation or inconsistent database migration.]]></comment>
+                            <frontend_type>export</frontend_type>  
+                            <frontend_model>bss/system_config_reinstalldb</frontend_model> 
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </reinstalldb>    
+                        <rundiagnostics translate="label comment">
+                            <label><![CDATA[Run 'Test BSS' Diagnostics]]></label>
+                            <comment><![CDATA[When clicked, this will run a diagnostics utility that will tell you information about your store and check for any common problems that may occur on your store. When contacting our software support team, you should have this report handy.]]></comment>
+                            <frontend_type>export</frontend_type>  
+                            <frontend_model>bss/system_config_rundiagnostics</frontend_model> 
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </rundiagnostics>                   
+                    </fields>
+                </help>
+                <registration translate="label comment">
+                    <label>Registration Information</label>
+                    <comment><![CDATA[If you didn't install this module using CEM, this section is required.]]></comment>
+                    <sort_order>900</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <license_key translate="label">
+                            <label>License Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <backend_model>bss/system_config_backend_license</backend_model>
+                        </license_key>
+                    </fields>
+                </registration>
+            </groups>
+        </bss>
+    </sections>
+</config>

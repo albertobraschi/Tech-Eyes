@@ -1,0 +1,170 @@
+<div class="footer-container footer-bg-gray-d footer-skin-light">
+<div class="footer-container2">
+<div class="footer">
+	<div class="footer-top">
+		<ul class="links">
+                    	            <li class="item-1 first" ><a href="http://localhost:8888/techeyes/index.php/catalogsearch/term/popular/?___SID=U" title="Search Terms" >Search Terms</a></li>
+                                    	            <li class="item-2" ><a href="http://localhost:8888/techeyes/index.php/catalogsearch/advanced/?___SID=U" title="Advanced Search" >Advanced Search</a></li>
+                                        <li ><a href="https://techeyes.com/index.php/sales/guest/form/?<!--SID=42e099ce681f8fa1df68e2d5eaca8e84e769f64b-->" title="Orders and Returns" >Orders and Returns</a></li>
+                                    	            <li class="item-4 last" ><a href="http://localhost:8888/techeyes/index.php/contacts/?___SID=U" title="Contact Us" >Contact Us</a></li>
+                    </ul>
+        
+        		<div class="links-float-right links-border-left"></div>
+        
+                 	</div> <!-- end: footer-top -->
+	<div class="footer-main mclear">
+    	<div class="footer-main-top clearer">
+            <div class="footer-main-top-left">
+            	                     <div class="footer-social-wrapper"><div class="custom-content image-hover"><a title="Join us on Facebook" href="http://facebook.com/techeyes" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/facebook.png" alt="facebook" /> </a> <a title="Follow us on Twitter" href="https://twitter.com/#!/techeyesllc" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/twitter.png" alt="twitter" /> </a><a title="Join us on Google Plus" href="https://plus.google.com/113165839235743315644/posts" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/googleplus.png" alt="google" /> </a><a title="Pinterest" href="http://pinterest.com/techeyes" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/pinterest.png" alt="pinterest" /> </a> <!--<a title="Watch us on YouTube" href="http://www.youtube.com/user/TechEyesVideos/feed" _mce_href="http://www.youtube.com/user/TechEyesVideos/feed" target="_blank"> <img src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/youtube.png" _mce_src="http://d1r913ofpcpbjz.cloudfront.net/media//infortis/site/social/youtube.png" alt="youtube" /> </a>--></div></div>
+                            </div>
+            <div class="footer-main-top-right">
+                <div id="subscribe-form" class="clearer">
+                    
+<form action="https://techeyes.com/index.php/newsletter/subscriber/new/?<!--SID=42e099ce681f8fa1df68e2d5eaca8e84e769f64b-->" method="post" id="newsletter-validate-detail">
+	<div>
+        <label for="newsletter">Newsletter</label>
+        <div class="input-box">
+            <input type="text" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" />
+        </div>
+        <button type="submit" title="Subscribe" class="button btn-inline"><span><span>Subscribe</span></span></button>
+	</div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    new Varien.searchForm('newsletter-validate-detail', 'newsletter', 'Enter your email address');
+//]]>
+</script>
+                </div>
+            </div>
+        </div> <!-- end: footer-main-top -->
+        
+                		                                    <div class="footer-main-bottom clearer">
+            
+                                                    <div class="footer-item wide" style="min-height:120px;">
+                                                                                                        <div class="footer-links-column-wrapper" style="width:22.5%; margin-right:3.33333333333%;">
+                                <h6 class="heading">Info</h6>
+<ul>
+<li><a href="/index.php/company-info/?___store=default#answer1">About us</a></li>
+<li><a href="/index.php/company-info/?___store=default#answer2">Contact us</a></li>
+<li><a href="/index.php/company-info/?___store=default#answer3">About our products</a></li>
+<li><a href="/index.php/company-info/?___store=default#answer4">Payment</a></li>
+<li><a href="/index.php/company-info/?___store=default#answer5">Tech Daily</a></li>
+</ul>                            </div>
+                                                                                <div class="footer-links-column-wrapper" style="width:22.5%; margin-right:3.33333333333%;">
+                                <h6 class="heading">Business</h6>
+<ul>
+<li><a href="/index.php/company-options/?___store=default#answer1">Dealer</a></li>
+<li><a href="/index.php/company-options/?___store=default#answer2">Wholesale</a></li>
+<li><a href="/index.php/company-options/?___store=default#answer3">Government/GSA</a></li>
+<li><a href="/index.php/company-options/?___store=default#answer4">Career</a></li>
+<li><a href="/index.php/company-options/?___store=default#answer5">Advertising</a></li>
+</ul>                            </div>
+                                                                                <div class="footer-links-column-wrapper" style="width:22.5%; margin-right:3.33333333333%;">
+                                <h6 class="heading">Policies</h6>
+<ul>
+<li><a href="/index.php/company-policies/?___store=default#answer1">Shipping&nbsp;</a></li>
+<li><a href="/index.php/company-policies/?___store=default#answer2">Privacy & Security</a></li>
+<li><a href="/index.php/company-policies/?___store=default#answer3">Return</a></li>
+<li><a href="/index.php/company-policies/?___store=default#answer4">Order cancellation</a></li>
+<li><a href="/index.php/company-policies/?___store=default#answer5">Export</a></li>
+</ul>                            </div>
+                                                                                <div class="footer-links-column-wrapper" style="width:22.5%; margin-right:0;">
+                                <h6 class="heading">Customer Service</h6>
+<ul>
+<li><a href="/index.php/customer-service/?___store=default#answer1">Customer Feedback</a></li>
+<li><a href="/index.php/customer-service/?___store=default#answer2">FAQ</a></li>
+<li><a href="/index.php/customer-service/?___store=default#answer3">Tech Deals</a></li>
+<li><a href="/sitemap/sitemap.xml">Sitemap</a></li>
+<li><a href="/index.php/customer-service/?___store=default#answer5">Price match</a></li>
+</ul>                            </div>
+                                                <script type="text/javascript">decorateGeneric($$('.footer-links-column-wrapper'), ['last'])</script>
+                    </div>
+                    
+                                                    <div class="footer-item narrow last" style="min-height:120px;">
+                        <div class="footer-company-wrapper"><p><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/footer-logo_4.png" alt="" /></p></div>
+                    </div>
+                    
+            </div> <!-- end: footer-main-bottom -->
+                        
+    </div> <!-- end: footer-main -->
+    
+    <div class="footer-bottom mclear">
+        <p class="footer-copyright">Copyright &copy; 2012 <a title="Tech Eyes" href="http://www.TechEyes.com">Tech Eyes</a>. All rights reserved.<br />Magento Turbo Cache 
+    				Demo by <a href="http://www.artio.net/magento-extensions/m-turbo-accelerator" title="MTurbo Accelerator">
+    				Magento speed</a> up by ARTIO</p>
+        <div class="store-switcher"></div>
+		         	<div class="footer-payment-wrapper"><p><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/payments_1.png" alt="Payments" /></p></div>
+                <div class="clearer"></div>
+    </div> <!-- end: footer-bottom -->
+    
+	         <div class="footer-below-bottom-wrapper"><div class="footer_seals">
+<ul>
+<li><!-- (c) 2005, 2012. Authorize.Net is a registered trademark of CyberSource Corporation -->
+<div class="AuthorizeNetSeal" style="padding-left: 5px;">
+<script type="text/javascript">// <![CDATA[
+var ANS_customer_id="825d0b6e-156c-4189-8479-d62f7227c42d";
+// ]]></script>
+<script src="//verify.authorize.net/anetseal/seal.js" type="text/javascript"></script>
+<a id="AuthorizeNetText" href="http://www.authorize.net/" target="_blank">Credit Card Services</a></div>
+</li>
+<li id="auth"><span id="siteseal">
+<script src="https://seal.godaddy.com/getSeal?sealID=9fSGum1sHbHSZiTtavd0D5RftAWxC2boBQB2DGwZmICX10JWxQt" type="text/javascript"></script>
+</span></li>
+<!-- (c) 2005, 2012. Authorize.Net is a registered trademark of CyberSource Corporation -->
+<li id="rapid"><img src="http://d1r913ofpcpbjz.cloudfront.net/media/wysiwyg/RapidSSL_SEAL-90x50.gif" alt="" /></li>
+</ul>
+</div></div> <!-- end: footer-below-bottom-wrapper -->
+        <div class="clearer"></div>
+    
+</div> <!-- end: footer -->
+</div> <!-- end: footer-container2 -->
+</div> <!-- end: footer-container -->
+
+<script type="text/javascript">
+	jQuery(function() {
+		
+		jQuery(".left-edgebox").hover(function() {
+			jQuery(this).addClass('hover');
+			jQuery(this).stop(true).delay(150).animate({left: '-1px'}, 800, 'easeOutQuint'); //'easeOutCubic');
+		}, function() {
+			jQuery(this).stop(true).animate({left: '-252px'}, 800, 'easeInQuint');
+		});
+	
+		jQuery(".right-edgebox").hover(function() {
+			jQuery(this).addClass('hover');
+			jQuery(this).stop(true).delay(150).animate({right: '-1px'}, 800, 'easeOutQuint'); //'easeOutCubic');
+		}, function() {
+			jQuery(this).stop(true).animate({right: '-252px'}, 800, 'easeInQuint');
+		});
+		
+		jQuery("#mini-cart").hover(function() {
+			jQuery(this).addClass('hover');
+			jQuery("#mini-cart .block-content").stop(true, true).delay(300).slideDown(500, "easeOutBounce");
+		}, function() {
+			jQuery("#mini-cart .block-content").stop(true, true).delay(300).fadeOut(800, "easeInCubic");
+		});
+			     $(".block-cart").click(function () { $(this).effect("pulsate", { times:3 }, 2000); });		
+
+	    //////////////////////////////////////////
+//		jQuery(".top-dropdown").hover(function() {
+//			jQuery(this).addClass('hover');
+//			jQuery(this).find("ul").stop(true, true).delay(300).fadeIn(500, "easeOutCubic");
+//		}, function() {
+//			jQuery(this).find("ul").stop(true, true).delay(300).fadeOut(800, "easeInCubic");
+//		});
+//		//jQuery(this).parent('div').find(".itemslider-back")
+		
+		
+				jQuery(".top-dropdown").mouseenter(function() {
+			jQuery(this).click();
+		});
+		jQuery(".top-dropdown").click(function() {
+			jQuery(this).addClass('hover');
+			jQuery(this).find("ul").stop(true, true).delay(300).fadeIn(500, "easeOutCubic");
+		}).mouseleave(function() {
+			jQuery(this).find("ul").stop(true, true).delay(300).fadeOut(500, "easeInCubic");
+		});
+
+	});
+</script>

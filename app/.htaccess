@@ -1,0 +1,132 @@
+
+RewriteEngine on
+
+############################################
+## M-Turbo Accelleration (www.artio.net)
+
+           
+    #
+    # Rules for storeview Default Store View
+    #
+    
+    # store view is choosen by cookie
+    
+    # static rewrite - home page
+
+    RewriteCond %{HTTP_COOKIE} store=default
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default.html -f
+    RewriteRule .* var/turbocache/default.html [L]
+
+    # static rewrite - other pages
+
+    RewriteCond %{HTTP_COOKIE} store=default
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} /(.*)\.html$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default/%1.html -f
+    RewriteRule .* var/turbocache/default/%1.html [L]
+    
+    # store view is choosen by request_path
+    
+    # static rewrite - home page
+
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/default(/|)$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default.html -f
+    RewriteRule .* var/turbocache/default.html [L]
+    
+    # static rewrite - other pages
+
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/default/(.*)\.html$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default/%1.html -f
+    RewriteRule .* var/turbocache/default/%1.html [L]
+
+
+    # rules for default storeview
+
+    # static rewrite - home page
+    
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default.html -f
+    RewriteRule .* var/turbocache/default.html [L]
+
+    # static rewrite - other pages
+    
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} /(.*)\.html$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond /home/techey5/public_html/var/turbocache/default/%1.html -f
+    RewriteRule .* var/turbocache/default/%1.html [L]
+
+
+  
+## End M-Turbo
+
+
+
+RewriteCond %{HTTP_HOST} ^techeyes\.info$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.techeyes\.info$
+RewriteRule ^/?$ "http\:\/\/www\.techeyes\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^techeyes\.biz$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.techeyes\.biz$
+RewriteRule ^/?$ "http\:\/\/www\.techeyes\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^techeyes\.mobi$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.techeyes\.mobi$
+RewriteRule ^/?$ "http\:\/\/www\.techeyes\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^techeyes\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.techeyes\.net$
+RewriteRule ^/?$ "http\:\/\/www\.techeyes\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^techeyes\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.techeyes\.org$
+RewriteRule ^/?$ "http\:\/\/www\.techeyes\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^usadefensetech\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.usadefensetech\.com$
+RewriteRule ^/?$ "http\:\/\/techeyes\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^usadefensetechnology\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.usadefensetechnology\.com$
+RewriteRule ^/?$ "http\:\/\/techeyes\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^americanarmytechnology\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.americanarmytechnology\.com$
+RewriteRule ^/?$ "http\:\/\/techeyes\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^americanoptictechnology\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.americanoptictechnology\.com$
+RewriteRule ^/?$ "http\:\/\/techeyes\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^armytech\.us$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.armytech\.us$
+RewriteRule ^/?$ "http\:\/\/techeyes\.com" [R=301,L]
+
+
+############################################
+## enable apache served files compression
+## http://developer.yahoo.com/performance/rules.html#gzip
+# Insert filter
+SetOutputFilter DEFLATE
+# Netscape 4.x has some problems?
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+# Netscape 4.06-4.08 have some more problems
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+# MSIE masquerades as Netscape, but it is fine
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+# Don?t compress images
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+# Make sure proxies don?t deliver the wrong content
+Header append Vary User-Agent env=!dont-vary
+
+

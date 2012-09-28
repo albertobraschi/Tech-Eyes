@@ -1,0 +1,42 @@
+/**
+ * Crius
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt
+ *
+ * @category   Crius
+ * @package    Crius_GroupedProductsPro
+ * @copyright  Copyright (c) 2011 Crius (http://www.criuscommerce.com)
+ * @license    http://www.criuscommerce.com/CRIUS-LICENSE.txt
+ */
+ 
+.sortcol strong {
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: right center;
+	text-decoration: underline;
+}
+.sortcol-right strong {
+	padding-right: 0;
+	padding-left: 14px;
+	background-position: left center;
+}
+.data-table thead th.sortasc,
+.data-table thead th.sortdesc {
+	background-color: #94aec4;
+	background-image: none;
+}
+.data-table .price-box {
+    text-align: right;
+}
+.sortasc strong {
+	background-image: url(../images/groupedproductspro/up.gif);
+}
+.sortdesc strong {
+	background-image: url(../images/groupedproductspro/down.gif);
+}
+.nosort strong {
+	cursor: default;
+}
