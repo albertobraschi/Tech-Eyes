@@ -86,7 +86,6 @@
                     <div class="rebate">
                           <?php echo '&nbsp;<span>'.$_product->getRebate().'</span>' ?>
                        </div>
-                        
                        <div class="sku">
                           <?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?>
                        </div>
@@ -101,7 +100,9 @@
                                 <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                             </div>
                         <?php endif;?>
-                        
+                       <div id="pricematch">
+                          <img src="http://localhost:8888/techeyes/media/infortis/_home/banners/price_match_medium.png" alt="price match"/>
+                       </div>
                         <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
                         	<div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
 						<?php endif; ?>
