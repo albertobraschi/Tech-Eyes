@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Catalog
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -116,7 +116,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      *
      * @var string
      */
-    protected $_direction           = 'asc';
+    protected $_direction           = 'desc';
 
     /**
      * Default View mode
@@ -230,6 +230,15 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
             $this->_collection->setPageSize($limit);
         }
         if ($this->getCurrentOrder()) {
+		// Begin new Code
+            $this->getCollection()->joinField('rating',
+                'review/review_aggregate',
+                'rating_summary',
+                'entity_pk_value=entity_id',
+                '{{table}}.store_id=1',
+                'left');
+            // End new Code               
+		
             $this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
         }
         return $this;
@@ -386,7 +395,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
     public function setDefaultOrder($field)
     {
         if (isset($this->_availableOrder[$field])) {
-            $this->_orderField = $field;
+            $this->_orderField = $this->getEntityId();
         }
         return $this;
     }
@@ -397,13 +406,26 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      * @param string $dir
      * @return Mage_Catalog_Block_Product_List_Toolbar
      */
-    public function setDefaultDirection($dir)
+    //public function setDefaultDirection($dir)
+    //{
+      //  if (in_array(strtolower($dir), array('asc', 'desc'))) {
+        //    $this->_direction = strtolower($dir);
+        //}
+        //return $this;
+    //}
+	
+	public function setDefaultDirection($dir)
     {
-        if (in_array(strtolower($dir), array('asc', 'desc'))) {
-            $this->_direction = strtolower($dir);
-        }
+//        if (in_array(strtolower($dir), array('asc', 'desc'))) {
+//            $this->_direction = strtolower($dir);
+//        }
+
+        $this->_direction = 'desc';
+
         return $this;
-    }
+    }    
+
+
 
     /**
      * Retrieve available Order fields list
@@ -412,7 +434,20 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      */
     public function getAvailableOrders()
     {
-        return $this->_availableOrder;
+	// Add rating to "Sort by"
+	$_availableOrder = $this->_availableOrder;
+        $_availableOrder['rating'] = 'Rating';
+		
+        return $_availableOrder;
+	
+       $this->_availableOrder = array(
+	   ‘rating_summary’ => Mage::helper(’catalog’)->__(’Rating’),
+	   ‘price’ => Mage::helper(’catalog’)->__(’Price’),
+	   ‘newest’ => Mage::helper(’catalog’)->__(’Newest’),
+	   ‘name’ => Mage::helper(’catalog’)->__(’Name’)		
+);
+
+return $this->_availableOrder; 
     }
 
     /**
@@ -472,17 +507,20 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      * @return string
      */
     public function getOrderUrl($order, $direction)
+	//add new code to select desc or asc by array attribute
+	//end new code
     {
-        if (is_null($order)) {
-            $order = $this->getCurrentOrder() ? $this->getCurrentOrder() : $this->_availableOrder[0];
-        }
-        return $this->getPagerUrl(array(
-            $this->getOrderVarName()=>$order,
-            $this->getDirectionVarName()=>$direction,
-            $this->getPageVarName() => null
-        ));
+      	if (is_null($order)) {
+		$order = $this->getCurrentOrder() ? $this->getCurrentOrder() : $this->_availableOrder[0];
+    	}
+	    return $this->getPagerUrl(array(
+    	$this->getOrderVarName()=>$order,
+	    $this->getDirectionVarName()=>$direction,
+    	$this->getPageVarName() => null
+	    ));
     }
-
+	//add new code to select desc or asc by array attribute
+    //end new code
     /**
      * Return current URL with rewrites and additional parameters
      *
