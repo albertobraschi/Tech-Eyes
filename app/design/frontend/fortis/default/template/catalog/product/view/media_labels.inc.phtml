@@ -19,7 +19,7 @@
 	if (Mage::getStoreConfig('themeadmin/products/label_sale_enabled'))
 	{
 		$isSpecial = $themeHelper->isOnSale($_product);
-	}
+	}	
 ?>
 
 <?php if ($isNew == true): ?>
@@ -28,3 +28,9 @@
 <?php if ($isSpecial == true): ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/sale.png"); ?>" alt="<?php echo $this->__('Sale'); ?>" class="sticker sticker-top-right" />
 <?php endif; ?>
+<?php if ($_product->getrebate()) : ?>
+	<img src="<?php echo $this->getSkinUrl("images/stickers/rebate.png"); ?>" alt="<?php echo $this->__('Rebate'); ?>" class="sticker sticker-top-right" />
+<?php endif; ?>                        
+<?php if ($_product->getbestseller()) : ?>
+	<img src="<?php echo $this->getSkinUrl("images/stickers/best.png"); ?>" alt="<?php echo $this->__('BestSeller'); ?>" class="sticker sticker-top-left" />
+<?php endif; ?>                        
