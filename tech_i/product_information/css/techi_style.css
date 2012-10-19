@@ -28,7 +28,16 @@
 	padding:0; 
 	margin:0;
 }
-
+#sections{
+	margin-right: -60px;
+	padding-bottom: 10px;
+}
+#sections li{
+	list-style-type: none;
+	display: inline;
+	padding:100px;
+	font-size: 20px;
+}
 .usquare_module_wrapper li {
 	list-style:none; 
 	padding:0; 
