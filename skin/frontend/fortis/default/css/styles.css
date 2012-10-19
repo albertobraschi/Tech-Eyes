@@ -164,7 +164,7 @@ input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { 
 	-webkit-border-fit:lines; /* <- Safari & Google Chrome Fix */ 
-	overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer;
+	overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer;padding-bottom:5px;
 
 }
 .account-login button.button , .std button.button ,.products-grid button.button , .account-create button.button{
@@ -4293,10 +4293,10 @@ h1,
 /* Tags: */
 /*my:predef-block*/
 .desc-center{
-	margin-top:-162px;
+	margin-top:-179px;
 	margin-left:265px;
 }
 .desc-right{
 	float:right;
-	margin-top: -162px;
+	margin-top: -179px;
 }
