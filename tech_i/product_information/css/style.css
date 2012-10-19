@@ -22,10 +22,11 @@ h4 {
 	font-size:20px;
 }
 body {
-	background:#fff url(../images/bg_2.png) no-repeat;
+	background:#fff url(../images/slide.jpg) no-repeat;
+	background-position-x: center;
+	background-position-y: center;
 	font-family: 'PTSansRegular', Sans-Serif;
 	font-size:14px;
-	margin-left:120px;
 	text-align:center;
 }
 a {
