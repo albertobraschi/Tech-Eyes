@@ -2633,7 +2633,12 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .itar #restriction a:hover,.ger #restriction a:hover,.gr #restriction a:hover{
 	color: #002A54;
 }
-
+.gift span #restriction{border:#790089 1px solid;margin-bottom:5px;padding:3px}
+.gift h2{
+	color: #FFAB19;
+	margin-left: 30px;
+	margin-top: -23px;
+}
 /* Prices. Common for product view and MAP popup.
 -------------------------------------------------------------- */
 .product-view .price-box,
@@ -4287,3 +4292,11 @@ h1,
 
 /* Tags: */
 /*my:predef-block*/
+.desc-center{
+	margin-top:-162px;
+	margin-left:265px;
+}
+.desc-right{
+	float:right;
+	margin-top: -162px;
+}
