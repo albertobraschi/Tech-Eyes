@@ -2568,7 +2568,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 -------------------------------------------------------------- */
 .sticker { border:none; position:absolute; z-index:99; /* Gteater than Cloud Zoom image */ }
 .sticker-top-right { top:-2px; right:-2px; }
-.sticker-bottom-right { bottom:5px; right:-2px; }
+.sticker-bottom-right { bottom:185px; right:-2px; }
 .sticker-bottom-left { bottom:-2px; left:-2px; }
 .sticker-top-left { top:-2px; left:-2px; }
 
