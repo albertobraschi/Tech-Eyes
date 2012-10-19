@@ -33,4 +33,8 @@
 <?php endif; ?>                        
 <?php if ($_product->getbestseller()) : ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/best.png"); ?>" alt="<?php echo $this->__('BestSeller'); ?>" class="sticker sticker-top-left" />
+<?php endif; ?>
+<?php if ($_product->getgift()) : ?>
+	<img src="<?php echo $this->getSkinUrl("images/stickers/gift_ribbon.png"); ?>" alt="<?php echo $this->__('Free Gift'); ?>" class="sticker sticker-bottom-right" />
 <?php endif; ?>                        
+                        
