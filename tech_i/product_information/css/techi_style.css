@@ -29,7 +29,6 @@
 	margin:0;
 }
 #sections{
-	margin-right: -60px;
 	padding-bottom: 10px;
 }
 #sections li{
@@ -231,38 +230,45 @@ img.usquare_square:hover {
 
 
 
+/* -------------------------------------------------------------- */
+/* --- REPSONSE 1024px ------------------------------------------- */
+/* -------------------------------------------------------------- */
 
 
 
+@media screen and (max-width:1024px) {
+   #sections{
+   margin-right:-74px;
+   }
+}
 
 
+/* -------------------------------------------------------------- */
+/* --- REPSONSE 980px ------------------------------------------- */
+/* -------------------------------------------------------------- */
 
-
-
+@media screen and (max-width:980px) {
+	.usquare_module_wrapper {width:640px;}
+   #sections{
+     text-indent:-9999px;
+   }
+}
 
 
 /* -------------------------------------------------------------- */
 /* --- REPSONSE 660px ------------------------------------------- */
 /* -------------------------------------------------------------- */
 
-@media screen and (max-width:980px) {
-	.usquare_module_wrapper {width:640px;}
-	
+@media screen and (max-width:660px) {
+	.usquare_module_wrapper {width:320px;}
+   #sections{
+     text-indent:-9999px;
+   }
 }
 
 
 /* -------------------------------------------------------------- */
 /* --- REPSONSE 340px ------------------------------------------- */
-/* -------------------------------------------------------------- */
-
-@media screen and (max-width:660px) {
-	.usquare_module_wrapper {width:320px;}
-	
-}
-
-
-/* -------------------------------------------------------------- */
-/* --- REPSONSE 300px ------------------------------------------- */
 /* -------------------------------------------------------------- */
 
 @media screen and (max-width:340px) {
@@ -296,6 +302,21 @@ img.usquare_square:hover {
 	.usquare_block_extended .usquare_about {
 		height:205px;
 	}
+	   #sections li{
+     padding-bottom: 0;
+     margin-left: -10px;
+   }
+.selectors a {
+	font-family:'OstrichSansMedium';
+	font-weight: normal;
+	text-decoration:none;
+	color:#ef4939;
+	font-size:28px;
+	margin:10px;
+}
+#sections{
+	text-indent: -9999px;
+}
 }
 
 

@@ -132,4 +132,26 @@ td {
 	padding:10px;
     background: #f2f2f2;
 }
+/***Font size only*******/
+@media screen and (max-width:340px) {
+.selectors a {
+	font-family:'OstrichSansMedium';
+	font-weight: normal;
+	text-decoration:none;
+	color:#ef4939;
+	font-size:28px;
+	margin:10px;
+}
+}
+/***Font size only*******/
+@media screen and (max-width:240px) {
+.selectors a {
+	font-family:'OstrichSansMedium';
+	font-weight: normal;
+	text-decoration:none;
+	color:#ef4939;
+	font-size:20px;
+	margin:10px;
+}
+}
 
