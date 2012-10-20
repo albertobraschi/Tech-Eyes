@@ -37,6 +37,12 @@
 	padding:100px;
 	font-size: 20px;
 }
+.night{
+	margin-left:-15px;
+}
+.thermal{
+margin-left: 13px;
+}
 .usquare_module_wrapper li {
 	list-style:none; 
 	padding:0; 
@@ -98,8 +104,8 @@ img.usquare_square {
 
 .usquare_arrow {
 	float:left; 
-	margin-top:-50px; 
-	margin-left: 45px;
+	margin-top:-52px; 
+	margin-left: 40px;
 	padding:0 5px 5px 5px;
 }
 
