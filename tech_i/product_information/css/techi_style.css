@@ -247,9 +247,12 @@ img.usquare_square:hover {
 /* -------------------------------------------------------------- */
 
 @media screen and (max-width:980px) {
-	.usquare_module_wrapper {width:640px;}
+.usquare_module_wrapper {width:640px;}
    #sections{
      text-indent:-9999px;
+   }
+   .usquare_arrow{
+     margin-top:-1000px;
    }
 }
 
