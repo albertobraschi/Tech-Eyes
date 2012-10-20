@@ -98,7 +98,8 @@ img.usquare_square {
 
 .usquare_arrow {
 	float:left; 
-	margin-top:5px; 
+	margin-top:-50px; 
+	margin-left: 45px;
 	padding:0 5px 5px 5px;
 }
 
@@ -227,8 +228,6 @@ img.usquare_square:hover {
 .usquare_square_bg10 {background-color:#f78d41;}
 .usquare_square_bg11 {background-color:#f78d41;}
 .usquare_square_bg12 {background-color:#f78d41;}
-
-
 
 /* -------------------------------------------------------------- */
 /* --- REPSONSE 1024px ------------------------------------------- */
