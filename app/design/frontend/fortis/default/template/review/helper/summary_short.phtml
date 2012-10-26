@@ -35,7 +35,7 @@
                 <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
             </div>
         <?php endif;?>
-        <span class="amount"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></span>
+<? //        <span class="amount"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></span> 
     </div>
 <?php elseif ($this->getDisplayIfEmpty()): ?>
     <p class="no-rating"><?php echo $this->__('Be the first to review this product') ?></p>

@@ -1,14 +1,23 @@
-<div class="footer-container footer-bg-gray-d footer-skin-light">
+<div style="position:relative; border:1px dotted red; margin:6px 2px; padding:18px 2px 2px 2px; zoom:1;">
+<div style="position:absolute; left:0; top:0; padding:2px 5px; background:red; color:white; font:normal 11px Arial;
+text-align:left !important; z-index:998;" onmouseover="this.style.zIndex='999'"
+onmouseout="this.style.zIndex='998'" title="frontend/fortis/default/template/page/html/footer.phtml">frontend/fortis/default/template/page/html/footer.phtml</div><div class="footer-container footer-bg-gray-d footer-skin-light">
 <div class="footer-container2">
 <div class="footer">
 	<div class="footer-top">
-		<ul class="links">
+		<div style="position:relative; border:1px dotted red; margin:6px 2px; padding:18px 2px 2px 2px; zoom:1;">
+<div style="position:absolute; left:0; top:0; padding:2px 5px; background:red; color:white; font:normal 11px Arial;
+text-align:left !important; z-index:998;" onmouseover="this.style.zIndex='999'"
+onmouseout="this.style.zIndex='998'" title="frontend/fortis/default/template/page/template/links.phtml">frontend/fortis/default/template/page/template/links.phtml</div><ul class="links">
                     	            <li class="item-1 first" ><a href="http://localhost:8888/techeyes/index.php/catalogsearch/term/popular/?___SID=U" title="Search Terms" >Search Terms</a></li>
                                     	            <li class="item-2" ><a href="http://localhost:8888/techeyes/index.php/catalogsearch/advanced/?___SID=U" title="Advanced Search" >Advanced Search</a></li>
-                                        <li ><a href="https://techeyes.com/index.php/sales/guest/form/?<!--SID=42e099ce681f8fa1df68e2d5eaca8e84e769f64b-->" title="Orders and Returns" >Orders and Returns</a></li>
-                                    	            <li class="item-4 last" ><a href="http://localhost:8888/techeyes/index.php/contacts/?___SID=U" title="Contact Us" >Contact Us</a></li>
+                                        <div style="position:relative; border:1px dotted red; margin:6px 2px; padding:18px 2px 2px 2px; zoom:1;">
+<div style="position:absolute; left:0; top:0; padding:2px 5px; background:red; color:white; font:normal 11px Arial;
+text-align:left !important; z-index:998;" onmouseover="this.style.zIndex='999'"
+onmouseout="this.style.zIndex='998'" title="frontend/base/default/template/page/template/linksblock.phtml">frontend/base/default/template/page/template/linksblock.phtml</div><li ><a href="https://techeyes.com/index.php/sales/guest/form/?<!--SID=42e099ce681f8fa1df68e2d5eaca8e84e769f64b-->" title="Orders and Returns" >Orders and Returns</a></li>
+</div>                                    	            <li class="item-4 last" ><a href="http://localhost:8888/techeyes/index.php/contacts/?___SID=U" title="Contact Us" >Contact Us</a></li>
                     </ul>
-        
+</div>        
         		<div class="links-float-right links-border-left"></div>
         
                  	</div> <!-- end: footer-top -->
@@ -19,7 +28,10 @@
                             </div>
             <div class="footer-main-top-right">
                 <div id="subscribe-form" class="clearer">
-                    
+                    <div style="position:relative; border:1px dotted red; margin:6px 2px; padding:18px 2px 2px 2px; zoom:1;">
+<div style="position:absolute; left:0; top:0; padding:2px 5px; background:red; color:white; font:normal 11px Arial;
+text-align:left !important; z-index:998;" onmouseover="this.style.zIndex='999'"
+onmouseout="this.style.zIndex='998'" title="frontend/fortis/default/template/newsletter/subscribe.phtml">frontend/fortis/default/template/newsletter/subscribe.phtml</div>
 <form action="https://techeyes.com/index.php/newsletter/subscriber/new/?<!--SID=42e099ce681f8fa1df68e2d5eaca8e84e769f64b-->" method="post" id="newsletter-validate-detail">
 	<div>
         <label for="newsletter">Newsletter</label>
@@ -35,7 +47,7 @@
     new Varien.searchForm('newsletter-validate-detail', 'newsletter', 'Enter your email address');
 //]]>
 </script>
-                </div>
+</div>                </div>
             </div>
         </div> <!-- end: footer-main-top -->
         
@@ -93,7 +105,10 @@
         <p class="footer-copyright">Copyright &copy; 2012 <a title="Tech Eyes" href="http://www.TechEyes.com">Tech Eyes</a>. All rights reserved.<br />Magento Turbo Cache 
     				Demo by <a href="http://www.artio.net/magento-extensions/m-turbo-accelerator" title="MTurbo Accelerator">
     				Magento speed</a> up by ARTIO</p>
-        <div class="store-switcher"></div>
+        <div class="store-switcher"><div style="position:relative; border:1px dotted red; margin:6px 2px; padding:18px 2px 2px 2px; zoom:1;">
+<div style="position:absolute; left:0; top:0; padding:2px 5px; background:red; color:white; font:normal 11px Arial;
+text-align:left !important; z-index:998;" onmouseover="this.style.zIndex='999'"
+onmouseout="this.style.zIndex='998'" title="frontend/base/default/template/page/switch/stores.phtml">frontend/base/default/template/page/switch/stores.phtml</div></div></div>
 		         	<div class="footer-payment-wrapper"><p><img src="http://localhost:8888/techeyes/media/wysiwyg/payments_1.png" alt="Payments" /></p></div>
                 <div class="clearer"></div>
     </div> <!-- end: footer-bottom -->
@@ -168,3 +183,4 @@ var ANS_customer_id="825d0b6e-156c-4189-8479-d62f7227c42d";
 
 	});
 </script>
+</div>

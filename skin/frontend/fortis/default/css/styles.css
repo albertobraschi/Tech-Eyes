@@ -938,19 +938,22 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .header-top { height:40px; font-size:11px; }
-.header-top .header-top-search-wrapper { float:right; margin-top:8px; }
+.header-top .header-top-search-wrapper { float:right; margin-top:-15px; margin-right: 380px; }
 .header-top .lang-switcher,
 .header-top .currency-switcher { margin-top:7px; margin-right:25px; }
 
 /* Header top - links
 -------------------------------------------------------------- */ /*my:predef-block*/
-.header-top .header-top-links-wrapper { float:left; margin-top:13px; }
+.header-top .header-top-links-wrapper { float:right; margin-top:13px; }
 .header-top-links-wrapper ul {}
 .header-top-links-wrapper li {
 	float:left;
 	border-right:1px solid rgba(255, 255, 255, 0.075); /*1px solid #555;*/
 	padding:0 8px;
 	line-height:12px;
+	font-size: 12px;
+}
+.header-top-links-wrapper li a{
 }
 .header-top-links-wrapper li.first { padding-left:0; }
 .header-top-links-wrapper li.last { padding-right:0; border-right:0 !important; }
@@ -977,11 +980,13 @@ tr.summary-details-excluded { font-style:italic; }
 /* "ul" is a list of default Magento links or additional custom links added in header template.
    Set floating because there can be more than one list in a row. */
 .user-menu ul { float:left; }
+#custom{
+	margin-right: -30px;
+}
 .user-menu > ul > li {
 	float:left;
 	margin-left:10px;
 	display:block;
-	
 	background-image:url(../images/img/ic-toplinks-wishlist.png); /* Default icon for links is wishlist icon */
 	background-color:rgba(255,255,255, 0.1);
 	background-position:center 5px;
@@ -1003,6 +1008,9 @@ tr.summary-details-excluded { font-style:italic; }
 .user-menu > ul > li.item-7 			{ background-image:url(../images/img/ic-toplinks-account.png); }
 .user-menu > ul > li.user-menu-signup	{ background-image:url(../images/img/ic-toplinks-signup.png); }
 .user-menu > ul > li.user-menu-custom	{ background-image:url(../images/img/ic-toplinks-custom.png); }
+.user-menu > ul > li.user-menu-deals	{ background-image:url(../images/img/ic-toplinks-deals.png); }
+.user-menu > ul > li.user-menu-daily	{ background-image:url(../images/img/ic-toplinks-custom.png); }
+.user-menu > ul > li.user-menu-techi	{ background-image:url(../images/img/ic-toplinks-techi.png); }
 .user-menu > ul > li.user-menu-cart		{ background-image:none; /* No background icon for cart link */ }
 
 .user-menu > ul > li > a {
@@ -1012,7 +1020,7 @@ tr.summary-details-excluded { font-style:italic; }
 	height:22px;
 	padding:20px 6px 0;
 	text-align:center;
-	color:#aaa;
+	color:#33CCFF;
 }
 .user-menu > ul > li:hover > a { color:#ddd; }
 
@@ -2335,7 +2343,10 @@ tr.summary-details-excluded { font-style:italic; }
 /* Old price */
 .old-price { margin:0; }
 .old-price .price {}
-
+/*.old-price img{
+	margin-left: 50px;
+	z-index: 100;
+}*/
 /* Special price */
 .special-price { margin:0; padding:0; }
 .special-price .price,
@@ -2627,18 +2638,25 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 }
 .rebate span #restriction{border:#24D600 1px solid;margin-bottom:5px;padding:3px}
 
-.itar #restriction a,.ger #restriction a,.gr #restriction a{
+.itar #restriction a,.ger #restriction a,.gr #restriction a , #gift_border a{
 	color: #066cc3;
 }
 .itar #restriction a:hover,.ger #restriction a:hover,.gr #restriction a:hover{
 	color: #002A54;
 }
-.gift span #restriction{border:#790089 1px solid;margin-bottom:5px;padding:3px}
+.gift span #gift_border{border:#790089 1px solid;margin-bottom:5px;padding:3px}
 .gift h2{
 	color: #FFAB19;
-	margin-left: 30px;
-	margin-top: -23px;
+	margin-left: 110px;
+	margin-top: -55px;
 }
+#gift_border img{
+	margin-top:3px;
+}
+#gift_border p{
+	margin-left:108px;
+}
+
 /* Prices. Common for product view and MAP popup.
 -------------------------------------------------------------- */
 .product-view .price-box,
@@ -4299,4 +4317,64 @@ h1,
 .desc-right{
 	float:right;
 	margin-top: -179px;
+}
+/*********** TECH DEALS**************/
+#techdeals , #techdeals-2{
+	margin-left: 100px;
+	margin-top: 50px;
+}
+#techdeals li {
+    background: url(/media/techdeals/techdealssprite.png);
+    display: inline-block;
+    height: 213px;
+    width: 213px;
+    margin-right: 50px;
+    text-indent: -9999px;
+}
+
+ #techdeals-2 li{
+    background: url(/media/techdeals/techdealssprite_2.png);
+    display: inline-block;
+    height: 213px;
+    width: 213px;
+    margin-right: 50px;
+    text-indent: -9999px;
+}
+
+
+#techdeals .deals1{
+	background-position: 0px 0px ;
+}
+#techdeals .deals1:hover{
+	background-position: 0px -215px ;
+}
+#techdeals .deals2{
+	background-position: 430px 0px ;
+}
+#techdeals .deals2:hover{
+	background-position: 430px -215px ;
+}
+#techdeals .deals3{
+	background-position: 215px 0px ;
+}
+#techdeals .deals3:hover{
+	background-position: 215px -215px ;
+}
+#techdeals-2 .deals4{
+	background-position:0px 0px ;
+}
+#techdeals-2 .deals4:hover{
+	background-position: 0px -215px ;
+}
+#techdeals-2 .deals5{
+	background-position: 430px -0px ;
+}
+#techdeals-2 .deals5:hover{
+	background-position: 430px -215px ;
+}
+#techdeals-2 .deals6{
+	background-position: 215px 0px ;
+}
+#techdeals-2 .deals6:hover{
+	background-position: 215px -215px ;
 }
