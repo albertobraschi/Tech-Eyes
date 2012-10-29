@@ -101,7 +101,7 @@
                         </li>
                     </ul>
                 <?php endif?>
-                <ul id="custom">
+              <!--<ul id="custom">
                  <li class="user-menu-item user-menu-deals">
                    <a href="techeyes.com/techdeals">Tech Deals</a>
                  <li>
@@ -111,8 +111,8 @@
                  <li class="user-menu-item user-menu-techi">
                    <a href="#">Tech i</a>
                  <li>
-                </ul>
-                <?php //<?php echo $this->getChildHtml('topLinks') ?>
+                </ul>-->
+                <?php echo $this->getChildHtml('topLinks') ?>
 				<?php // If customer is not logged in: show "Sign Up" link, if enabled ?>
                 <?php if (Mage::getSingleton('customer/session')->isLoggedIn() == false): ?>
                     <?php if ($themeHelper->getCfg('header/links_signup_enabled')): ?>

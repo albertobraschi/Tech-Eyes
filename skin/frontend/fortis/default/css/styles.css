@@ -1020,7 +1020,7 @@ tr.summary-details-excluded { font-style:italic; }
 	height:22px;
 	padding:20px 6px 0;
 	text-align:center;
-	color:#33CCFF;
+	color:#ddd;
 }
 .user-menu > ul > li:hover > a { color:#ddd; }
 
@@ -2579,7 +2579,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 -------------------------------------------------------------- */
 .sticker { border:none; position:absolute; z-index:99; /* Gteater than Cloud Zoom image */ }
 .sticker-top-right { top:-2px; right:-2px; }
-.sticker-bottom-right { bottom:185px; right:-2px; }
+.sticker-bottom-right { top:85px; right:-2px; }
 .sticker-bottom-left { bottom:-2px; left:-2px; }
 .sticker-top-left { top:-2px; left:-2px; }
 
