@@ -916,7 +916,9 @@ tr.summary-details-excluded { font-style:italic; }
 .header .login-msg a { color:#777; }
 .header .login-msg a:hover { color:#fff; }
 
-
+#LiveChat_1351535889 a{
+	color:#FFAB19;
+}
 /* Header additional containers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
