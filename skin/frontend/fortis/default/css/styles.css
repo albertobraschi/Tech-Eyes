@@ -1932,7 +1932,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Grid item's content */
 .products-grid .product-name { margin:15px 0 0; font-weight:bold; font-size:12px; line-height:15px; }
-.products-grid .product-image { display:block; margin:0 auto; }
+.products-grid .product-image { display:block; margin:0px 0px 0px 4px; }
 .products-grid .price-box { margin:10px 0; }
 .products-grid .price-box .price-label { color:#777; }
 .products-grid .ratings { margin:7px 0; }
