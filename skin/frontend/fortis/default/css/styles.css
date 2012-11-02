@@ -2023,7 +2023,14 @@ tr.summary-details-excluded { font-style:italic; }
 	margin:0 8px 0 0; /* margin-right = 15px. Subtracted 7px (shadow width) */
 	border:none;
 	
-	background:url(../images/img/grid-item-shadow.png) right bottom no-repeat;
+	background:url(../images/img/grid-item-shadow.png) left bottom no-repeat;
+	
+}
+
+.spec-grid .item:hover {	
+	background:url(../images/img/grid-item-shadow.png) left bottom no-repeat;
+	background-position-x: -265px;
+	
 }
 .spec-grid .item.last { margin-right:0; }
 
