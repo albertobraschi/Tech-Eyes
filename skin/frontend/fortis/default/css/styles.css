@@ -4399,14 +4399,12 @@ h1,
    margin-left: 50px;
 }
 #left{
-	
+	margin-top:-1262px;
 }
 #center{
 	margin-left: 345px;
-	margin-top: -436px;
 }
 #right{
-    margin-top: -1262px;
 	float: right;
 }
 
