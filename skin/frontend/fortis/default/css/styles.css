@@ -4387,6 +4387,26 @@ h1,
 #techdeals-2 .deals6:hover{
 	background-position: 215px -215px ;
 }
+/******** NV Glossary ***********/
 #NV-Term h3{
 	padding-top:10px;
 }
+/********* Fast Pass *************/
+.pass-products li{
+	padding-bottom: 10px;
+}
+.pass-products h3{
+   margin-left: 50px;
+}
+#left{
+	
+}
+#center{
+	margin-left: 345px;
+	margin-top: -436px;
+}
+#right{
+    margin-top: -1262px;
+	float: right;
+}
+
