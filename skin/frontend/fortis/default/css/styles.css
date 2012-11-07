@@ -1875,14 +1875,16 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .products-list.last {}
 .products-list li.item {
-	background:url(../images/img/grid-item-shadow.png) right bottom no-repeat;
+	background:url() right bottom no-repeat; /*removed background image effecting list view */
     padding:0 7px 7px 0; /* Added 7px padding (shadow width) */
 	margin-bottom:8px; /* margin-bottom = 15px. Subtracted 7px (shadow width) */
 	padding-bottom: 10px;
 }
 .widget-products .products-list li.item img{ margin-left: 45px;}
 .products-list li.item.last { margin-bottom:0; }
-.products-list .item-inner { position:relative; background-color:#fff; padding:15px; }
+.products-list .item-inner { position:relative; background-color:#fff; padding:15px; background-position: right bottom; } 
+.item-inner:hover {background-color: #e5f9ff;} /* added inner item view hover - JJ */
+
 .products-list .product-image { float:left; width:190px; /*height:190px;*/ }
 .products-list .product-shop { float:left; width:296px; min-height:190px; padding-right:15px; margin:0 0 0 15px; border-right:1px solid #f1f1f1; }
 .products-list .right-column { float:right; width:130px;}
