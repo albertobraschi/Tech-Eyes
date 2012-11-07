@@ -1610,6 +1610,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Block: Layered Navigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
+.tf_upfront_badge img{ margin-top: -20px; margin-left:50px; padding-bottom: 15px; }
 .block-layered-nav { margin-top:2px; border: 1px solid #e7e7e7; }
 .block-layered-nav .block-title {
 	background:none;
