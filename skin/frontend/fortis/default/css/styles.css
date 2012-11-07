@@ -4031,13 +4031,14 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 
 /*Site seals*/
 .footer_seals{
-margin-left: 320px;
-width: 327px;
+   margin-left: 250px;
+   width: 450px;
 }
 .footer_seals ul li{
    background: none;
    padding: 0;
 }
+.footer_seals .tf_upfront_badge img{ margin-top: -60px; margin-left:240px;}
 #auth{
    margin-top: -60px;
    float:left;
@@ -4045,7 +4046,7 @@ width: 327px;
    padding-right: 7px;
 }
 #rapid{
-   margin-top: -67px; float: right;
+   margin-top: -86px; float: right;
 }
 .AuthorizeNetSeal{
    margin-top: -67px;
