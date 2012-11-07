@@ -2189,7 +2189,7 @@ tr.summary-details-excluded { font-style:italic; }
 .itemslider-wrapper .backward {
 	position:absolute;
 	left:20px; /*-55px;*/
-	top:45%;
+	top:35%;
 	background:url(../images/img/slideshow-arrows.png) 0 0 no-repeat;
 	width:50px;
 	height:50px;
@@ -2198,7 +2198,7 @@ tr.summary-details-excluded { font-style:italic; }
 .itemslider-wrapper .forward {
 	position:absolute;
 	right:20px; /*-55px;*/
-	top:45%;
+	top:35%;
 	background:url(../images/img/slideshow-arrows.png) -50px 0 no-repeat;
 	width:50px;
 	height:50px;
