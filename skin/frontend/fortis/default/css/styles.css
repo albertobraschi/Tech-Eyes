@@ -2039,7 +2039,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Fix for right aligned stickers:
    move sticker 7px left (shadow width). Subtract 2px, because the label sticks out 2px */
-.spec-grid .item .sticker-top-right { right:5px; }
+.spec-grid .item .sticker-top-right { right:-3px; }
 .spec-grid .item .sticker-bottom-right { right:5px;}
 
 /* Special grid: 3 columns
