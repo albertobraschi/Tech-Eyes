@@ -1,11 +1,11 @@
 // JavaScript Document
 //month = '0', day = '+1', dow = 0, hour = 0
-var month1 = '12'; // 1 through 12 or '*' within the next month, '0' for the current month //please set the month 12 to enable the counter upto next year 31st december.
-var day1 = '31';   // day of month or + day offset // please set the day 31 to enable the counter upto next year 31st december.
+var month1 = '0'; // 1 through 12 or '*' within the next month, '0' for the current month //please set the month 12 to enable the counter upto next year 31st december.
+var day1 = '+7';   // day of month or + day offset // please set the day 31 to enable the counter upto next year 31st december.
 var dow1 = 0;     // day of week sun=1 sat=7 or 0 for whatever day it falls on
 var hour1 = 0;    // 0 through 23 for the hour of the day
 var min1 = 0;    // 0 through 59 for minutes after the hour
-var tz1 = 11;     // offset in hours from UTC to your timezone  11 is set to australian time, please set the timezone offset accoring to your local time.
+var tz1 = -8;     // offset in hours from UTC to your timezone  11 is set to australian time, please set the timezone offset accoring to your local time.
 var lab1 = 'cd';  // id of the entry on the page where the counter is to be inserted
 
 function start1() {

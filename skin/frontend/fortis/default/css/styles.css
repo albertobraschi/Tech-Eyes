@@ -4411,4 +4411,9 @@ h1,
 #right{
 	float: right;
 }
+/********** Countdown ***************/
+#cd{
+	font-family: open sans;
+	font-size: 24px;
+}
 
