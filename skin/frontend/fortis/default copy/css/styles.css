@@ -1838,7 +1838,7 @@ tr.summary-details-excluded { font-style:italic; }
 .category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
 .category-image img {}
 .category-description { margin:0 0 15px; }
-.category-products { margin:10px 0; }
+.category-products { margin:0 0; }
 
 /* Static CMS blocks on category page */ /*my:predef-block*/
 .category-above-collection-wrapper,
@@ -2007,7 +2007,7 @@ tr.summary-details-excluded { font-style:italic; }
 */
 .spec-grid {
 	width:697px; /* 697 = 720 - padding-right - padding-left */
-	padding:8px 8px 0 15px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
+	padding:8px 8px 0 12px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
 	border:none;
 	
 	background-color:#eee;
@@ -2021,8 +2021,9 @@ tr.summary-details-excluded { font-style:italic; }
 	-moz-border-radius:0 0 2px 2px; -webkit-border-radius:0 0 2px 2px; border-radius:0 0 2px 2px;
 }
 .spec-grid .item {
-	width:190px;
-	padding:15px 22px 22px 15px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */
+	width:125px;
+	height: 280px;
+	padding:15px 22px 22px 12px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */
 	margin:0 8px 0 0; /* margin-right = 15px. Subtracted 7px (shadow width) */
 	border:none;
 	
@@ -2044,11 +2045,11 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid: 3 columns
 -------------------------------------------------------------- */
-.spec-grid3col .item { min-height:333px; }
+.spec-grid3col .item {  }
 .spec-grid3col .product-image { width:190px; /*height:190px;*/ }
-.spec-grid3col.grid-actions-absolute .item { padding-bottom:59px; min-height:307px; }
+.spec-grid3col.grid-actions-absolute .item { padding-bottom:59px;  }
 /* Bottom space equals bottom padding of the item (when "actions" box position != absolute) */
-.spec-grid3col.grid-actions-absolute .actions { position:absolute; bottom:22px; width:192px; }
+.spec-grid3col.grid-actions-absolute .actions { position:absolute;  width:192px; }
 
 /* Special grid: 4 columns
 -------------------------------------------------------------- */
@@ -2059,7 +2060,7 @@ tr.summary-details-excluded { font-style:italic; }
 .spec-grid4col .add-to-links li { float:none; }
 .spec-grid4col .add-to-links a.link-compare { margin-top:3px; margin-left:0; }
 
-.spec-grid4col.grid-actions-absolute .item { padding-bottom:78px; min-height:243px; }
+.spec-grid4col.grid-actions-absolute .item { padding-bottom:78px;  }
 /* Bottom space equals bottom padding of the item (when "actions" box position != absolute) */
 .spec-grid4col.grid-actions-absolute .actions { position:absolute; bottom:17px; width:141px; }
 
@@ -4417,4 +4418,3 @@ h1,
 	font-family: open sans;
 	font-size: 24px;
 }
-
