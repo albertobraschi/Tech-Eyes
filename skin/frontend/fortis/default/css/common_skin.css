@@ -107,7 +107,8 @@
 /* Header */
 .header-skin-l .header { color:#bbb; }
 .header-skin-l .header a { color:#bbb; }
-.header-skin-l .header a:hover { color:#fff; }
+.header-skin-l .header a:hover { color:#FFFFFF; }
+.header-skin-l .header #cart-sidebar a:hover { color:#797979; }
 
 /* Header top - links */
 .header-skin-l .header-top-links-wrapper li { border-right:1px solid rgba(255,255,255, 0.1); }
