@@ -1935,7 +1935,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Grid item's content */
 .products-grid .product-name { margin:15px 0 0; font-weight:bold; font-size:12px; line-height:15px; }
-.products-grid .product-image { display:block; margin:0px 0px 0px 4px; }
+.products-grid .product-image { display:block; margin:0px 0px 0px 1px; }
 .products-grid .price-box { margin:10px 0; }
 .products-grid .price-box .price-label { color:#777; }
 .products-grid .ratings { margin:7px 0; }
@@ -1973,7 +1973,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Grid: 5 columns
 -------------------------------------------------------------- */
 .grid5col .item {
-	width:123px; /*124px + 1px border-right = 125px*/
+	width:158px; /*124px + 1px border-right = 125px*/
 	padding:10px;
 	min-height:260px;
 }
@@ -2006,7 +2006,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .spec-grid {
-	width:697px; /* 697 = 720 - padding-right - padding-left */
+	width:937px; /* 697 = 720 - padding-right - padding-left */
 	padding:8px 11px 0 12px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
 	border:none;
 	
@@ -2021,9 +2021,9 @@ tr.summary-details-excluded { font-style:italic; }
 	-moz-border-radius:0 0 2px 2px; -webkit-border-radius:0 0 2px 2px; border-radius:0 0 2px 2px;
 }
 .spec-grid .item {
-	width:125px;
+	width:140px;
 	height: 280px;
-	padding:15px 22px 22px 12px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */
+	padding:15px 22px 22px 19px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */
 	margin:0 8px 0 0; /* margin-right = 15px. Subtracted 7px (shadow width) */
 	border:none;
 	
@@ -2053,7 +2053,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid: 4 columns
 -------------------------------------------------------------- */
-.spec-grid4col .item { width:141px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:302px; }
+.spec-grid4col .item { width:141px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
 .spec-grid4col .product-image { width:141px; /*height:141px;*/ }
 .spec-grid4col .add-to-links { visibility:hidden; }
 .spec-grid4col .item:hover .add-to-links { visibility:visible; }
@@ -2081,7 +2081,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid, full width: 4 columns
 -------------------------------------------------------------- */
-.grid-wide.spec-grid4col .item { width:191px; padding:15px 22px 22px 15px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */ min-height:319px; }
+.grid-wide.spec-grid4col .item { width:191px; padding:15px 22px 22px 15px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
 .grid-wide.spec-grid4col .product-image { width:190px; /*height:190px;*/ }
 
 /* Restore basic ".add-to-links" styling */
@@ -2095,7 +2095,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid, full width: 5 columns
 -------------------------------------------------------------- */
-.grid-wide.spec-grid5col .item { width:154px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:319px; }
+.grid-wide.spec-grid5col .item { width:154px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
 .grid-wide.spec-grid5col .product-image { width:154px; height:154px; }
 .grid-wide.spec-grid5col .add-to-links { visibility:hidden; }
 .grid-wide.spec-grid5col .item:hover .add-to-links { visibility:visible; }
@@ -4439,8 +4439,15 @@ h1,
 	margin: 19px 0 0 12px;
 	overflow: 
 }
-.productsection-2 h3{
-	margin-top:25px;
+.top h3{
+    margin-top: -20px;
+    color: #066CC3;
+    font-family: open sans;
+    font-weight: 600;
+}
+.top a{margin:-20px 0 0 795px;}
+.top{
+	margin:25px 0 5px 0;
     background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
@@ -4448,7 +4455,4 @@ h1,
     position: relative;
     top:5px;
     padding: 10px 0 5px 15px;
-    color: #066CC3;
-    font-family: open sans;
-    font-weight: 600;
 }
