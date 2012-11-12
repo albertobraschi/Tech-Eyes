@@ -4452,3 +4452,28 @@ h1,
     font-family: open sans;
     font-weight: 600;
 }
+
+#sub-categories {
+	background: #eee;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-bottom: 15px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#sub-categories ul {
+}
+
+#sub-categories li {
+	display: inline-block;
+	width: 169px;
+	height: 250px;
+	background-color: #fff;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	text-indent: 10px;
+	text-align: center;
+	
+}
