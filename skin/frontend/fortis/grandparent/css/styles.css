@@ -2031,11 +2031,11 @@ tr.summary-details-excluded { font-style:italic; }
 	
 }
 
-.spec-grid .item:hover {	
+/*.spec-grid .item:hover {	
 	background:url(../images/img/grid-item-shadow.png) left bottom no-repeat;
 	background-position-x: -265px;
 	
-}
+}*/
 .spec-grid .item.last { margin-right:0; }
 
 /* Fix for right aligned stickers:
@@ -4447,7 +4447,7 @@ h1,
 }
 .top a{margin:-20px 0 0 795px;}
 .top{
-	margin:25px 0 5px 0;
+	margin:20px 0 5px 0;
     background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
@@ -4455,4 +4455,21 @@ h1,
     position: relative;
     top:5px;
     padding: 10px 0 5px 15px;
+}
+.brand #one{
+    padding-top:13px;
+}
+.brand{
+    width: 960px; 
+    height:120px;  
+    background: -webkit-linear-gradient(top, #eee, #fff);
+    background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
+    margin-top:20px;
+}
+.brand ul{margin-top: 18px;}
+.brand ul li{
+	display:inline;
+	margin: 0 13px 0 14px;
 }
