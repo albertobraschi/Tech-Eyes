@@ -4462,14 +4462,13 @@ h1,
 }
 .brand{
     width: 960px; 
-    height:120px;  
     background: -webkit-linear-gradient(top, #eee, #fff);
-    background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
-    margin-top:20px;
+    background: -moz-linear-gradient(top, #eeeeee, #ffffff);
+    background: -ms-linear-gradient(top, #eeeeee, #ffffff);
+    background: -o-linear-gradient(top, #eeeeee, #ffffff);
+    margin-top:25px;
 }
-.brand ul{margin-top: 18px;}
+.brand ul{margin-top:10px; padding-bottom:13px;}
 .brand ul li{
 	display:inline;
 	margin: 0 13px 0 14px;
