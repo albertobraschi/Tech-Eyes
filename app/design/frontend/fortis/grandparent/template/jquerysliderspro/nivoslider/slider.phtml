@@ -1,0 +1,125 @@
+<?php
+$helper = Mage::helper('jquerysliderspro');
+if($helper->getConfig('active')): ?>
+	<?php if($_slider = $this->getSlider()):
+			$identifier				= $_slider->getIdentifier();
+			$groupId				= $_slider->getId();
+			$sliderCode				= $_slider->getSliderType();
+			$sliderSettings			= $_slider->getUseSliderSettings() == 'from_config_settings' ? $helper->getSystemSliderSettings($sliderCode) : unserialize($_slider->getSliderSettings());
+			$sliderWidth			= (int)$_slider->getSliderWidth();
+			$sliderHeight			= (int)$_slider->getSliderHeight();
+			$theme					= !empty($sliderSettings['nivoslider_theme']) ? $sliderSettings['nivoslider_theme'] :'default';
+			$showCaption			= isset($sliderSettings['nivoslider_showCaption']) ? (int) $sliderSettings['nivoslider_showCaption'] : 0;
+		?>
+	<div id="wrapper<?php echo $groupId; ?>">
+		<div class="slider-wrapper theme-<?php echo $theme; ?>">
+			<div class="ribbon"></div>
+			<div id="slider<?php echo $groupId; ?>" class="nivoSlider" style="width:<?php echo $sliderWidth; ?>px; height:<?php echo $sliderHeight; ?>px;">
+				<?php
+				$slides = Mage::getModel('jquerysliderspro/slide')->getCollection()->addFieldToFilter('group_id', $_slider->getId());
+				$slides->addFieldToFilter('status', 1);
+				$slides->getSelect()->order('sort_order', 'ASC');
+				?>
+				<?php
+					$htmlCaption	= '';
+					$imageSlideHtml = '';
+					if($slides->getSize()): ?>
+					<?php
+					foreach($slides as $_slide):
+						$titleAttr			= null;
+						$slideContentType	= $_slide->getContentType();
+						if($slideContentType == 'catalog_product'){
+							$productSkus = preg_replace('/\s+/', '', $_slide->getProductSkus());
+							$productSkusArray = explode(',', $productSkus);
+							foreach($productSkusArray as $_sku){
+								$_product = Mage::getModel('catalog/product')->loadByAttribute('sku', $_sku);
+								if($_product){
+
+									$slideId			= $_product->getId();
+									$slideDescription	= $_product->getShortDescription();
+									$slideLink			= $_product->getProductUrl();
+									$slideTitle			= $_product->getName();
+									$slideTarget		= $_slide->getTarget();
+									$slideImageUrl		= $this->helper('catalog/image')->init($_product, 'small_image')->resize($sliderWidth, $sliderHeight);
+
+									if($slideDescription && $showCaption){
+										$htmlcaptionId		= 'htmlcaption' . $slideId;
+										$titleAttr			= ' title="#' . $htmlcaptionId . '"';
+										$htmlCaption       .= '<div id="' . $htmlcaptionId . '" class="nivo-html-caption">'.$slideDescription.'</div>';
+									}
+
+									if($slideLink){
+										$imageSlideHtml .= '<a href="'. $slideLink . '" target="' . $slideTarget . '" title="' . $this->stripTags($slideTitle). '">';
+									}
+									$imageSlideHtml .= '<img src="' . $slideImageUrl . '" alt="' . $this->stripTags($slideTitle) . '"' . $titleAttr .' />';
+									if($slideLink){
+										$imageSlideHtml .= '</a>';
+									}
+								}
+							}
+						}else{
+							$slideId			= $_slide->getId();
+							$slideDescription	= $_slide->getDescription();
+							$slideLink			= $helper->getLinkUrl($_slide->getLink());
+							$slideTitle			= $_slide->getTitle();
+							$slideTarget		= $_slide->getTarget();
+							$slideImageUrl		= $helper->getResizedUrl($_slide->getImagefile(), $sliderWidth, $sliderHeight);
+
+							if($slideDescription && $showCaption){
+								$htmlcaptionId		= 'htmlcaption' . $slideId;
+								$titleAttr			= ' title="#' . $htmlcaptionId . '"';
+								$htmlCaption       .= '<div id="' . $htmlcaptionId . '" class="nivo-html-caption">'.$slideDescription.'</div>';
+							}
+
+							if($slideLink){
+										$imageSlideHtml .= '<a href="'. $slideLink . '" target="' . $slideTarget . '" title="' . $this->stripTags($slideTitle). '">';
+							}
+							$imageSlideHtml .= '<img src="' . $slideImageUrl . '" alt="' . $this->stripTags($slideTitle) . '"' . $titleAttr .' />';
+							if($slideLink){
+								$imageSlideHtml .= '</a>';
+							}
+						}
+						?>
+
+					<?php endforeach; ?>
+				<?php endif; ?>
+				<?php echo $imageSlideHtml; ?>
+			</div>
+			<?php echo $htmlCaption; ?>
+		</div>
+	</div>
+<script type="text/javascript">
+	jQuery.fn._reverse = []._reverse;
+    jQuery(window).load(function() {
+        jQuery('#slider<?php echo $groupId; ?>').nivoSlider({
+				effect:	'<?php echo (string) $sliderSettings[$sliderCode . '_effect']; ?>',
+				slices:	<?php echo (int) $sliderSettings[$sliderCode . '_slices']; ?>, // For slice animations
+				boxCols: <?php echo (int) $sliderSettings[$sliderCode . '_boxCols']; ?>, // For box animations
+				boxRows: <?php echo (int) $sliderSettings[$sliderCode . '_boxRows']; ?>, // For box animations
+				animSpeed: <?php echo (int) $sliderSettings[$sliderCode . '_animSpeed']; ?>, // Slide transition speed
+				pauseTime: <?php echo (int) $sliderSettings[$sliderCode . '_pauseTime']; ?>, // How long each slide will show
+				startSlide: 0, // Set starting Slide (0 index)
+				directionNav: <?php echo (int) $sliderSettings[$sliderCode . '_directionNav']; ?>, //Next & Prev
+				directionNavHide: <?php echo (int) $sliderSettings[$sliderCode . '_directionNavHide']; ?>, //Only show on hover
+				controlNav: <?php echo (int) $sliderSettings[$sliderCode . '_controlNav']; ?>, // 1,2,3... navigation
+				controlNavThumbs: false, // Use thumbnails for Control Nav
+				controlNavThumbsFromRel: false, // Use image rel for thumbs
+				controlNavThumbsSearch: '.jpg', // Replace this with...
+				controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
+				keyboardNav: <?php echo (int) $sliderSettings[$sliderCode . '_keyboardNav']; ?>, //Use left & right arrows
+				pauseOnHover: <?php echo (int) $sliderSettings[$sliderCode . '_pauseOnHover']; ?>, //Stop animation while hovering
+				manualAdvance: <?php echo (int) $sliderSettings[$sliderCode . '_manualAdvance']; ?>, //Force manual transitions
+				captionOpacity: <?php echo (float) $sliderSettings[$sliderCode . '_captionOpacity']; ?>, //Universal caption opacity
+				prevText: 'Prev', // Prev directionNav text
+				nextText: 'Next', // Next directionNav text
+				beforeChange: function(){}, // Triggers before a slide transition
+				afterChange: function(){}, // Triggers after a slide transition
+				slideshowEnd: function(){}, // Triggers after all slides have been shown
+				lastSlide: function(){}, // Triggers when last slide is shown
+				afterLoad: function(){} // Triggers when slider has loaded
+		});
+    });
+ </script>
+	<?php endif; ?>
+
+ <?php endif; ?>

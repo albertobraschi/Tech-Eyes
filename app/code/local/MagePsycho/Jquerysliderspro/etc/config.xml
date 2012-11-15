@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_Jquerysliderspro
+ * @author     magepsycho@gmail.com
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <MagePsycho_Jquerysliderspro>
+            <version>0.1.0</version>
+        </MagePsycho_Jquerysliderspro>
+    </modules>
+    <global>
+        <models>
+            <jquerysliderspro>
+                <class>MagePsycho_Jquerysliderspro_Model</class>
+                <resourceModel>jquerysliderspro_mysql4</resourceModel>
+            </jquerysliderspro>
+            <jquerysliderspro_mysql4>
+                <class>MagePsycho_Jquerysliderspro_Model_Mysql4</class>
+                <entities>
+                    <group>
+                        <table>jquerysliderspro_groups</table>
+                    </group>
+					 <slide>
+                        <table>jquerysliderspro_slides</table>
+                    </slide>
+                </entities>
+            </jquerysliderspro_mysql4>
+        </models>
+        <resources>
+            <jquerysliderspro_setup>
+                <setup>
+                    <module>MagePsycho_Jquerysliderspro</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </jquerysliderspro_setup>
+            <jquerysliderspro_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </jquerysliderspro_write>
+            <jquerysliderspro_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </jquerysliderspro_read>
+        </resources>
+        <blocks>
+            <jquerysliderspro>
+                <class>MagePsycho_Jquerysliderspro_Block</class>
+            </jquerysliderspro>
+        </blocks>
+        <helpers>
+            <jquerysliderspro>
+                <class>MagePsycho_Jquerysliderspro_Helper</class>
+            </jquerysliderspro>
+        </helpers>
+    </global>
+	<frontend>
+        <routers>
+            <jquerysliderspro>
+                <use>standard</use>
+                <args>
+                    <module>MagePsycho_Jquerysliderspro</module>
+                    <frontName>jquerysliderspro</frontName>
+                </args>
+            </jquerysliderspro>
+        </routers>
+        <layout>
+            <updates>
+                <jquerysliderspro>
+                    <file>jquerysliderspro.xml</file>
+                </jquerysliderspro>
+            </updates>
+        </layout>
+		<events>
+            <controller_action_predispatch>
+                <observers>
+                    <jquerysliderspro_controller_action_predispatch>
+						<type>singleton</type>
+                        <class>jquerysliderspro/observer</class>
+                        <method>preDispatchCheck</method>
+                    </jquerysliderspro_controller_action_predispatch>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+			<jquerysliderspro>
+				<use>admin</use>
+				<args>
+					<module>MagePsycho_Jquerysliderspro</module>
+					<frontName>jquerysliderspro</frontName>
+				</args>
+			</jquerysliderspro>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<jquerysliderspro module="jquerysliderspro">
+				<title>jQuery Sliders Pro</title>
+				<sort_order>71</sort_order>
+				<children>
+					<group module="jquerysliderspro">
+						<title>Manage Groups</title>
+						<sort_order>0</sort_order>
+						<action>jquerysliderspro/adminhtml_group</action>
+					</group>
+					<slide module="jquerysliderspro">
+						<title>Manage Slides</title>
+						<sort_order>1</sort_order>
+						<action>jquerysliderspro/adminhtml_slide</action>
+					</slide>
+					<setting module="jquerysliderspro">
+						<title>Manage Settings</title>
+						<sort_order>2</sort_order>
+						<action>adminhtml/system_config/edit/section/jquerysliderspro</action>
+					</setting>
+				</children>
+			</jquerysliderspro>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<jquerysliderspro module="jquerysliderspro">
+							<title>jQuery Sliders Pro</title>
+							<children>
+								<group module="jquerysliderspro">
+									<title>Manage Groups</title>
+								</group>
+								<slide module="jquerysliderspro">
+									<title>Manage Slides</title>
+								</slide>
+								<setting module="jquerysliderspro">
+									<title>Manage Settings</title>
+								</setting>
+							</children>
+						</jquerysliderspro>
+						<system>
+							<children>
+								<config>
+									<children>
+										<magepychoinfo>
+											<title>MagePsycho Information</title>
+										</magepychoinfo>
+										<jquerysliderspro>
+											<title>jQuery Sliders Pro</title>
+										</jquerysliderspro>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<jquerysliderspro>
+					<file>jquerysliderspro.xml</file>
+				</jquerysliderspro>
+			</updates>
+		</layout>
+    </adminhtml>
+    <default>
+        <jquerysliderspro>
+            <option>
+                <active>1</active>
+                <enable_log>1</enable_log>
+				<domain_type>1</domain_type>
+            </option>
+			<js_settings>
+				<include_jquery>1</include_jquery>
+				<include_jquery_from>local</include_jquery_from>
+			</js_settings>
+			<nivoslider>
+				<nivoslider_theme>default</nivoslider_theme>
+				<nivoslider_effect>random</nivoslider_effect>
+				<nivoslider_slices>15</nivoslider_slices>
+				<nivoslider_boxCols>8</nivoslider_boxCols>
+				<nivoslider_boxRows>4</nivoslider_boxRows>
+				<nivoslider_animSpeed>500</nivoslider_animSpeed>
+				<nivoslider_pauseTime>3000</nivoslider_pauseTime>
+				<nivoslider_startSlide>0</nivoslider_startSlide>
+				<nivoslider_directionNav>1</nivoslider_directionNav>
+				<nivoslider_directionNavHide>1</nivoslider_directionNavHide>
+				<nivoslider_controlNav>1</nivoslider_controlNav>
+				<nivoslider_controlNavThumbs>0</nivoslider_controlNavThumbs>
+				<nivoslider_controlNavThumbsFromRel>0</nivoslider_controlNavThumbsFromRel>
+				<nivoslider_keyboardNav>1</nivoslider_keyboardNav>
+				<nivoslider_pauseOnHover>1</nivoslider_pauseOnHover>
+				<nivoslider_manualAdvance>0</nivoslider_manualAdvance>
+				<nivoslider_showCaption>1</nivoslider_showCaption>
+				<nivoslider_captionOpacity>0.8</nivoslider_captionOpacity>
+				<nivoslider_prevText>Prev</nivoslider_prevText>
+				<nivoslider_nextText>Next</nivoslider_nextText>
+				<nivoslider_randomStart>0</nivoslider_randomStart>
+			</nivoslider>
+        </jquerysliderspro>
+    </default>
+</config>
