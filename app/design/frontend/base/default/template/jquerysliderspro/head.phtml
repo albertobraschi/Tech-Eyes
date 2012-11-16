@@ -1,0 +1,9 @@
+<?php
+$helper = Mage::helper('jquerysliderspro');
+if($helper->getConfig('active')):
+?>
+	<?php if($helper->getConfig('include_jquery', 'js_settings')): ?>
+		<?php echo $this->getChildHtml('jquery_inclusion'); ?>
+	<?php endif; ?>
+	<?php echo $this->getChildHtml('sliders_inclusion'); ?>
+<?php endif; ?>
