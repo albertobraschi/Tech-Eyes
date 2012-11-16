@@ -4461,15 +4461,55 @@ h1,
 }
 .brand{
     width: 960px; 
-    height:120px;  
     background: -webkit-linear-gradient(top, #eee, #fff);
     background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
     margin-top:20px;
 }
-.brand ul{margin-top: 18px;}
+.brand ul{margin-top: 10px; padding-bottom:10px;}
 .brand ul li{
 	display:inline;
 	margin: 0 13px 0 14px;
+}
+.productsection-2 h3{
+	margin-top:25px;
+    background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
+    position: relative;
+    top:5px;
+    padding: 10px 0 5px 15px;
+    color: #066CC3;
+    font-family: open sans;
+    font-weight: 600;
+}
+
+#sub-categories {
+	background: #eee;
+	padding-top: 10px;
+	padding-left: 17px;
+	margin-bottom: 15px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#sub-categories ul {
+}
+
+#sub-categories li {
+	display: inline-block;
+	width: 169px;
+	background-color: #fff;
+	margin-right: 17px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	text-indent: 10px;
+	text-align: center;
+	
+}
+#sub-categories li a{
+	margin:10px;
+	font-size:14px;
 }
