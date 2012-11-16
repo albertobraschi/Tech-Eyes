@@ -47,7 +47,10 @@
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-                <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+                <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?>
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('left_nav_filler')->toHtml() ?>
+
+                </div>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
