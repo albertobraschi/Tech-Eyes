@@ -1518,9 +1518,9 @@ tr.summary-details-excluded { font-style:italic; }
 	position:absolute;
 	top:-16px;
 	padding:3px 7px;
-	background-color:#fff;
 	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
 }
+#mini-cart .block-title:hover{background-color: rgba(255,255,255,0.1);}
 #mini-cart .block-title .to-checkout {
 	float:left;
 	margin:0 5px 0 4px;
@@ -4183,7 +4183,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	right:-252px;
 	top:190px;
 }
-.right-edgebox:hover { right:-1px; } /* -1px to hide the border */
+.right-edgebox:hover { right:-1px;} /* -1px to hide the border */
 .right-edgebox.hover:hover { right:-252px; } /* If JS is enabled, this class will override default :hover behavior */
 
 .left-edgebox {
@@ -4218,6 +4218,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .edgebox-content .custom-content {
 	padding:15px;
 	background-color:#fff;
+	margin-top:12px;
 }
 .edgebox-content .custom-content .heading { margin:10px 0; }
 

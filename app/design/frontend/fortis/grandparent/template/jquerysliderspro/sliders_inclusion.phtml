@@ -1,0 +1,16 @@
+<?php
+$helper = Mage::helper('jquerysliderspro');
+?>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="<?php echo $helper->getSliderUrl(); ?>/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php echo $helper->getSliderUrl(); ?>/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
+<?php
+$themes = $helper->getFolders($helper->getSliderDir('nivo-slider/themes'));
+foreach($themes as $_theme):
+?>
+<link rel="stylesheet" href="<?php echo $helper->getSliderUrl(); ?>/nivo-slider/themes/<?php echo $_theme; ?>/<?php echo $_theme; ?>.css" type="text/css" media="screen" />
+<?php
+endforeach;
+?>
+<script type="text/javascript" src="<?php echo $helper->getSliderUrl(); ?>/nivo-slider/jquery.nivo.slider.pack.js"></script>
+<!-- //Nivo Slider -->

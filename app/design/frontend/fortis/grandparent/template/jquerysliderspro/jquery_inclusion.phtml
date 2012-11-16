@@ -1,0 +1,9 @@
+<?php
+$helper = Mage::helper('jquerysliderspro');
+?>
+<?php if($helper->getConfig('include_jquery_from', 'js_settings') == 'local'): ?>
+	<script type="text/javascript" src="<?php echo $helper->getSliderUrl(); ?>/jquery/1.7.1/jquery.min.js"></script>
+<?php else: ?>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<?php endif; ?>
+<script type="text/javascript" src="<?php echo $helper->getSliderUrl(); ?>/noConflict.js"></script>
