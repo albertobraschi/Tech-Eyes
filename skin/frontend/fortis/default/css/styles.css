@@ -1443,6 +1443,55 @@ tr.summary-details-excluded { font-style:italic; }
 	background:none;
 	border:none;
 }
+#mini-cart .block-title-white {
+	padding:5px;
+	height:32px;
+	background:rgba(255,255,255,0.9);
+	border:none;
+}
+#mini-cart .block-title-white:hover .subtotal .incl-tax {
+	display:block;
+	position:absolute;
+	top:-16px;
+	padding:3px 7px;
+	background-color:#737373;
+	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
+}
+#mini-cart .block-title-white .heading {
+	background:url(../images/img/pix.png) 0 -205px no-repeat;
+	float:left;
+	width:35px;
+	height:32px;
+	margin:0 2px 0 3px;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+#mini-cart .block-title-white .empty { margin-right:5px; }
+#mini-cart .block-title-white .summary { float:left; font-size:11px; line-height:20px; margin-top:6px; }
+#mini-cart .block-title-white .summary a { color:#aaa; }
+#mini-cart .block-title-white .amount { float:left; color:#717171; }
+#mini-cart .block-title-white .subtotal {
+	float:left;
+	margin-left:5px;
+	color: #e78904;
+}
+#mini-cart .block-title-white .subtotal .incl-tax { display:none; }
+#mini-cart .block-title-white .to-checkout {
+	float:left;
+	margin:0 5px 0 4px;
+	padding-left:5px;
+	border-left:1px solid #c1c1c1;
+}
+#mini-cart .block-title-white .to-checkout a { color:#8baed8; }
+#mini-cart .block-title-white .to-checkout .icon {
+	background:url(../images/img/pix.png) 0 -177px no-repeat;
+	width:9px;
+	height:9px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+
 /* Element extends "block-title" height. It prevents cart from hiding while moving cursor from "block-title" to "block-content". */
 
 #mini-cart .block-title .heading {
@@ -1518,7 +1567,7 @@ tr.summary-details-excluded { font-style:italic; }
 #mini-cart:hover .block-content { display:block;}
 #mini-cart.hover .block-content { display:none; background-color: white; } /* Override (remove) default :hover behavior, if JS is enabled */
 #mini-cart.roll .block-cart{background: #ffffff;}
-#mini-cart:hover .block-title {
+#mini-cart:hover .block-title-white {
 	position:relative;
 	z-index:3001; /* Higher than ".block-content" */
 	color:#333;
@@ -1558,12 +1607,26 @@ tr.summary-details-excluded { font-style:italic; }
 	line-height:15px;
 	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
 }
+.block .block-title-white {
+	background:url(../images/img/pix.png) -93px 0px no-repeat #f5f5f5;
+	padding:10px 5px 10px 26px;
+	line-height:15px;
+	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
+}
+
 .block .block-title strong {
 	font-size:13px;
 	text-transform:uppercase;
 	color:#555;
 }
+.block .block-title-white strong {
+	font-size:13px;
+	text-transform:uppercase;
+	color:#555;
+}
 .block .block-title a { text-decoration:none !important; }
+.block .block-title-white a { text-decoration:none !important; }
+
 .block .block-subtitle { margin:0; padding:0 0 5px; font-size:1em; font-weight:bold; line-height:15px; color:#555; }
 .block .block-content {	padding:10px; }
 .block .block-content li.item {	padding:2px 0; }
