@@ -24,6 +24,12 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<div id="offer">
+<a href="/make-an-offer">
+<?php $buttonTitle = $this->__('Make An Offer'); ?>
+  <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart"><span><span><?php echo $buttonTitle ?></span></span></button></a>
+        <?php echo $this->getChildHtml('', true, true) ?>
+</div>
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>

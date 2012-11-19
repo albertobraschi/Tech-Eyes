@@ -196,6 +196,25 @@ button.button span span {
 	line-height:35px;
 }
 /*button.button:hover span span { background-position:100% -70px; }*/
+#offer{
+	margin-left:257px;
+	padding-bottom: 10px;
+	width: 50px;
+}
+#offer .btn-cart span {
+	background-image:url(../images/img/header-gray-vd.png);
+	height:35px;
+	padding:5px 8px 0 8px;
+	line-height:20px;
+	color:#fff;
+}
+#offer .btn-cart:hover span {
+	background-image:url(../images/img/header-gray-d.png);
+	height:35px;
+	padding:5px 8px 0 8px;
+	line-height:20px;
+	color:#fff;
+}
 
 
 /* Button - small, for inline display with input boxes
@@ -1675,7 +1694,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Block: Layered Navigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.tf_upfront_badge img{ margin-top: -20px; margin-left:50px; padding-bottom: 15px; }
+.tf_upfront_badge img{ margin-left:22px; padding-bottom: 5px; }
 .block-layered-nav { margin-top:2px; border: 1px solid #e7e7e7; }
 .block-layered-nav .block-title {
 	background:none;
@@ -4116,7 +4135,6 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
    background: none;
    padding: 0;
 }
-.footer_seals .tf_upfront_badge img{ margin-top: -61px; margin-left:238px;}
 #auth{
    margin-top: -60px;
    float:left;
