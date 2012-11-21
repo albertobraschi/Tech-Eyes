@@ -77,6 +77,9 @@
                     <?php if($_product->getRatingSummary()): ?>
                     <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                     <?php endif; ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                </li>
+            
             <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
             	</ul>
                 </div>
