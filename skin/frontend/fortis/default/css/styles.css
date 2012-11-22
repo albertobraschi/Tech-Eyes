@@ -1131,11 +1131,11 @@ tr.summary-details-excluded { font-style:italic; }
 .header .form-search .search-autocomplete li.first { border-top:none; }
 .header .form-search .search-autocomplete li .amount { float:right; padding-left:5px; font-weight:bold; }
 
-
+#ad{margin:0 auto; width:960px;}
 /* Main navigation container (main menu)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.nav-container {}
+.nav-container {margin-top:10px;}
 .nav {
 	width:960px;
 	margin:0px auto;

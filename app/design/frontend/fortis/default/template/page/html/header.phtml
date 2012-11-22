@@ -135,10 +135,13 @@
     
     <?php echo $this->getChildHtml('topMenu') ?>
 </div> <!-- end: header-container2 -->
+    <div id="ad">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top_ad')->toHtml() ?>
+</div>
+
 </div> <!-- end: header-container -->
 	
 <?php // Additional static CMS blocks ?>
-
 <?php if ($tmp_html = $this->getChildHtml('i_block_edgebox_right')): ?> <?php //Predefined CMS block ?>
 	<div class="edgebox side-edgebox right-edgebox">
     	<div class="edgebox-content edgebox-right-wrapper std"><?php echo $tmp_html; ?></div>
