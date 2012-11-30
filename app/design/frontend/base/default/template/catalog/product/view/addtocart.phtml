@@ -24,6 +24,7 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
 <div id="offer">
 <a href="/make-an-offer">
 <?php $buttonTitle = $this->__('Make An Offer'); ?>
@@ -42,3 +43,8 @@
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>
+   <div id="after-rebate">
+    <?php if ($_product->getAfter_rebate()) : ?>
+	  <?php echo 'After Rebate<br><span>'.$_product->getAfter_rebate().'</span>' ?>
+    <?php endif; ?>
+   </div>  
