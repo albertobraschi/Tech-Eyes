@@ -1036,6 +1036,11 @@ tr.summary-details-excluded { font-style:italic; }
 .user-menu > ul > li.user-menu-techi	{ background-image:url(../images/img/ic-toplinks-techi.png); }
 .user-menu > ul > li.user-menu-cart		{ background-image:none; /* No background icon for cart link */ }
 
+/**********CUSTOM TECHI,DEALS,DAILY ICONS***********/
+.user-menu > ul > li.user-menu-deals{background-color:rgba(255, 5, 8, 0.2)}
+.user-menu > ul > li.user-menu-daily{background-color:rgba(50, 170, 255, 0.2)}
+.user-menu > ul > li.user-menu-techi{background-color:rgba(80, 255, 10, 0.2)}
+
 .user-menu > ul > li > a {
 	display:block;
 	font-size:11px;
@@ -1131,7 +1136,7 @@ tr.summary-details-excluded { font-style:italic; }
 .header .form-search .search-autocomplete li.first { border-top:none; }
 .header .form-search .search-autocomplete li .amount { float:right; padding-left:5px; font-weight:bold; }
 
-#ad{margin:0 auto; width:960px;}
+#ad{margin:10px auto; width:960px;}
 /* Main navigation container (main menu)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
