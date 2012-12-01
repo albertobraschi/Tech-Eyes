@@ -1140,7 +1140,6 @@ tr.summary-details-excluded { font-style:italic; }
 /* Main navigation container (main menu)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.nav-container {margin-top:10px;}
 .nav {
 	width:960px;
 	margin:0px auto;
@@ -1644,9 +1643,13 @@ tr.summary-details-excluded { font-style:italic; }
 	line-height:15px;
 	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
 }
-.header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px;}
+.header .block .block-title{	
+     padding:6px 5px 5px 26px;
+}
+.header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
 .header .block .block-title:hover{background-color:rgba(255,255,255,0.3) }
 #compare{margin-right:30px;}
+
 
 .block .block-title strong {
 	font-size:13px;

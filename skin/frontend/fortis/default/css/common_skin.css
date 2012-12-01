@@ -34,7 +34,7 @@
 .header-container.header-bg-gray-l		{ background-image:url(../images/img/header-gray-l.png); }
 .header-container.header-bg-gray		{ background-image:url(../images/img/header-gray.png); }
 .header-container.header-bg-gray-d		{ background-image:url(../images/img/header-gray-d.png); }
-.header-container.header-bg-gray-vd		{ background-image:url(../images/img/header-gray-vd.png); }
+.header-container.header-bg-gray-vd		{ background-image:url(../images/img/header-gray-vd.png); height: 187px; }
 .header-container.header-bg-blue-pale-l	{ background-image:url(../images/img/header-blue-pale-l.png); }
 /*.header-container.header-bg-navy		{ background-image:url(../images/img/header-navy.png); }*/
 
