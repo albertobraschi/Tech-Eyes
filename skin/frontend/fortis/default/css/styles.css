@@ -1647,7 +1647,7 @@ tr.summary-details-excluded { font-style:italic; }
      padding:6px 5px 5px 26px;
 }
 .header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
-.header .block .block-title:hover{background-color:rgba(255,255,255,0.3) }
+.header .block .block-title:hover{background-color:rgba(255,255,255,0.3); }
 #compare{margin-right:30px;}
 
 
@@ -2779,7 +2779,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 }
 #gift_border img{
 	margin-top:3px;
-}
+	}
 #gift_border p{
 	margin-left:108px;
 }
