@@ -1712,7 +1712,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Block: Layered Navigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.tf_upfront_badge img{ margin-left:22px; padding-bottom: 5px; }
+.tf_upfront_badge img{ margin-top: -20px; margin-left:50px; padding-bottom: 15px; }
 .block-layered-nav { margin-top:2px; border: 1px solid #e7e7e7; }
 .block-layered-nav .block-title {
 	background:none;
@@ -2154,7 +2154,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Fix for right aligned stickers:
    move sticker 7px left (shadow width). Subtract 2px, because the label sticks out 2px */
 .spec-grid .item .sticker-top-right { right:-3px; }
-.spec-grid .item .sticker-bottom-right { right:5px;}
+/*.spec-grid .item .sticker-bottom-right { right:5px;}*/
 
 /* Special grid: 3 columns
 -------------------------------------------------------------- */
@@ -4172,7 +4172,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .AuthorizeNetSeal img{
    float:left;
 }
-
+.footer .tf_upfront_badge img{ margin-left:22px; padding-bottom: 5px; }
 /* Tooltips %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
