@@ -4342,6 +4342,80 @@ h1,
     background: url(/media/techdeals/techdealssprite.png);
     background-position: left top;
     display: inline-block;
+    height: 330px;
+    width: 310px;
+    text-indent: -9999px;
+    position: relative;
+    left: -105px;
+    top: -10px;
+    margin-right: 23px;
+}
+#techdeals-2 li{
+    background: url(/media/techdeals/techdealssprite_2.png);
+    display: inline-block;
+    height: 330px;
+    width: 310px;
+    text-indent: -9999px;
+    position: relative;
+    left: -105px;
+    top: -30px;
+    margin-right: 23px;
+}
+#techdeals .deals1{
+	background-position: -17px 0px ;
+}
+#techdeals .deals1:hover{
+	background-position: -17px -332px ;
+}
+#techdeals .deals2{
+	background-position: -331px 0px ;
+}
+#techdeals .deals2:hover{
+	background-position: -331px -332px ;
+}
+#techdeals .deals3{
+	background-position: -642px 0px ;
+}
+#techdeals .deals3:hover{
+	background-position: -642px -332px ;
+}
+#techdeals-2 .deals4{
+	background-position: -17px 0px ;
+}
+#techdeals-2 .deals4:hover{
+	background-position: -17px -332px ;
+}
+#techdeals-2 .deals5{
+	background-position: -331px -0px ;
+	}
+#techdeals-2 .deals5:hover{
+	background-position: -331px -332px ;
+}
+#techdeals-2 .deals6{
+	background-position: -642px 0px ;
+}
+#techdeals-2 .deals6:hover{
+	background-position: -642px -332px ;
+}
+.dealslast1{
+	position: absolute;
+	left: 769px;
+	top: 375px;	
+}
+.dealslast2{
+position: absolute;
+	left: 769px;
+	top: 725px;
+}
+/* original CSS Before I changed it to account for the bigger Blocks 12.6.12
+#techdeals , #techdeals-2{
+	margin-left: 100px;
+	margin-top: 20px;
+}
+#techdeals li {
+    background: url(/media/techdeals/techdealssprite.png);
+    background-position: left top;
+    display: inline-block;
     height: 240px;
     width: 225px;
     margin-right: 50px;
@@ -4394,10 +4468,8 @@ h1,
 #techdeals-2 .deals6:hover{
 	background-position: 230px -244px ;
 }
-/******** NV Glossary ***********/
-#NV-Term h3{
-	padding-top:10px;
-}
+
+end of old CSS - JJ Mas*/
 /********* Fast Pass *************/
 .pass-products li{
 	padding-bottom: 10px;
