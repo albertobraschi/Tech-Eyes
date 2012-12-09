@@ -87,7 +87,7 @@ body.cms-index-defaultindex .main { padding:20px 0; }
 
 /* Base Columns */
 .col-left { float:left; width:220px; padding:0 20px 0 0; position: relative; top: 15px; }
-.col-main { float:left; width:720px; padding: 0; position:relative; top: 10px; }
+.col-main { float:left; width:720px; padding: 0; position:relative;  }
 .col-right { float:right; width:220px; padding:0 0 0 20px; }
 
 /* 1 Column Layout */
@@ -1121,7 +1121,7 @@ tr.summary-details-excluded { font-style:italic; }
 	padding:0;
 	height:61px;
 }
-
+#ad{margin:10px auto; width:960px;}
 /* Class specifying default background image for navigation bar */
 .navbar-bg { background:url(../images/img/navbar-blue3.png) no-repeat; }
 
@@ -1574,11 +1574,8 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
 .header .block .block-title:hover{background-color:rgba(255,255,255,0.3); }
-<<<<<<< HEAD
 #compare{margin-right:20px;}
-=======
-#compare{margin-right:30px;}
->>>>>>> e855e0caa3cd027bc06c7e6b6e79cd81c8b35be1
+
 
 
 .block .block-title strong {
@@ -4372,6 +4369,80 @@ h1,
     background: url(/media/techdeals/techdealssprite.png);
     background-position: left top;
     display: inline-block;
+    height: 330px;
+    width: 310px;
+    text-indent: -9999px;
+    position: relative;
+    left: -105px;
+    top: -10px;
+    margin-right: 23px;
+}
+#techdeals-2 li{
+    background: url(/media/techdeals/techdealssprite_2.png);
+    display: inline-block;
+    height: 330px;
+    width: 310px;
+    text-indent: -9999px;
+    position: relative;
+    left: -105px;
+    top: -30px;
+    margin-right: 23px;
+}
+#techdeals .deals1{
+	background-position: -17px 0px ;
+}
+#techdeals .deals1:hover{
+	background-position: -17px -332px ;
+}
+#techdeals .deals2{
+	background-position: -331px 0px ;
+}
+#techdeals .deals2:hover{
+	background-position: -331px -332px ;
+}
+#techdeals .deals3{
+	background-position: -642px 0px ;
+}
+#techdeals .deals3:hover{
+	background-position: -642px -332px ;
+}
+#techdeals-2 .deals4{
+	background-position: -17px 0px ;
+}
+#techdeals-2 .deals4:hover{
+	background-position: -17px -332px ;
+}
+#techdeals-2 .deals5{
+	background-position: -331px -0px ;
+	}
+#techdeals-2 .deals5:hover{
+	background-position: -331px -332px ;
+}
+#techdeals-2 .deals6{
+	background-position: -642px 0px ;
+}
+#techdeals-2 .deals6:hover{
+	background-position: -642px -332px ;
+}
+.dealslast1{
+	position: absolute;
+	left: 769px;
+	top: 375px;	
+}
+.dealslast2{
+position: absolute;
+	left: 769px;
+	top: 725px;
+}
+/* original CSS Before I changed it to account for the bigger Blocks 12.6.12
+#techdeals , #techdeals-2{
+	margin-left: 100px;
+	margin-top: 20px;
+}
+#techdeals li {
+    background: url(/media/techdeals/techdealssprite.png);
+    background-position: left top;
+    display: inline-block;
     height: 240px;
     width: 225px;
     margin-right: 50px;
@@ -4424,6 +4495,8 @@ h1,
 #techdeals-2 .deals6:hover{
 	background-position: 230px -244px ;
 }
+
+end of old CSS - JJ Mas*/
 /******** NV Glossary ***********/
 #NV-Term h3{
 	padding-top:10px;
