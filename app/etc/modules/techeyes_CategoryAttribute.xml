@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+  <modules>
+    <techeyes_CategoryAttribute>
+      <active>true</active>
+      <codePool>local</codePool>
+    </techeyes_CategoryAttribute>
+  </modules>
+</config>

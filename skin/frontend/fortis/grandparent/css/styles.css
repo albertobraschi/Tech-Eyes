@@ -1574,7 +1574,11 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
 .header .block .block-title:hover{background-color:rgba(255,255,255,0.3); }
+<<<<<<< HEAD
 #compare{margin-right:20px;}
+=======
+#compare{margin-right:30px;}
+>>>>>>> e855e0caa3cd027bc06c7e6b6e79cd81c8b35be1
 
 
 .block .block-title strong {
