@@ -1648,7 +1648,7 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
 .header .block .block-title:hover{background-color:rgba(255,255,255,0.3); }
-#compare{margin-right:30px;}
+#compare{margin-right:20px;}
 
 
 .block .block-title strong {
