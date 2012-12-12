@@ -2779,6 +2779,8 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 }
 #gift_border img{
 	margin-top:3px;
+	width: 100px;
+	height: 75px;
 	}
 #gift_border p{
 	margin-left:108px;
