@@ -2771,19 +2771,16 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .itar #restriction a:hover,.ger #restriction a:hover,.gr #restriction a:hover{
 	color: #002A54;
 }
-.gift span #gift_border{border:#790089 1px solid;margin-bottom:5px;padding:3px}
-.gift h2{
+.gift{border:#790089 1px solid;margin-bottom:5px;padding:3px; min-height:80px;}
+.product-shop .gift span a , .product-shop h2{
 	color: #FFAB19;
-	margin-left: 110px;
-	margin-top: -55px;
 }
-#gift_border img{
+.gift img{
 	margin-top:3px;
-	width: 100px;
+	width: 75px;
 	height: 75px;
-	}
-#gift_border p{
-	margin-left:108px;
+	float:left;
+	padding-right:3px;
 }
 
 /* Prices. Common for product view and MAP popup.

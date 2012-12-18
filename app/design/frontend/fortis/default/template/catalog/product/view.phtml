@@ -87,8 +87,10 @@
                           <?php echo '&nbsp;<span>'.$_product->getRebate().'</span>' ?>
                        </div>
                     <div class="gift">
-                          <?php echo '&nbsp;<span>'.$_product->getGift().'</span>' ?>
-                       </div>
+                          <p><img src=" <?php echo $this->helper('catalog/image')->init($_product, 'gift_image');?>"  echo alt="'$this->htmlEscape($this->getImageLabel())'?>"/></p>
+                          <h2><?php echo '<span>'.$_product->getGift_name().'</span>' ?></h2>
+                          <p><?php echo '<span>'.$_product->getGift_details().'</span>' ?></p>
+                    </div>
                        <div class="sku">
                           <?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?>
                        </div>
