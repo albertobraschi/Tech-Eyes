@@ -2748,7 +2748,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	font-weight: bold;
 }
 #pricematch img{padding-bottom:3px;}
-.itar span #restriction,.ger span #restriction,.gr span #restriction{
+.itar,.ger,.gr{
     border: #FFAB19 1px solid;
 	padding: 3px;
 	margin-bottom: 5px;
@@ -2763,7 +2763,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	margin-left: 30px;
 	margin-top: -19px;
 }
-.rebate span #restriction{border:#24D600 1px solid;margin-bottom:5px;padding:3px}
+.rebate {border:#24D600 1px solid;margin-bottom:5px;padding:3px}
 
 .itar #restriction a,.ger #restriction a,.gr #restriction a , #gift_border a{
 	color: #066cc3;

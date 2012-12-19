@@ -83,16 +83,20 @@
                         <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name')?></h1>
                     </div>
                     <div class="product-shop<?php if($rightBoxEnabled==false) echo ' no-right-border'; ?>"<?php if($newImgWidth) echo " style=\"width:{$centerBoxWidth}px;\"";?>>
+                  <?php if ($_product->getrebate_name()) : ?>
                     <div class="rebate">
-                          <?php echo '&nbsp;<span>'.$_product->getRebate().'</span>' ?>
+                          <img src="../media/wysiwyg/rebate.jpg" alt="rebate"/>
+                          <h2><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h2>
+                          <p><?php echo '<span>'.$_product->getRebate_details().'</span>' ?></p>
                        </div>
-                    <?php if ($_product->getgift_name()) : ?>
+                  <?php endif; ?>
+                  <?php if ($_product->getgift_name()) : ?>
                     <div class="gift">
                           <img src=" <?php echo $this->helper('catalog/image')->init($_product, 'gift_image');?>"/>
                           <h2><?php echo '<span>'.$_product->getGift_name().'</span>' ?></h2>
                           <p><?php echo '<span>'.$_product->getGift_details().'</span>' ?></p>
                     </div>
-                    <?php endif; ?>
+                  <?php endif; ?>
                        <div class="sku">
                           <?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?>
                        </div>
@@ -159,15 +163,27 @@
                         <?php endif; ?>
                         <?php echo $this->getChildHtml('alert_urls'); //alerts ?>
                         <?php echo $this->getChildHtml('other'); ?>
+<?php if ($_product->getitar()) : ?>
                         <div class="itar">
-                          <?php echo '<span>'.$_product->getItar().'</span>' ?>
+                          <img src="../media/wysiwyg/itar.png" alt="itar"/>
+                            <h2>ITAR Restricted Product</h2>
+                              <p>By completing transaction, I acknowledge, understand, and agree to the <a href="http://techeyes.com/index.php/company-policies/?___store=default#answer5" target="_blank">Export Policy</a>.  As a U.S. citizen/person, I do not intend to export this product.</p>
                        </div>
+<?php endif; ?>
+<?php if ($_product->getger()) : ?>
                        <div class="ger">
-                          <?php echo '<span>'.$_product->getGer().'</span>' ?>
+                        <img src="/media/wysiwyg/warning.png" alt="" />
+                         <h2>Government Export Regulations(GER):</h2>
+                          <p>This product may be regulated for export by the U.S. Department of Sate of the U.S. Department of Commerce.  Please see <a href="http://techeyes.com/index.php/company-policies/?___store=default#answer5" target="_blank">Export Policy</a> for further information.</p>
                        </div>
+<?php endif; ?>
+<?php if ($_product->getgr()) : ?>
                        <div class="gr">
-                          <?php echo '<span>'.$_product->getGr().'</span>' ?>
+                        <img src="/media/wysiwyg/warning.png" alt="" />
+                         <h2>Government Restrictions:</h2>
+                          <p>This product may be regulated for sale to U.S. Armed Forces, Law Enforcement, or other qualified entities and personal.  For verification purposes, our risk control team will be in touch with you regarding qualifications and documentations.  Some Federal, State, or Local laws and regulations may apply.
                        </div>
+<?php endif; ?>
                         <?php if ($tmp_html = $this->getChildHtml('i_block_product_main_bottom')): ?> <?php //Predefined CMS block ?>
                         	<div class="product-main-bottom-wrapper"><?php echo $tmp_html; ?></div>
                         <?php endif; ?>
