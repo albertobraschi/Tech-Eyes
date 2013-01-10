@@ -4568,6 +4568,7 @@ end of old CSS - JJ Mas*/
 .brand #one{
     padding-top:13px;
 }
+.brand a{margin:10px 0 0 845px;position:relative; top:10px;}
 .brand{
     width: 960px; 
     background: -webkit-linear-gradient(top, #eee, #fff);
