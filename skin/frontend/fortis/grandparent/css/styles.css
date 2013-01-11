@@ -4614,3 +4614,7 @@ end of old CSS - JJ Mas*/
 	margin:10px;
 	font-size:14px;
 }
+/********** All Brands Page ***************/
+.all-brands-list p{display: inline-block; width: 22%; margin: 10px;}
+.all-brands-list img{border: 1px solid #fff; padding: 5px;}
+.all-brands-list img:hover{border: 1px solid #0da8e2;}
