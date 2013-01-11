@@ -38,7 +38,7 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
-<div class="product-view">
+<div class="product-view" itemscope itemtype="http://schema.org/Product">
     <?php //my:del <div class="product-essential"> ?>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <div class="no-display">
@@ -80,7 +80,7 @@
 						}
 					?>
                     <div class="product-name">
-                        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name')?></h1>
+                        <h1 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name')?></h1>
                     </div>
                     <div class="product-shop<?php if($rightBoxEnabled==false) echo ' no-right-border'; ?>"<?php if($newImgWidth) echo " style=\"width:{$centerBoxWidth}px;\"";?>>
                   <?php if ($_product->getrebate_name()) : ?>
@@ -104,11 +104,11 @@
 			             <?php echo ' <span>'.$_product->getExport().'</span>'?>
 			           </div>
 
-                        <?php echo $this->getReviewsSummaryHtml($_product, false, true); //reviews ?>
+                        <div><?php echo $this->getReviewsSummaryHtml($_product, false, true); //reviews ?></div>
                         
                         <?php if ($_product->getShortDescription()): ?>
                             <div class="short-description">
-                                <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                                <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                             </div>
                         <?php endif;?>
                        <div id="pricematch">
@@ -127,7 +127,7 @@
 								&& $_product->getTypeId() != Mage_Downloadable_Model_Product_Type::TYPE_DOWNLOADABLE
 								): ?>
 							<?php if ($_product->isConfigurable() || $this->hasOptions()): ?>
-								<div style="display:none;"><?php echo $this->getPriceHtml($_product); ?></div>
+								<div style="display:none;"itemprop="price"><?php echo $this->getPriceHtml($_product); ?></div>
 							<?php endif; ?>
 						<?php endif; ?>
                         
