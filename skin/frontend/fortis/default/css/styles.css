@@ -4149,29 +4149,20 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 
 /*Site seals*/
 .footer_seals{
-   margin-left: 250px;
-   width: 325px;
+   margin: auto 0;
+   width: 960px;
+}
+.footer_seals ul{
+	width:720px;
+	margin: auto;
 }
 .footer_seals ul li{
-   background: none;
-   padding: 0;
+    display: inline-block;
 }
-#auth{
-   margin-top: -60px;
-   float:left;
-   padding-left: 100px;
-   padding-right: 7px;
+.authorize{
+   position: relative;
+   top:35px;
 }
-#rapid{
-   margin-top: -70px; float: right;
-}
-.AuthorizeNetSeal{
-   margin-top: -67px;
- }
-.AuthorizeNetSeal img{
-   float:left;
-}
-.footer .tf_upfront_badge img{ margin-left:22px; padding-bottom: 5px; }
 /* Tooltips %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
