@@ -1,0 +1,74 @@
+body { 
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+.banner {
+  position: fixed;
+  left: 0; right: 0;
+  background: #444;
+  height: 50px;
+  top: -40px;   
+  transition: all 1s ease;
+  
+  /* ====================
+  I'm doubling-up on the transitions, here,   
+  for both :targeted and not-targeted 
+  instances. This makes closing the menu just 
+  as pleasant. */
+  
+  &:target {
+    top: 0;
+    transition: all 1s ease;
+    
+    /* ====================
+    Descend the banner when targeted.
+    Swap opening and closing links as
+    appropriate.
+    */
+    
+    a#open-menu { display: none; }
+    a#close-menu {display: block;}
+  }
+  
+  a#close-menu { display: none; }
+}
+
+/* ====================
+Here are some kind of ugly links. */
+nav li {
+  position: relative;
+  list-style-type: none;
+  display: inline;
+}
+
+a { color: white; text-decoration: none; }
+
+.ribbon {
+  position: absolute;
+  top: 0; left: 1em;
+  height: 70px;
+  
+  h4 {
+    position: relative;
+    padding-top: 30px; 
+    text-align: center;
+    
+    a { color: #444; }
+    
+    a#open-menu:before {
+      content: "↓ ";
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    
+    a#close-menu:before {
+      content: "↑ ";
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    
+  }
+}
+
+
