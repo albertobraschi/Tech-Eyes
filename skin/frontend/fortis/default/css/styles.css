@@ -238,26 +238,22 @@ button.button span span {
 	line-height:35px;
 }
 /*button.button:hover span span { background-position:100% -70px; }*/
-#offer{
-	margin-left:260px;
-	padding-bottom: 10px;
-	width: 50px;
-}
+#offer{margin-bottom:8px;}
 #offer .btn-cart span {
 	background-image:url(../images/img/header-gray-vd.png);
 	height:35px;
-	padding:5px 6px 0 8px;
+	padding:5px 11px 0 12px;
 	line-height:20px;
 	color:#fff;
 }
 #offer .btn-cart:hover span {
 	background-image:url(../images/img/header-gray-d.png);
 	height:35px;
-	padding:5px 8px 0 8px;
+	padding:5px 11px 0 12px;
 	line-height:20px;
 	color:#fff;
 }
-
+.add-to-box .button{margin-top:5px;}
 
 /* Button - small, for inline display with input boxes
 -------------------------------------------------------------- */
@@ -1839,14 +1835,21 @@ tr.summary-details-excluded { font-style:italic; }
 -------------------------------------------------------------- */
 .block-related-wrapper {
 	float:right;
-	width:220px;
+	width:22%;
 	margin:20px 0 0;
 }
+/************** cross sells ************************/
+.cross .block-related-wrapper{ margin: 0px !important;}
+.cross .block-related .block-title { background:url(../images/img/block-cross-title.png) center 0 repeat-x;}
+
+
+
 .block-related { padding-right:4px; /* "product-top-wrapper" right shadow width */ }
 .block-related .block-title {
-	background:url(../images/img/block-related-title.png) center 0 no-repeat;
+	background:url(../images/img/block-related-title.png) center 0 repeat-x;
 	padding:0 0 0 4px;
-	border:0;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
 }
 .block-related .block-title strong { line-height:40px; color:#eee; text-transform:none; font-weight:normal; }
 .block-related .block-content li.item { padding:9px; position:relative; }
@@ -1867,6 +1870,7 @@ tr.summary-details-excluded { font-style:italic; }
 .block-related-tabbed .block-content li.item {
 	padding:12px 0;
 	border-top:1px solid #e5e5e5;
+	min-height: 69px;
 }
 .block-related-tabbed input.checkbox { clear:left; margin:5px 0 0 5px; }
 .block-related-tabbed .product { margin-left:0;  }
@@ -2227,11 +2231,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid - additional classes
 -------------------------------------------------------------- */
-.spec-grid.grid-standalone {
-	padding-top:15px;
-	border-bottom:8px solid #eee; /* border = 15px. Subtracted 7px (shadow width) */
-	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
-}
+
 
 /* Special grid - full width
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2394,14 +2394,14 @@ tr.summary-details-excluded { font-style:italic; }
 	background-position:0 -40px;
 	background-repeat:no-repeat;
 	float:left;
-	width:8px;
+	width:1%;
 	height:40px;
 }
 .large-tabs-right {
 	background-position:100% -40px;
 	background-repeat:no-repeat;
 	float:left;
-	width:8px;
+	width:1%;
 	height:40px;
 }
 
@@ -2658,7 +2658,7 @@ a.email2friend:hover { background-position: -54px -27px; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .add-to-cart label { float:left; margin:8px 5px 0 0; font-weight:bold; color:#666; }
-.add-to-cart .qty { float:left; margin: 5px 5px 0 0; }
+.add-to-cart .qty { float: left; margin: 5px 5px 0 0; }
 .add-to-cart button.button { float:left; }
 .add-to-cart .paypal-logo { clear:left; margin:0; padding:10px 0 0; text-align:right; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 60px 5px 0; }
@@ -2685,7 +2685,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .product-view { margin-top:10px; }
 .product-collateral { 
 	float:left;
-	width:720px;
+	width:77%;
 	margin:20px 0 0;
 }
 .product-collateral h2 { margin:0 0 10px; }
@@ -2710,7 +2710,6 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 }
 .col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
 .product-view .product-img-box .product-image {
-	border:#e5e5e5 1px solid;
 	padding:5px;
 	position:relative; /* IMPORTANT: Stickers ("new", "sale") are positioned relative to this box */
 }
@@ -2762,7 +2761,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 /* Product Shop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.product-top-wrapper { background:url(../images/img/prod-bg-right.jpg) 100% 0 repeat-y; }
+.product-top-wrapper { background:url(../images/img/prod-bg-right.jpg) 100% 0 repeat-y; width: 77%; }
 .product-top { background:url(../images/img/prod-bg-bottom.jpg) 100% 100% no-repeat; }
 .product-top-inner {
 	background:url(../images/img/prod-bg-top.jpg) 100% 0 no-repeat;
@@ -2795,7 +2794,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .sku span{
 	font-weight: bold;
 }
-#pricematch img{padding-bottom:3px;}
+#pricematch img{padding-bottom:3px; width:100%;}
 .itar,.ger,.gr{
     border: #FFAB19 1px solid;
 	padding: 3px;
@@ -3028,7 +3027,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .product-tabs-wrapper .tabs {
-	width:704px; /* 720 - (large-tabs-left->width + large-tabs-right->width)*/
+	width:98%; /* 720 - (large-tabs-left->width + large-tabs-right->width)*/
 }
 .product-tabs-wrapper .tabs-panes { clear:both; width:100%; }
 .product-tabs-wrapper .tabs-panes .pane {
@@ -3088,13 +3087,37 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 
 /* Tabs - override */
 .box-up-sell .tabs { display:none; }
-.box-up-sell .tabs-panes { float:left; clear:none; }
+.box-up-sell .tabs-panes {  width: 100%; float:left; clear:none; }
 .box-up-sell .browse-button { float:left; margin:0 3px 10px 0; }
 .box-up-sell .browse-button.forward { margin-right:15px; }
 .box-up-sell .ratings { font-size:10px; margin:10px 0; }
 
+/*=====================================================
+    product-page responsive
+=====================================================*/
+/**************Product-top****************/
+.product-view .product-img-box{width:30% !important;}
+.product-top .product-attributes{width: 21% !important;}
+.product-view .product-shop{width:38% !important;}
+.box-brand img{margin-left:-13px;}
+
+/**************Up-Sells****************/
+.box-up-sell .tabs-panes .spec-grid4col .item{ width: 15.1%; }
+.box-up-sell .tabs-panes .spec-grid4col .item.first{ margin-left:8px; }
+.box-up-sell .tabs-panes .spec-grid4col .item img{ width:100%; height:20%; }
+.box-up-sell .tabs-panes .spec-grid4col .item a{width: !important;}
+.box-up-sell .tabs-panes .spec-grid4col .product-image{width: auto !important;}
+.spec-grid.grid-standalone {
+	padding-top:15px;
+	border-bottom:8px solid #eee; /* border = 15px. Subtracted 7px (shadow width) */
+	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
+	width: 98% !important;
+}
+
 /* Override grid item's minimal height */
 .box-up-sell .spec-grid4col .item { min-height:265px; }
+
+
 
 
 
@@ -4767,3 +4790,4 @@ end of old CSS - JJ Mas*/
   top: 42px;
 }
 .more-link{font-size:14px; padding-top: 10px;}
+.more-link:visited{display:none;}
