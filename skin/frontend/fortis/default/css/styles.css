@@ -4433,6 +4433,7 @@ h1,
 
 /* Tags: */
 /*my:predef-block*/
+.desc{ display:none;}
 .desc-center{
 	margin-top:-179px;
 	margin-left:265px;
