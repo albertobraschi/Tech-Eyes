@@ -45,7 +45,31 @@
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
-        
+       <div class="cross">
+               <?php // Related products
+		$replaceRelated = $themeHelper->getCfg('products/replace_related');
+		if ($replaceRelated == 0) //never replace
+		{
+			echo '<div class="block-related-wrapper">' . $this->getChildHtml('catalog.product.related') . '</div>';
+		}
+		elseif ($replaceRelated == 1) //always replace
+		{
+			if ($replaceRelated_html = $this->getChildHtml('i_block_product_replace_related'))
+				echo '<div class="block-related-wrapper"><div class="product-replace-related-wrapper">' . $replaceRelated_html . '</div></div>';
+		}
+		else //replace if no related ($replaceRelated == 2)
+		{
+			if ($blockRelated_html = $this->getChildHtml('catalog.product.related')) //related exists
+				echo '<div class="block-related-wrapper">' . $blockRelated_html . '</div>';
+			else //no related
+				if ($replaceRelated_html = $this->getChildHtml('i_block_product_replace_related'))
+					echo '<div class="block-related-wrapper"><div class="product-replace-related-wrapper">' . $replaceRelated_html . '</div></div>';
+		}
+		?>
+       </form>
+       </div> 
+                        
+
         <div class="product-top-wrapper">
 			<div class="product-top">
 				<div class="product-top-inner clearer">
@@ -112,7 +136,7 @@
                             </div>
                         <?php endif;?>
                        <div id="pricematch">
-                          <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="/media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
+                          <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="../media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
                        </div>
                         <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
                         	<div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
@@ -205,28 +229,7 @@
           <div id="group">
         	<?php echo $this->getChildHtml('groupedproductspro') ?>
           </div>
-        <?php // Related products
-		$replaceRelated = $themeHelper->getCfg('products/replace_related');
-		if ($replaceRelated == 0) //never replace
-		{
-			echo '<div class="block-related-wrapper">' . $this->getChildHtml('catalog.product.related') . '</div>';
-		}
-		elseif ($replaceRelated == 1) //always replace
-		{
-			if ($replaceRelated_html = $this->getChildHtml('i_block_product_replace_related'))
-				echo '<div class="block-related-wrapper"><div class="product-replace-related-wrapper">' . $replaceRelated_html . '</div></div>';
-		}
-		else //replace if no related ($replaceRelated == 2)
-		{
-			if ($blockRelated_html = $this->getChildHtml('catalog.product.related')) //related exists
-				echo '<div class="block-related-wrapper">' . $blockRelated_html . '</div>';
-			else //no related
-				if ($replaceRelated_html = $this->getChildHtml('i_block_product_replace_related'))
-					echo '<div class="block-related-wrapper"><div class="product-replace-related-wrapper">' . $replaceRelated_html . '</div></div>';
-		}
-		?>
-        
-    </form>
+        <?php echo $this->getChildHtml('crosssell_products') ?>
     <script type="text/javascript">
     //<![CDATA[
         var productAddToCartForm = new VarienForm('product_addtocart_form');
