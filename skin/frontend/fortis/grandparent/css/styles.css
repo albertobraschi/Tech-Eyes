@@ -1241,7 +1241,7 @@ tr.summary-details-excluded { font-style:italic; }
 #nav > li {
 	height:38px;
 	display:inline-block;
-	margin-top: -8px;
+	margin: -10px 0px 0px 0px;
 	/*position:relative;*/ /*Set to position drop-down under current tab*/
 }
 #nav > li > a {

@@ -1258,7 +1258,7 @@ tr.summary-details-excluded { font-style:italic; }
 #nav > li {
 	height:38px;
 	display:inline-block;
-	margin-top: -8px;
+	margin: -10px 0px 0px 0px;
 	/*position:relative;*/ /*Set to position drop-down under current tab*/
 }
 #nav > li > a {
@@ -2040,7 +2040,7 @@ tr.summary-details-excluded { font-style:italic; }
 .item-inner:hover {background-color: #e5f9ff;} /* added inner item view hover - JJ */
 
 .products-list .product-image { float:left; width:190px; /*height:190px;*/ }
-.products-list .product-shop { float:left; width:296px; min-height:190px; padding-right:15px; margin:0 0 0 15px; border-right:1px solid #f1f1f1; }
+.products-list .product-shop { float:left; width:560px; min-height:190px; padding-right:15px; margin:0 0 0 15px; border-right:1px solid #f1f1f1; }
 .products-list .right-column { float:right; width:130px;}
 
 .products-list .product-name { margin:0 0 15px; font-weight:bold; font-size:12px; }
@@ -2769,7 +2769,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	padding:6px 5px 5px 0; /* Added padding to keep the content away from the shadow of background images */
 }
 
-.product-view .product-shop { float:right; width:160px; padding:10px 20px 20px; border-right:#eee 1px solid; }
+.product-view .product-shop { float:right; width:160px; padding:10px 10px 10px; border-right:#eee 1px solid; }
 .product-view .product-shop.no-right-border { border-right:none; }
 .col1-layout .product-view .product-shop {}
 .col3-layout .product-view .product-shop { float:none; width:auto; }
@@ -2946,7 +2946,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	float:right;
 	width:210px;
 	min-height:233px;
-	padding:15px;
+	padding:10px;
 }
 .product-attributes .item { margin:10px 0; }
 .product-attributes .item img { float:left; }
@@ -3101,6 +3101,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .product-top .product-attributes{width: 21% !important;}
 .product-view .product-shop{width:38% !important;}
 .box-brand img{margin-left:-13px;}
+}
 
 /**************Up-Sells****************/
 .box-up-sell .tabs-panes .spec-grid4col .item{ width: 15.1%; }
@@ -4503,7 +4504,7 @@ h1,
 
 /* Tags: */
 /*my:predef-block*/
-.category-description .desc{ display:none;}
+.lower-desc{ display:none;}
 .desc-center{
 	margin-top:-179px;
 	margin-left:265px;
@@ -4792,3 +4793,11 @@ end of old CSS - JJ Mas*/
 }
 .more-link{font-size:14px; padding-top: 10px;}
 .more-link:visited{display:none;}
+
+/*==================================================
+RESPONSIVE DESIGN
+==================================================*/
+@media only screen and (max-device-width: 1024px) {
+     .main{max-width: 960px !important;}
+     .col2-left-layout.main-container{max-width: 960px;}
+}
