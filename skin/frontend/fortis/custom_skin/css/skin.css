@@ -2,3 +2,13 @@
  * In this file you can override default CSS styling of any element of the theme.
  * You can also add your own styling.
  */
+ 
+.line span{
+	 text-indent: -9999px;
+ }
+.gift span #restriction{border:#24D600 1px solid;margin-bottom:5px;padding:3px}
+.gift h2{
+	color: #FFAB19;
+	margin-left: 30px;
+	margin-top: -19px;
+}

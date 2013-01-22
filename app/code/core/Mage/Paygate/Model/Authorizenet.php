@@ -35,8 +35,9 @@ class Mage_Paygate_Model_Authorizenet extends Mage_Payment_Model_Method_Cc
     /*
      * Transaction Details gateway url
      */
-    const CGI_URL_TD = 'https://apitest.authorize.net/xml/v1/request.api';
-
+     
+    const CGI_URL_TD = 'https://api.authorize.net/xml/v1/request.api';
+     
     const REQUEST_METHOD_CC     = 'CC';
     const REQUEST_METHOD_ECHECK = 'ECHECK';
 

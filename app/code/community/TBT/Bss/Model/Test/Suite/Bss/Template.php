@@ -17,9 +17,10 @@ class TBT_Bss_Model_Test_Suite_Bss_Template extends TBT_Testsweet_Model_Test_Sui
     protected function generateSummary() {
              
         $paths = array(
-            Mage::getBaseDir('design') . '/frontend/default/default/layout/bss.xml',
-            Mage::getBaseDir('design') . '/frontend/default/default/template/bss/dym.phtml',
-            Mage::getBaseDir('design') . '/frontend/default/default/template/bss/dym/results.phtml'
+            Mage::getBaseDir('design') . '/frontend/base/default/layout/bss.xml',
+            Mage::getBaseDir('design') . '/frontend/base/default/template/bss/dym.phtml',
+            Mage::getBaseDir('design') . '/frontend/base/default/template/bss/dym/results.phtml',
+            Mage::getBaseDir('design') . '/frontend/base/default/template/bss/cms/result.phtml'
         );
 
         foreach ($paths as $path) {

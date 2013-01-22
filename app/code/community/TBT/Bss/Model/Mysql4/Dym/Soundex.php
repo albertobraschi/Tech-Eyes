@@ -137,19 +137,31 @@ ORDER BY {$rank_match_sql} DESC, {$rank_pos_sql} ASC, {$rank_match_partial_sql} 
      */
     protected function _quickUpdatePnsIndexes($storeId, $productIds = null)
     {
-        $conn = Mage::getSingleton('core/resource')->getConnection('core_read');
+        
+        $conn = $this->_getWriteAdapter();
+        
+        // The DDL statements error only comes up in v1.7 so we need to end all older transactions.
+        if(Mage::helper('bss/version')->isBaseMageVersionAtLeast('1.7')) {
+            while($conn->getTransactionLevel() > 0) {
+                $conn->commit();
+            }
+        }
         
         $conn->beginTransaction();
-        
         $this->_regenerateBssIndexIds($conn, $storeId, $productIds);
+        $conn->commit();
         
         $this->_regenerateNewTmpCfTables($conn, $storeId, $productIds);
         
+        $conn->beginTransaction();
         $this->_updateBssPns($conn, $storeId, $productIds);
-        
         $conn->commit();
+
         return $this;
     }
+    
+    
+    
     
     /**
      * Enter description here...
@@ -202,48 +214,50 @@ ORDER BY {$rank_match_sql} DESC, {$rank_pos_sql} ASC, {$rank_match_partial_sql} 
     	//@nelkaake -a 19/12/10: 
         $sql_in1 = $this->getMixedArrayCondSql("names.entity_id", $productIds, $conn);
         
+    
+        $conn->query("DROP temporary table IF EXISTS `tmp_cf_fs`");
+        
         $conn->query("
-DROP temporary table if exists tmp_cf_fs;");
-        $conn->query("
-CREATE temporary table tmp_cf_fs  (
-	SELECT {$storeId} as store_id, names.entity_id, @pname := names.name as value, names.entity_id as product_id,
-	  @s1 := IF(LOCATE(' ', @pname) > 0, ((LEFT(@pname, LOCATE(' ', @pname)))), @pname) as s1,
-	  @s2 := IF(@s1='','',( LEFT(SUBSTR(@pname, length(@s1)+locate(@s1,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s1)+locate(@s1,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s1)+locate(@s1,@pname))))) )  ) as s2,
-	  @s3 := IF(@s2='','',( LEFT(SUBSTR(@pname, length(@s2)+locate(@s2,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s2)+locate(@s2,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s2)+locate(@s2,@pname))))) )  ) as s3,
-	  @s4 := IF(@s3='','',( LEFT(SUBSTR(@pname, length(@s3)+locate(@s3,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s3)+locate(@s3,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s3)+locate(@s3,@pname))))) )  ) as s4,
-	  @s5 := IF(@s4='','',( LEFT(SUBSTR(@pname, length(@s4)+locate(@s4,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s4)+locate(@s4,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s4)+locate(@s4,@pname))))) )  ) as s5,
-	  @s6 := IF(@s5='','',( LEFT(SUBSTR(@pname, length(@s5)+locate(@s5,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s5)+locate(@s5,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s5)+locate(@s5,@pname))))) )  ) as s6,
-	  @s7 := IF(@s6='','',( LEFT(SUBSTR(@pname, length(@s6)+locate(@s6,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s6)+locate(@s6,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s6)+locate(@s6,@pname))))) )  ) as s7,
-	  @s8 := IF(@s7='','',( LEFT(SUBSTR(@pname, length(@s7)+locate(@s7,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s7)+locate(@s7,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s7)+locate(@s7,@pname))))) )  ) as s8,
-	  @s9 := IF(@s8='','',( LEFT(SUBSTR(@pname, length(@s8)+locate(@s8,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s8)+locate(@s8,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s8)+locate(@s8,@pname))))) )  ) as s9,
-	  @s10 := IF(@s9='','',( LEFT(SUBSTR(@pname, length(@s9)+locate(@s9,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s9)+locate(@s9,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s9)+locate(@s9,@pname))))) )  ) as s10,
-	CONCAT(
-	    SUBSTR(soundex(@s1),1),
-	    '|',
-	    SUBSTR(soundex(@s2),1), 
-	    '|',
-	    SUBSTR(soundex(@s3),1), 
-	    '|',
-	    SUBSTR(soundex(@s4),1),
-	    '|',
-	    SUBSTR(soundex(@s5),1),
-	    '|',
-	    SUBSTR(soundex(@s6),1),
-	    '|',
-	    SUBSTR(soundex(@s7),1),
-	    '|',
-	    SUBSTR(soundex(@s8),1),
-	    '|',
-	    SUBSTR(soundex(@s9),1),
-	    '|',
-	    SUBSTR(soundex(@s10),1),
-	    '|'
-	) as full_soundex
-	FROM {$cpflat_t} names
-	WHERE {$sql_in1}
-)
-;
+            CREATE temporary table tmp_cf_fs  (
+            	SELECT {$storeId} as store_id, names.entity_id, @pname := names.name as value, names.entity_id as product_id,
+            	  @s1 := IF(LOCATE(' ', @pname) > 0, ((LEFT(@pname, LOCATE(' ', @pname)))), @pname) as s1,
+            	  @s2 := IF(@s1='','',( LEFT(SUBSTR(@pname, length(@s1)+locate(@s1,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s1)+locate(@s1,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s1)+locate(@s1,@pname))))) )  ) as s2,
+            	  @s3 := IF(@s2='','',( LEFT(SUBSTR(@pname, length(@s2)+locate(@s2,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s2)+locate(@s2,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s2)+locate(@s2,@pname))))) )  ) as s3,
+            	  @s4 := IF(@s3='','',( LEFT(SUBSTR(@pname, length(@s3)+locate(@s3,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s3)+locate(@s3,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s3)+locate(@s3,@pname))))) )  ) as s4,
+            	  @s5 := IF(@s4='','',( LEFT(SUBSTR(@pname, length(@s4)+locate(@s4,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s4)+locate(@s4,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s4)+locate(@s4,@pname))))) )  ) as s5,
+            	  @s6 := IF(@s5='','',( LEFT(SUBSTR(@pname, length(@s5)+locate(@s5,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s5)+locate(@s5,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s5)+locate(@s5,@pname))))) )  ) as s6,
+            	  @s7 := IF(@s6='','',( LEFT(SUBSTR(@pname, length(@s6)+locate(@s6,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s6)+locate(@s6,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s6)+locate(@s6,@pname))))) )  ) as s7,
+            	  @s8 := IF(@s7='','',( LEFT(SUBSTR(@pname, length(@s7)+locate(@s7,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s7)+locate(@s7,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s7)+locate(@s7,@pname))))) )  ) as s8,
+            	  @s9 := IF(@s8='','',( LEFT(SUBSTR(@pname, length(@s8)+locate(@s8,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s8)+locate(@s8,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s8)+locate(@s8,@pname))))) )  ) as s9,
+            	  @s10 := IF(@s9='','',( LEFT(SUBSTR(@pname, length(@s9)+locate(@s9,@pname)),  If(LOCATE(' ', SUBSTR(@pname, length(@s9)+locate(@s9,@pname))) = 0, 999, LOCATE(' ', SUBSTR(@pname, length(@s9)+locate(@s9,@pname))))) )  ) as s10,
+            	CONCAT(
+            	    SUBSTR(soundex(@s1),1),
+            	    '|',
+            	    SUBSTR(soundex(@s2),1), 
+            	    '|',
+            	    SUBSTR(soundex(@s3),1), 
+            	    '|',
+            	    SUBSTR(soundex(@s4),1),
+            	    '|',
+            	    SUBSTR(soundex(@s5),1),
+            	    '|',
+            	    SUBSTR(soundex(@s6),1),
+            	    '|',
+            	    SUBSTR(soundex(@s7),1),
+            	    '|',
+            	    SUBSTR(soundex(@s8),1),
+            	    '|',
+            	    SUBSTR(soundex(@s9),1),
+            	    '|',
+            	    SUBSTR(soundex(@s10),1),
+            	    '|'
+            	) as full_soundex
+            	FROM {$cpflat_t} names
+            	WHERE {$sql_in1}
+            )
+            ;
         ");
+            
 
 		return $this;
     }
@@ -280,6 +294,7 @@ WHERE TRUE AND {$sql_in}
         return $this;
     }
     
+
     
     
 }

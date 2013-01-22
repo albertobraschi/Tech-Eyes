@@ -27,6 +27,16 @@ class TBT_Bss_Model_Test_Suite_Bss_Database extends TBT_Testsweet_Model_Test_Sui
             'merged_sku',
             'merged_name'
         );
+        $tableChecks[$cr->getTableName('bss_cms_index')] = array(
+            'page_id',
+            'store_id',
+            'content'
+        );
+        $tableChecks[$cr->getTableName('bss_cms_result')] = array(
+            'query_id',
+            'page_id',
+            'relevance'
+        );
        
         $read = Mage::getSingleton('core/resource')->getConnection('core_read');
 

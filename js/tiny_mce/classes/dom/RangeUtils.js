@@ -38,31 +38,6 @@
 			}
 
 			/**
-			 * Excludes start/end text node if they are out side the range
-			 *
-			 * @private
-			 * @param {Array} nodes Nodes to exclude items from.
-			 * @return {Array} Array with nodes excluding the start/end container if needed.
-			 */
-			function exclude(nodes) {
-				var node;
-
-				// First node is excluded
-				node = nodes[0];
-				if (node.nodeType === 3 && node === startContainer && startOffset >= node.nodeValue.length) {
-					nodes.splice(0, 1);
-				}
-
-				// Last node is excluded
-				node = nodes[nodes.length - 1];
-				if (endOffset === 0 && nodes.length > 0 && node === endContainer && node.nodeType === 3) {
-					nodes.splice(nodes.length - 1, 1);
-				}
-
-				return nodes;
-			};
-
-			/**
 			 * Collects siblings
 			 *
 			 * @private
@@ -107,7 +82,7 @@
 						if (!next)
 							siblings.reverse();
 
-						callback(exclude(siblings));
+						callback(siblings);
 					}
 				}
 			};
@@ -118,30 +93,30 @@
 
 			// If index based end position then resolve it
 			if (endContainer.nodeType == 1 && endContainer.hasChildNodes())
-				endContainer = endContainer.childNodes[Math.min(endOffset - 1, endContainer.childNodes.length - 1)];
-
-			// Same container
-			if (startContainer == endContainer)
-				return callback(exclude([startContainer]));
+				endContainer = endContainer.childNodes[Math.min(startOffset == endOffset ? endOffset : endOffset - 1, endContainer.childNodes.length - 1)];
 
 			// Find common ancestor and end points
 			ancestor = dom.findCommonAncestor(startContainer, endContainer);
-				
+
+			// Same container
+			if (startContainer == endContainer)
+				return callback([startContainer]);
+
 			// Process left side
 			for (node = startContainer; node; node = node.parentNode) {
-				if (node === endContainer)
+				if (node == endContainer)
 					return walkBoundary(startContainer, ancestor, true);
 
-				if (node === ancestor)
+				if (node == ancestor)
 					break;
 			}
 
 			// Process right side
 			for (node = endContainer; node; node = node.parentNode) {
-				if (node === startContainer)
+				if (node == startContainer)
 					return walkBoundary(endContainer, ancestor);
 
-				if (node === ancestor)
+				if (node == ancestor)
 					break;
 			}
 
@@ -160,7 +135,7 @@
 			);
 
 			if (siblings.length)
-				callback(exclude(siblings));
+				callback(siblings);
 
 			// Walk right leaf
 			walkBoundary(endContainer, endPoint);
@@ -172,40 +147,42 @@
 		 * @param {Range/RangeObject} rng Range to split.
 		 * @return {Object} Range position object.
 		 */
-		this.split = function(rng) {
+/*		this.split = function(rng) {
 			var startContainer = rng.startContainer,
 				startOffset = rng.startOffset,
 				endContainer = rng.endContainer,
 				endOffset = rng.endOffset;
 
 			function splitText(node, offset) {
-				return node.splitText(offset);
+				if (offset == node.nodeValue.length)
+					node.appendData(INVISIBLE_CHAR);
+
+				node = node.splitText(offset);
+
+				if (node.nodeValue === INVISIBLE_CHAR)
+					node.nodeValue = '';
+
+				return node;
 			};
 
 			// Handle single text node
-			if (startContainer == endContainer && startContainer.nodeType == 3) {
-				if (startOffset > 0 && startOffset < startContainer.nodeValue.length) {
-					endContainer = splitText(startContainer, startOffset);
-					startContainer = endContainer.previousSibling;
+			if (startContainer == endContainer) {
+				if (startContainer.nodeType == 3) {
+					if (startOffset != 0)
+						startContainer = endContainer = splitText(startContainer, startOffset);
 
-					if (endOffset > startOffset) {
-						endOffset = endOffset - startOffset;
-						startContainer = endContainer = splitText(endContainer, endOffset).previousSibling;
-						endOffset = endContainer.nodeValue.length;
-						startOffset = 0;
-					} else {
-						endOffset = 0;
-					}
+					if (endOffset - startOffset != startContainer.nodeValue.length)
+						splitText(startContainer, endOffset - startOffset);
 				}
 			} else {
 				// Split startContainer text node if needed
-				if (startContainer.nodeType == 3 && startOffset > 0 && startOffset < startContainer.nodeValue.length) {
+				if (startContainer.nodeType == 3 && startOffset != 0) {
 					startContainer = splitText(startContainer, startOffset);
 					startOffset = 0;
 				}
 
 				// Split endContainer text node if needed
-				if (endContainer.nodeType == 3 && endOffset > 0 && endOffset < endContainer.nodeValue.length) {
+				if (endContainer.nodeType == 3 && endOffset != endContainer.nodeValue.length) {
 					endContainer = splitText(endContainer, endOffset).previousSibling;
 					endOffset = endContainer.nodeValue.length;
 				}
@@ -218,7 +195,7 @@
 				endOffset : endOffset
 			};
 		};
-
+*/
 	};
 
 	/**

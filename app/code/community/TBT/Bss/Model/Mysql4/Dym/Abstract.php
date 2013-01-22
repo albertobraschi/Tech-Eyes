@@ -64,9 +64,16 @@ abstract class TBT_Bss_Model_Mysql4_Dym_Abstract extends Mage_Core_Model_Mysql4_
 	}
 	
 	protected function getConnection() {
-		return Mage::getSingleton('core/resource')->getConnection('core_read');
+		return $this->_getReadAdapter();
 	}
 	
+	protected function _getWriteAdapter() {
+	    return Mage::getSingleton('core/resource')->getConnection('core_write');
+	}
+	
+	protected function _getReadAdapter() {
+	    return Mage::getSingleton('core/resource')->getConnection('core_read');
+	}
 	
  
     /**

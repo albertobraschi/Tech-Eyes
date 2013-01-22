@@ -254,7 +254,11 @@
 		    		<a rel="facebook-connect" title="<?php echo $this->__('Login with Facebook');?>" href="<?php echo $this->helper('gomage_checkout')->getConnectUrl() ?>" class="fb-checkout"><?php echo $this->__('Login with Facebook');?></a>
 			<?php endif; ?>
 		</div>
-		
+		<script type="text/javascript" style="margin-left:10px;">
+           document.write('<scr');
+           document.write('ipt type="text/javascript" data-ppmnid="22870277962647" src="//ad.where.com/jin/spotlight/ads?pubid=5bf943e886&format=js&v=2.4&placementtype=234x60&ppmnid=22870277962647&rand=' +     Math.round(Math.random() * 100000000000000) + '">');
+           document.write('</scr' + 'ipt>');
+         </script>
 		<?php endif;?>
 		
 		<?php $payments_buttons = explode(',', Mage::getStoreConfig('gomage_checkout/address_fields/payments_buttons')); ?>

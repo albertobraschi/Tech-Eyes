@@ -26,7 +26,6 @@
 ?>
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
 <title><?php echo $this->getTitle() ?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
 <meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
@@ -66,7 +65,9 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
   })();
 </script>
-
+<script type='text/javascript'>var TBRUM=TBRUM||{};TBRUM.q=TBRUM.q||[];TBRUM.q.push(['mark','firstbyte',(new Date).getTime()]);(function(){var a=document.createElement('script');a.type='text/javascript';a.async=true;a.src=document.location.protocol+'//insight.torbit.com/v1/insight.min.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b)})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <meta name="google-site-verification" content="CuyjTw6JMeQTkLt3WGDPnJxQf_MkHDgJyE8doCNx1ng" />
 
 <?php echo $this->getCssJsHtml() ?>

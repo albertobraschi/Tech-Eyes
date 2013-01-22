@@ -57,7 +57,7 @@ class TBT_Bss_Block_Dym  extends Mage_Core_Block_Template
 		
 		//@nelkaake: If the page is supposed to be HTTPS and the AJAX call is not HTTPS, add HTTPS
 		// if it's HTTP and the url returned HTTPS, remove HTTPS
-		if(  isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && strpos(strtolower($sug_url), 'https') !== 0) {
+                if(  isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && strtolower($_SERVER['HTTPS']) !== 'off' && strpos(strtolower($sug_url), 'https') !== 0) {
 			$sug_url = str_replace('http', 'https', $sug_url);
 		} elseif(!isset($_SERVER['HTTPS']) || !$_SERVER['HTTPS'] && strpos(strtolower($sug_url), 'https') === 0) {
 			$sug_url = str_replace('https', 'http', $sug_url);

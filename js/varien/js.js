@@ -19,7 +19,7 @@
  *
  * @category    Varien
  * @package     js
- * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 function popWin(url,win,para) {
@@ -634,7 +634,6 @@ Element.addMethods({
     }
 });
 
-/*
 if (!("console" in window) || !("firebug" in console))
 {
     var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
@@ -644,7 +643,6 @@ if (!("console" in window) || !("firebug" in console))
     for (var i = 0; i < names.length; ++i)
         window.console[names[i]] = function() {}
 }
-*/
 
 /**
  * Executes event handler on the element. Works with event handlers attached by Prototype,
@@ -654,38 +652,18 @@ if (!("console" in window) || !("firebug" in console))
  *
  * @example fireEvent($('my-input', 'click'));
  */
-function fireEvent(element, event) {
-    if (document.createEvent) {
-        // dispatch for all browsers except IE before version 9
-        var evt = document.createEvent("HTMLEvents");
-        evt.initEvent(event, true, true ); // event type, bubbling, cancelable
-        return element.dispatchEvent(evt);
-    } else {
-        // dispatch for IE before version 9
+function fireEvent(element, event){
+    if (document.createEventObject){
+        // dispatch for IE
         var evt = document.createEventObject();
-        return element.fireEvent('on' + event, evt)
+        return element.fireEvent('on'+event,evt)
     }
-}
-
-/**
- * Returns more accurate results of floating-point modulo division
- * E.g.:
- * 0.6 % 0.2 = 0.19999999999999996
- * modulo(0.6, 0.2) = 0
- *
- * @param dividend
- * @param divisor
- */
-function modulo(dividend, divisor)
-{
-    var epsilon = divisor / 10000;
-    var remainder = dividend % divisor;
-
-    if (Math.abs(remainder - divisor) < epsilon || Math.abs(remainder) < epsilon) {
-        remainder = 0;
+    else{
+        // dispatch for firefox + others
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+        return !element.dispatchEvent(evt);
     }
-
-    return remainder;
 }
 
 /**

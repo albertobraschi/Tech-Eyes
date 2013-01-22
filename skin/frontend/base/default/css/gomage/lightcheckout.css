@@ -1137,7 +1137,7 @@ html body .not_shipping_mode .methods #gcheckout-payment-methods{
 .glc-login-and-paypal #gcheckout-login-link{
 	float:left;
 	white-space:nowrap;
-	padding:5px 0 0;
+	padding:5px 20px 0 0;
 }
 .glc-skin-default .glc-col,
 .glc-skin-default .glc-col-in{

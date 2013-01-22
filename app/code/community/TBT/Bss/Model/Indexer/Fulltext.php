@@ -91,7 +91,7 @@ class TBT_Bss_Model_Indexer_Fulltext extends Mage_Index_Model_Indexer_Abstract
      */
     public function getDescription()
     {
-        return Mage::helper('catalogsearch')->__('Rebuild special algorithm indexes for the Better Store Search catalog product search engine.');
+        return Mage::helper('catalogsearch')->__('Rebuild special algorithm indexes for the Better Store Search catalog product & CMS page search engine.');
     }
 
     /**
@@ -105,7 +105,14 @@ class TBT_Bss_Model_Indexer_Fulltext extends Mage_Index_Model_Indexer_Abstract
     	$req = $o->getEvent()->getControllerAction()->getRequest();
     	$post = $req->getPost();
     	$reindex_ids = isset($post['process']) ?  $post['process'] : array();
-    	
+
+        $indexer = Mage::getSingleton('index/indexer');
+        $bssIndexer = $indexer->getProcessByCode('bss_fulltext');
+        // if BSS is also re-indexed we can skip this
+        if (array_search($bssIndexer->getProcessId(), $reindex_ids) !== false) {
+            return $this;
+        }
+
     	if(array_search(7, $reindex_ids) !== false) {
     		$this->updateAfterCatalogSearchReindex($o);
     	}
@@ -302,7 +309,7 @@ class TBT_Bss_Model_Indexer_Fulltext extends Mage_Index_Model_Indexer_Abstract
             //    ->resetSearchResults();
         } else if (!empty($data['catalogsearch_update_product_id'])) {
             $productId = $data['catalogsearch_update_product_id'];
-            $this->_getIndexer()->rebuildIndex(null, $productId)
+            $this->_getIndexer()->rebuildCatalogIndex(null, $productId)
                 ->resetSearchResults();
         } else if (!empty($data['catalogsearch_product_ids'])) {
             // mass action
@@ -321,7 +328,7 @@ class TBT_Bss_Model_Indexer_Fulltext extends Mage_Index_Model_Indexer_Abstract
                             //    ->resetSearchResults();
                         } else if ($actionType == 'add') {
                             $this->_getIndexer()
-                                ->rebuildIndex($storeId, $productIds)
+                                ->rebuildCatalogIndex($storeId, $productIds)
                                 ->resetSearchResults();
                         }
                     }
@@ -331,7 +338,7 @@ class TBT_Bss_Model_Indexer_Fulltext extends Mage_Index_Model_Indexer_Abstract
                 $status = $data['catalogsearch_status'];
                 if ($status == Mage_Catalog_Model_Product_Status::STATUS_ENABLED) {
                     $this->_getIndexer()
-                        ->rebuildIndex(null, $productIds)
+                        ->rebuildCatalogIndex(null, $productIds)
                         ->resetSearchResults();
                 } else {
             		//@nelkaake -d 5/11/10: Search indexes will do this for us so this is unneccesary
