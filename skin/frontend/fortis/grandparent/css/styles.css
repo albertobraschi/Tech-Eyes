@@ -1214,13 +1214,8 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* All Levels
 -------------------------------------------------------------- */
-#nav li {
-	float:left; 
-	text-align:left; 
-}
 #nav li a {
 	display:block;
-	float:left;
 	border:none;
 	text-decoration:none;
 	color:#333;
@@ -1242,21 +1237,23 @@ tr.summary-details-excluded { font-style:italic; }
 	height:38px;
 	display:inline-block;
 	margin: -10px 0px 0px 0px;
+	width: 14%;
 	/*position:relative;*/ /*Set to position drop-down under current tab*/
 }
 #nav > li > a {
 	display:block;
 	height:41px;
-	padding:0 0 0 8px;
+	margin:38px 0 0 0px;
 	color:#eee;
 	font-size:13px;
+	text-align: center;
 	text-transform:uppercase;
 	text-shadow:1px 1px rgba(0,0,0,0.3);
 }
 
 #nav > li > a span:hover { color:#066cc3; background-position: 0px -40px;}
 
-#nav > li > a span { margin: 42px 15px 0 15px;  }
+#nav > li > a span { margin:;  }
 
 #nav > li >a span:hover{color:#cccccc;}
 
@@ -1268,46 +1265,46 @@ tr.summary-details-excluded { font-style:italic; }
 }
 
 .nav-1{
-   background-position: 0px 0px;
+   background-position:-3.2% 0px;
 }
 .nav-1:hover , .nav-1.active{
-	background-position: 0px -36px;
+	background-position:-3.2% -36px;
 }
 .nav-2{
-   background-position: -100px 0px;
+   background-position: 11.5% 0px;
 }
 .nav-2:hover , .nav-2.active{
-   background-position: -100px -37px;
+   background-position: 11.5% -37px;
 }
 .nav-3{
-   background-position: -252px -1px;
+   background-position: 28.2% -1px;
 }
 .nav-3:hover , .nav-3.active{
-   background-position: -252px -40px;
+   background-position: 28.2% -40px;
 }
 .nav-4{
-   background-position: -365px 0px;
+   background-position: 43.5% 0px;
 }
 .nav-4:hover , .nav-4.active{
-   background-position: -365px -38px;
+   background-position: 43.5% -38px;
 }
 .nav-5{ 
-   background-position: -465px 0px;
+   background-position: 57.6% 0px;
 }
 .nav-5:hover , .nav-5.active{ 
-   background-position: -465px -38px;
+   background-position: 57.6% -38px;
 }
 .nav-6{
-   background-position: -595px 0px;
+   background-position: 72.8% 0px;
 }
 .nav-6:hover , .nav-6.active{
-   background-position: -595px -37px;
+   background-position: 72.8% -37px;
 }
 .nav-7{
-   background-position: -720px 0px;
+   background-position: 90.2% 0px;
 }
 .nav-7:hover , .nav-7.active{
-   background-position: -720px -39px;
+   background-position: 90.2% -39px;
 }
 
 
@@ -1339,7 +1336,7 @@ tr.summary-details-excluded { font-style:italic; }
 	left:-10000px;
 	padding:5px 21px 5px;
 	background-color:#fff;
-	width:918px; /*960 - padding*/
+	width:97.5%; /*960 - padding*/
 	display:none; /* IMPORTANT: display it when 'shown-sub' class is applied */
 	/*z-index:2000;*/ /*Deprecated*/
 }

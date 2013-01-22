@@ -8,7 +8,7 @@
 	left:-10000px;
 	padding:15px 21px 5px;
 	background-color:#fff;
-	width:918px; /*960 - padding*/
+	width:97.5%; /*960 - padding*/
 	display:none; /* IMPORTANT: display it when 'shown-sub' class is applied */
 	/*z-index:2000;*/ /*Deprecated*/
 	/* +Common shadow styles for multiple items */
