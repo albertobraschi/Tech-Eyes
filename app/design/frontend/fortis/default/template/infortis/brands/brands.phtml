@@ -14,7 +14,7 @@
 		<?php
 		$manufImageExt = trim($helper->getCfgGeneral('image_extension'));
 		$manufLinkSearch = $helper->getCfgGeneral('link_search_enabled'); //If true, brand logo is link to Quick Search results
-		$manufPageBasePath = trim($helper->getCfgGeneral('page_base_path')); //Base path to each brand's page
+		$manufPageBasePath = trim($helper->getCfgGeneral('page_base_path')); //Base path of each brand's page
 		$attr = $_product->getResource()->getAttribute($manufAttrId); //Attr. object
 		$manufValue = trim($attr->getFrontend()->getValue($_product)); //Attr. value
 		$manufValueCode = str_replace(" ", "_", strtolower($manufValue)); //Attr. value (simplified)
@@ -26,22 +26,23 @@
 			$manufPageUrl = Mage::getUrl() . 'catalogsearch/result/?q=' . $manufValue;
 		elseif ($manufPageBasePath != '')
 		{
-			//If $manufPageBasePath is '/', then it has to be omitted
+			//If $manufPageBasePath is '/', then '/' has to be omitted
 			//Change brand name to lowercase, and replace spaces with hyphens
 			$basePath = ($manufPageBasePath == '/') ? '' : $manufPageBasePath . '/';
 			$manufPageUrl = Mage::getUrl() . $basePath . str_replace(" ", "-", strtolower($manufValue));
+			
+			//Append category URL suffix if needed and if it exists
+			if ($helper->getCfgGeneral('append_category_suffix'))
+				$manufPageUrl .= Mage::getStoreConfig('catalog/seo/category_url_suffix');
 		}
 		else
 			$manufPageUrl = '';
-
-		//if (file_exists($manufImageUrl) == FALSE)
-		//	$manufImageUrl = $this->getSkinUrl("images/img/brand-placeholder.png");
 		?>
 		<div class="box-brand">
 			<?php if ($manufPageUrl != ''): ?>
-				<a href="<?php echo $manufPageUrl;?>" title="<?php echo str_replace("%s", $manufValue, $this->__('Click to see more products from %s')); ?>"><img src="<?php echo $manufImageUrl;?>" alt="<?php echo $manufValue; ?>" width="210" height="50" /></a>
+				<a href="<?php echo $manufPageUrl;?>" title="<?php echo str_replace("%s", $manufValue, $this->__('Click to see more products from %s')); ?>"><img src="<?php echo $manufImageUrl;?>" alt="<?php echo $manufValue; ?>" /></a>
 			<?php else: ?>
-				<img src="<?php echo $manufImageUrl;?>" title="<?php echo $manufLabel .': '. $manufValue; ?>" alt="<?php echo $manufValue; ?>" width="210" height="50" />
+				<img src="<?php echo $manufImageUrl;?>" title="<?php echo $manufLabel .': '. $manufValue; ?>" alt="<?php echo $manufValue; ?>" />
 			<?php endif; ?>
 		</div>
 

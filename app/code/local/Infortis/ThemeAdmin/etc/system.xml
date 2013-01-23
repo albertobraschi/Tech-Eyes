@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <config>
 	<tabs>
-        <infortis translate="label" module="themeadmin">
-            <label>Infortis Extensions</label>
-            <sort_order>200</sort_order>
-        </infortis>
+        <fortis translate="label" module="themeadmin">
+            <label>Fortis Theme (1.5)</label>
+            <sort_order>150</sort_order>
+			<class>fortis</class>
+        </fortis>
     </tabs>
     <sections>
         <themeadmin translate="label" module="themeadmin">
-			<label>Theme Admin - Fortis v1.3</label>
-			<tab>infortis</tab>
+			<label>Theme Admin</label>
+			<tab>fortis</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>100</sort_order>
 			<show_in_default>1</show_in_default>
@@ -289,56 +290,6 @@
 						</replace_upsell>
 					</fields>
 				</products>
-				<images translate="label">
-                    <label>Images on Product Page</label>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>30</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>
-                    <fields>
-						<product_main_width translate="label">
-                            <label>Main Image Width (px)</label>
-							<comment>
-								<![CDATA[If width is not specified, default <strong>width and height</strong> will be used (265 pixels). Setting value larger than the default <strong>will affect the size of other blocks</strong> on product page.]]>
-							</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>10</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </product_main_width>
-						<product_main_height translate="label">
-                            <label>Main Image Height (px)</label>
-							<comment>
-								<![CDATA[Leave empty to keep aspect ratio of the image (height will be calculated automatically based on width). If width is not specified, default <strong>width and height</strong> will be used (265 pixels).]]>
-							</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>20</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </product_main_height>
-						<product_thumbnail_width translate="label">
-                            <label>Thumbnail Image Width (px)</label>
-							<comment>If width is not specified, default width and height will be used (56 pixels).</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>30</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </product_thumbnail_width>
-						<product_thumbnail_height translate="label">
-                            <label>Thumbnail Image Height (px)</label>
-							<comment>Leave empty to keep aspect ratio of the thumbnail image (height will be calculated automatically based on width). If width is not specified, default width and height will be used (56 pixels).</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>40</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </product_thumbnail_height>
-					</fields>
-				</images>
 				<footer translate="label">
                     <label>Footer</label>
                     <frontend_type>text</frontend_type>
@@ -359,7 +310,7 @@
 					</fields>
 				</footer>
 				<product_slider translate="label">
-                    <label>Product Slider</label>
+                    <label>Product Sliders</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>60</sort_order>
                     <show_in_default>1</show_in_default>
@@ -386,11 +337,80 @@
                         </speed>
 					</fields>
 				</product_slider>
+				<install translate="label">
+                    <label>Theme Installation</label>
+					<comment>
+						<![CDATA[<strong>IMPORTANT</strong>: To change value of <strong>Overwrite Existing Blocks</strong>, select <em>Yes</em> or <em>No</em> and then save the configuration.<br/>Without saving, the option will remain unchanged after you refresh the page.]]>
+					</comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>900</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<heading_import translate="label">
+							<label>Import</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_import>
+						
+						<import_blocks translate="label">
+                            <label>Static Blocks</label>
+							<comment>
+								<![CDATA[Click this button to create all static blocks provided with this theme.]]>
+							</comment>
+                            <frontend_type>button</frontend_type>
+							<frontend_model>themeadmin/adminhtml_button_import_cms</frontend_model>
+							<process>blocks</process>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_blocks>
+						<overwrite_blocks translate="label">
+                            <label>Overwrite Existing Blocks</label>
+							<comment>If set to "Yes", imported blocks will overwrite existing blocks with the same identifiers.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overwrite_blocks>
+						
+						<import_pages translate="label">
+                            <label>Pages</label>
+							<comment>
+								<![CDATA[Click this button to create CMS pages provided with this theme.<br/><strong style="color:red;">Important:</strong> <strong>Configure layout of each page after import is finished.</strong>]]>
+							</comment>
+                            <frontend_type>button</frontend_type>
+							<frontend_model>themeadmin/adminhtml_button_import_cms</frontend_model>
+							<process>pages</process>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_pages>
+						<overwrite_pages translate="label">
+                            <label>Overwrite Existing Pages</label>
+							<comment>If set to "Yes", imported pages will overwrite existing pages with the same identifiers.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overwrite_pages>
+					</fields>
+				</install>
             </groups>
         </themeadmin>
 		<themedesign translate="label" module="themeadmin">
-			<label>Theme Design - Fortis v1.3</label>
-			<tab>infortis</tab>
+			<label>Theme Design</label>
+			<tab>fortis</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>110</sort_order>
 			<show_in_default>1</show_in_default>

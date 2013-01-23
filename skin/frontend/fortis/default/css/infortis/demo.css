@@ -1,0 +1,79 @@
+/* Demo box
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.demo {
+	position:fixed;
+	z-index:2000;
+	left:-252px;
+	top:190px;
+	width:250px;
+}
+.demo.show { color:#000; left:-1px; } /* -1px to hide the border */
+.demo.hover:hover { left:-252px; } /* If JS is enabled, this class will override default :hover behavior */
+
+.demo-title {
+	position:absolute;
+	top:10px;
+	width:45px;
+	min-height:40px;
+	cursor:pointer; 
+}
+/* Move title label outside the block. Value equals edgebox-title->width */
+.demo .demo-title { right:-45px; }
+
+/* Forms */
+.demo select {
+	width:100%;
+}
+
+
+/* Store elements %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Hide logo image and show logo as a background image
+  (depending on header background color)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.header .logo img { visibility:hidden; }
+.header-bg-gray-vl .header a.logo,
+.header-bg-gray-l .header a.logo { background:url(../../images/logo-dark-concave.png) center center no-repeat; }
+.header-bg-gray .header a.logo,
+.header-bg-navy .header a.logo,
+.header-bg-blue-pale-l .header a.logo { background:url(../../images/logo-white.png) center center no-repeat; }
+.header-bg-gray-d .header a.logo,
+.header-bg-gray-vd .header a.logo { background:url(../../images/logo.png) center center no-repeat; }
+
+/* Common temporary styles for selected predefined static blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Category */
+.category-above-collection-wrapper,
+.category-below-collection-wrapper,
+
+/* Product */
+.product-replace-upsell-wrapper,
+
+/* Cart */
+.cart-below-table-wrapper,
+.cart-above-crosssell-wrapper,
+.cart-replace-crosssell-wrapper,
+
+/* One Page Checkout */
+.opc-above-steps-wrapper,
+.opc-below-steps-wrapper,
+.opc-below-progress-wrapper,
+
+/* CMS pages */
+.cms-page-top-wrapper,
+.cms-page-bottom-wrapper
+{
+	padding:20px;
+	border:2px dashed #e5e5e5;
+	color:#999;
+	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
+}
+
+/* Mini-cart */
+.mini-cart-above-products-wrapper { padding:7px 9px; background-color:#f5f5f5; color:#999; }

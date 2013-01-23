@@ -10,7 +10,7 @@
 
 			<!-- jQuery plugins -->
 			<action method="addJs"><script>infortis/jquery/jquerytools/tools.tabs-1.0.4.min.js</script></action>
-			<!--<action method="addJs"><script>infortis/jquery/jquerytools/tooltip.min.js</script></action>-->
+			<action method="addJs"><script>infortis/jquery/jquerytools/tools.tooltip-1.2.7.min.js</script></action>
 			<action method="addJs"><script>infortis/jquery/plugins/jquery.cycle.2.999.js</script></action>
 			<action method="addJs"><script>infortis/jquery/plugins/jquery.easing.1.3.js</script></action>
 			
@@ -18,7 +18,6 @@
 			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action> -->
 			
 			<!-- CSS -->
-			<!--<action method="addItem"><type>skin_css</type><name>css/_demo.css</name><params/></action>-->
 			<action method="addItem"><type>skin_css</type><name>css/common_skin.css</name><params/></action>
 			<action method="addItem"><type>skin_css</type><name>css/skin.css</name><params/></action>
 			
@@ -29,8 +28,7 @@
 			<action method="addCssIe"><css>css/styles-ie-all.css</css></action>
 			<action method="addCssIe"><css>css/skin-ie-all.css</css></action>
 			<action method="addItem"><type>skin_css</type><name>css/styles-ie7.css</name><params/><if>lte IE 7</if></action>
-			
-			<!-- IMPORTANT: Override/change items added by other modules here: -->
+
 		</reference>
 		
 		<!-- Remove and rearange blocks ====================================================================== -->
@@ -111,6 +109,17 @@
 		<reference name="top.links">			
 			<!-- Remove "checkout" and "cart" links -->
 			<remove name="checkout_cart_link" />
+			
+			<!-- Uncomment to add link
+			<action method="addLink" translate="label title" module="page">
+				<name>Test</name>
+				<path>test</path>
+				<label>Test2</label>
+				<title>Test3</title>
+				<urlParams/>
+				<position>110</position>
+			</action>
+			-->
 		</reference>
 		
 		<!-- Header links -->
@@ -176,6 +185,12 @@
 			</block>
 			<block type="cms/block" name="i_block_header_nav_dropdown2">
 				<action method="setBlockId"><block_id>block_header_nav_dropdown2</block_id></action>
+			</block>
+			<block type="cms/block" name="i_block_header_nav_dropdown3">
+				<action method="setBlockId"><block_id>block_header_nav_dropdown3</block_id></action>
+			</block>
+			<block type="cms/block" name="i_block_header_nav_dropdown4">
+				<action method="setBlockId"><block_id>block_header_nav_dropdown4</block_id></action>
 			</block>		
 		</reference>
 		
@@ -204,15 +219,7 @@
 
     </default>
 	
-	
-	
-	
-	
-	
-	<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-	<!-- Other layout handles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-	<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-	
+
 	<!-- PRODUCT VIEW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<catalog_product_view>
 		<!-- Change default template for product view. IMPORTANT: same as 'review_product_list'. -->
@@ -235,15 +242,15 @@
 			<action method="unsetChild"><name>i_block_callout02</name></action>
 		</reference>
 		
-		<!-- Example: set CloudZoom media template. -->
-		<!--<reference name="product.info.media">
-			<action method="setTemplate" ifconfig="catalog/cloudzoom/enabled"><template>catalog/product/view/media.phtml</template></action>
-        </reference>-->
-		
 		<reference name="product.info">
 		
 			<!-- Change review summary template: removed links to review page. IMPORTANT: new template file. -->
 			<action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/summary_nolinks.phtml</template></action>
+			
+			<!-- Uncomment to use default Magento image style -->
+			<!--
+			<block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml"/>
+			-->
 
 			<!-- Add block displaying product labels "new" and "sale". IMPORTANT: new template file -->
 			<block type="catalog/product_view_media" name="product.info.media.labels" as="media_labels" template="catalog/product/view/media_labels.phtml" />
@@ -260,8 +267,13 @@
 				<!-- Add tags -->
 				<action method="addTab" translate="title" module="tag"><alias>product.tags</alias><title>Product Tags</title><block>tag/product_list</block><template>tag/list.phtml</template></action>
 				
-				<!-- HOWTO: Add custom tab. IMPORTANT: new template file -->
-				<!-- <action method="addTab" translate="title" module="catalog"><alias>custom_tab1</alias><title>Tab1</title><block>catalog/product_view</block><template>catalog/product/view/custom_tab1.phtml</template></action> -->
+				<!-- Add custom tabs -->				
+				<block type="cms/block" name="i_block_product_custom_tab1">
+					<action method="setBlockId"><block_id>block_product_custom_tab1</block_id></action>
+				</block>
+				<block type="cms/block" name="i_block_product_custom_tab2">
+					<action method="setBlockId"><block_id>block_product_custom_tab2</block_id></action>
+				</block>
 			</block>
 			<!-- end: Add tabs -->
 			
@@ -308,6 +320,7 @@
 		</reference>
 
 	</catalog_product_view>
+
 
 	<!-- CATEGORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	
@@ -379,8 +392,8 @@
 		</reference>
 	</catalog_category_layered_nochildren>
 	
-	<!-- CART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	
+	<!-- CART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<checkout_cart_index>
 
 		<!-- Predefined CMS blocks -->
@@ -401,8 +414,8 @@
 		
 	</checkout_cart_index>
 	
-	<!-- CHECKOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	
+	<!-- CHECKOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<checkout_onepage_index>
 	
 		<!-- PRedefined CMS blocks -->
@@ -426,7 +439,8 @@
 		</reference>
 	
 	</checkout_onepage_index>
-		
+
+
 	<!-- SEARCH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	
 	<!-- Quick search -->
@@ -493,7 +507,8 @@
 	<catalogsearch_term_popular>
 	</catalogsearch_term_popular>
 	-->
-	
+
+
 	<!-- TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<!-- Change template (previous: 2columns-right) -->
 	<tag_list_index>
@@ -507,7 +522,8 @@
             <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
 	</tag_product_list>
-	
+
+
 	<!-- REVIEWS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<review_product_list>
 
@@ -517,7 +533,8 @@
         </reference>
 		
 	</review_product_list>
-	
+
+
 	<!-- CUSTOMER ACCOUNT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<customer_account>
 
@@ -530,7 +547,8 @@
 		</reference>
 
 	</customer_account>
-	
+
+
 	<!-- CMS PAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<cms_page>
 	
@@ -569,18 +587,19 @@
 		<remove name="ii_block_cms_page_top"/>
 		<remove name="ii_block_cms_page_bottom"/>
 		
-		<!-- HOWTO: Insert slideshow at the top of the homepage -->
+		<!-- Add MAP functionality for home page -->
+		<!--<update handle="MAP_popup" />-->
+
+		<!-- HOWTO: Insert block before slideshow -->
 		<!--<reference name="content">
-			<block type="page/html_wrapper" name="xyz" before="-">
-				<action method="setElementClass"><value>SLIDE cms-page-bottom-wrapper</value></action>
-				<block type="core/template" name="xyzxyz" template="themeadmin/slideshow.phtml" />
+			<block type="page/html_wrapper" name="ii_block_home_banner" before="superslideshow_slideshow">
+				<action method="setElementClass"><value>home-banner-wrapper clearer</value></action>
+				<block type="cms/block" name="i_block_home_banner">
+					<action method="setBlockId"><block_id>block_home_banner</block_id></action>
+				</block>
 			</block>
 		</reference>-->
 		
     </cms_index_index>
-	
-	<!-- CONTACTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-	<!--<contacts_index_index>
-	</contacts_index_index>-->
-	
+
 </layout>
