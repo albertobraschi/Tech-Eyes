@@ -229,6 +229,12 @@ button.button span {
 	white-space:nowrap; 
 	color:#555;
 	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
+	
+	transition:			color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-moz-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-webkit-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-o-transition:		color 300ms ease-in-out, background-color 300ms ease-in-out;
+
 }
 button.button:hover span { /*background-position:0 -105px;*/ background-color:#ccc; color:#333; }
 button.button span span {
@@ -2707,10 +2713,11 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 }
 .col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
 .product-view .product-img-box .product-image {
+	border:#e5e5e5 1px solid;
 	padding:5px;
 	position:relative; /* IMPORTANT: Stickers ("new", "sale") are positioned relative to this box */
 }
-.product-view .product-img-box .product-image img { margin:0 auto; display:block; }
+.product-view .product-img-box .product-image img { margin:0 auto; display:block; width: 100% }
 .product-view .product-img-box .product-image.product-image-zoom {
 	z-index:9;
 	/* 275 = image width (magento default) + .product-image->padding */
@@ -2719,6 +2726,21 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	height:275px;*/
 }
 
+/* Thumbnails */
+.product-view .product-img-box .more-views .thumbnails { margin-top:10px; }
+.product-view .product-img-box .more-views .thumbnails li { float:left; /*margin: 10px -1px 0 0;*/ }
+.product-view .product-img-box .more-views .thumbnails li.last { margin-right:0; }
+.product-view .product-img-box .more-views .thumbnails li a {
+	display:block;
+	overflow:hidden;
+	text-decoration:none;
+	padding:4px;
+	border:1px solid #eee;
+	
+}
+.product-view .product-img-box .more-views .thumbnails li a:hover { border-color:#999; position:relative; z-index:1000; }
+
+/*
 .product-view .product-img-box .zoom { display:none; }
 .product-view .product-img-box .zoom-notice { display:none; font-size:11px; margin:0 0 5px; text-align:center; }
 
@@ -2737,8 +2759,9 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .product-view .product-img-box .more-views li a:hover {
 	border-color:#999;
 	position:relative;
-	z-index:1000; /*podniesienie powyzej pozostalych miniaturek, aby wyswietlana byla cala ramka miniaturki z hoverem*/
+	z-index:1000;
 }
+*/
 
 .product-image-popup { margin:0 auto; }
 .product-image-popup .nav { font-weight:bold; text-align:center; }
@@ -3094,10 +3117,9 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
     product-page responsive
 =====================================================*/
 /**************Product-top****************/
-.product-view .product-img-box{width:30% !important;}
+.product-view .product-img-box{width:38% !important;}
 .product-top .product-attributes{width: 21% !important;}
-.product-view .product-shop{width:38% !important;}
-.box-brand img{margin-left:-13px;}
+.product-view .product-shop{width:35% !important;}
 iframe{width: 100%;}
 
 /**************Up-Sells****************/
@@ -4789,9 +4811,3 @@ end of old CSS - JJ Mas*/
 }
 .more-link{font-size:14px; padding-top: 10px;}
 .more-link:visited{display:none;}
-
-/*==================================================
-RESPONSIVE DESIGN
-==================================================*/
-@media only screen and (max-device-width: 1200px) {
-}

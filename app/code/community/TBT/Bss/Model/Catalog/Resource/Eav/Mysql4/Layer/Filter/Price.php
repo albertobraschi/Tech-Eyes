@@ -37,16 +37,8 @@ class TBT_Bss_Model_Catalog_Resource_Eav_Mysql4_Layer_Filter_Price
      */
     protected function _getSelect($filter)
     {
-        $collection = $filter->getLayer()->getProductCollection();
-        $collection->addPriceData($filter->getCustomerGroupId(), $filter->getWebsiteId());
-
-        // clone select from collection with filters
-        $select = clone $collection->getSelect();
-        // reset columns, order and limitation conditions
-        $select->reset(Zend_Db_Select::COLUMNS);
-        $select->reset(Zend_Db_Select::ORDER);
-        $select->reset(Zend_Db_Select::LIMIT_COUNT);
-        $select->reset(Zend_Db_Select::LIMIT_OFFSET);
+        $select = parent::_getSelect($filter);
+        
         //@nelkaake Added on Friday July 2, 2010: 
         $select->reset(Zend_Db_Select::GROUP);
 

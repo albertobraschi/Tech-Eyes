@@ -38,7 +38,7 @@
                     <password/>
                     <dbname>magento</dbname>
                     <model>mysql4</model>
-                    <initStatements>SET NAMES utf8</initStatements>
+                    <initStatements>SET NAMES utf8; SET FOREIGN_KEY_CHECKS=0; SET UNIQUE_CHECKS=0;</initStatements>
                     <type>pdo_mysql</type>
                     <active>0</active>
                 </connection>
@@ -72,6 +72,7 @@
                 </connection>
             </core_read>
         </resources>
+        
         <resource>
             <connection>
                 <types>

@@ -90,7 +90,8 @@ class TBT_Bss_Model_CatalogSearch_Fulltext extends Mage_CatalogSearch_Model_Full
     {
         parent::rebuildIndex($storeId, $productId);
         //@nelkaake -a 16/11/10: Only for Mage 1.4 and up
-        $this->_getIndexer()->rebuildIndex($storeId, $productId);
+        // do we still need this? causes indexes to be built 2 times in some cases
+//        $this->_getIndexer()->rebuildIndex($storeId, $productId);
         return $this;
     }
     

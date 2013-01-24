@@ -110,12 +110,12 @@ class Mage_GoogleShopping_Model_Observer
     {
         $flag = Mage::getSingleton('googleshopping/flag')->loadSelf();
         if ($flag->isExpired()) {
-            Mage::getModel('adminnotification/inbox')->addMajor(
+           /* Mage::getModel('adminnotification/inbox')->addMajor(
                 Mage::helper('googleshopping')->__('Google Shopping operation has expired.'),
                 Mage::helper('googleshopping')->__('One or more google shopping synchronization operations failed because of timeout.')
-            );
+            );*/
             $flag->unlock();
-        }
-        return $this;
+        }        return $this;
     }
+    
 }

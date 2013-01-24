@@ -1,0 +1,459 @@
+<root>
+   <blocks>
+      <cms_block>
+         <title>Footer inline links</title>
+         <identifier>block_footer_inline_links</identifier>
+         <content><![CDATA[<ul>
+<li class="first"><a href="{{store direct_url="about-magento-demo-store"}}">Custom</a></li>
+<li class="last"><a href="{{store direct_url="customer-service"}}">Links</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Category above collection</title>
+         <identifier>block_category_above_collection</identifier>
+         <content><![CDATA[Static CMS block displayed above list/grid of products. Put your content here.]]></content>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer social</title>
+         <identifier>block_footer_social</identifier>
+         <content><![CDATA[<div class="custom-content image-hover">
+	<a href="#" title="Join us on Facebook">
+    	<img src="{{media url='infortis/site/social/facebook.png'}}" alt="facebook" />
+    </a>
+	<a href="#" title="Follow us on Twitter">
+    	<img src="{{media url='infortis/site/social/twitter.png'}}" alt="twitter" />
+    </a>
+	<a href="#" title="Join us on Google Plus">
+    	<img src="{{media url='infortis/site/social/googleplus.png'}}" alt="google" />
+    </a>
+	<a href="#" title="Pinterest">
+    	<img src="{{media url='infortis/site/social/pinterest.png'}}" alt="pinterest" />
+    </a>
+	<a href="#" title="Watch us on YouTube">
+    	<img src="{{media url='infortis/site/social/youtube.png'}}" alt="youtube" />
+    </a>
+</div>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer payment</title>
+         <identifier>block_footer_payment</identifier>
+         <content><![CDATA[<img src="{{media url='infortis/site/payment.gif'}}" alt="Payment methods" title="Available secure payment methods" />]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Category below collection</title>
+         <identifier>block_category_below_collection</identifier>
+         <content><![CDATA[Static CMS block displayed below the listing of products. You can put your own content here]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Category above empty collection</title>
+         <identifier>block_category_above_empty_collection</identifier>
+         <content><![CDATA[<p class="note-msg empty-catalog">There are no products matching the selection.<br/>This is a static CMS block displayed if category is empty. You can put your own content here.</p>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Product right bottom (social)</title>
+         <identifier>block_product_right_bottom</identifier>
+         <content><![CDATA[<div class="item">
+	<img src="{{media url='infortis/blocks/product_view/bullet.png'}}" alt="Icon"  />
+	<span class="heading">Return your items and get your money back. <a href="#">More details</a></span>
+</div>
+<div class="item">
+	<img src="{{media url='infortis/blocks/product_view/bullet.png'}}" alt="Icon" />
+	<span class="heading">Special offer: buy 2 and get 1 free. Every category available</span>
+</div>
+<div class="item">
+	<img src="{{media url='infortis/blocks/product_view/bullet.png'}}" alt="Icon" />
+	<span class="heading">Buy this product and earn 10 special loyalty points</span>
+</div>
+<div class="item">
+	<img src="{{media url='infortis/blocks/product_view/bullet.png'}}" alt="Icon" />
+	<span class="heading">Lorem ipsum dolor sit amet</span>
+</div>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Product main bottom (social)</title>
+         <identifier>block_product_main_bottom</identifier>
+         <content><![CDATA[<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f22a427182f052f"></script>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Cart above crosssell</title>
+         <identifier>block_cart_above_crosssell</identifier>
+         <content><![CDATA[Static CMS block displayed above the cross-sell block. Put your content here.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Cart below totals</title>
+         <identifier>block_cart_below_totals</identifier>
+         <content><![CDATA[<img src="{{media url='infortis/blocks/block_cart_below_totals.png'}}" alt="Example" title="Static CMS block displayed below totals" />]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Cart replace crosssell</title>
+         <identifier>block_cart_replace_crosssell</identifier>
+         <content><![CDATA[Static CMS block displayed if the cross-sell box is empty. Put your content here.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Checkout onepage above</title>
+         <identifier>block_opc_above_steps</identifier>
+         <content><![CDATA[Static CMS block displayed above the one page checkout steps. Put your content here.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Checkout onepage below</title>
+         <identifier>block_opc_below_steps</identifier>
+         <content><![CDATA[Static CMS block displayed below the one page checkout steps. Put your content here.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Checkout onepage below progress</title>
+         <identifier>block_opc_below_progress</identifier>
+         <content><![CDATA[Static CMS block displayed below the one page checkout progress block. Put your content here.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Tab</title>
+         <identifier>block_product_custom_tab1</identifier>
+         <content><![CDATA[Custom CMS block displayed as a tab. You can use it to display info about returns and refunds, latest promotions etc. You can put your own content here: text, HTML, images - whatever you like. There are <strong>many similar blocks</strong> accross the store. All CMS blocks are editable from the admin panel.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Tab 2</title>
+         <identifier>block_product_custom_tab2</identifier>
+         <content><![CDATA[Another custom CMS block displayed as a tab. You can use it to display info about returns and refunds, latest promotions etc. You can put your own content here: text, HTML, images - whatever you like. There are <strong>many similar blocks</strong> accross the store. All CMS blocks are editable from the admin panel.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Cart below table</title>
+         <identifier>block_cart_below_table</identifier>
+         <content><![CDATA[<p>Static CMS block displayed below the cart. You can put your own content here.</p>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer links column 1</title>
+         <identifier>block_footer_links_column1</identifier>
+         <content><![CDATA[<h6 class="heading">Theme Features</h6>
+<ul>
+<li><a href="{{store url='fortis-magento-theme'}}">Theme Overview</a></li>
+<li><a href="#">Buy Fortis Theme</a></li>
+<li><a href="#">Sample Link</a></li>
+<li><a href="#">Some Other Link</a></li>
+<li><a href="#">Link Example</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer links column 2</title>
+         <identifier>block_footer_links_column2</identifier>
+         <content><![CDATA[<h6 class="heading">What's in Store</h6>
+<ul>
+<li><a href="#">Women</a></li>
+<li><a href="#">Men</a></li>
+<li><a href="#">Products A-Z</a></li>
+<li><a href="#">Best Brands</a></li>
+<li><a href="#">Buy a Gift Card</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer links column 3</title>
+         <identifier>block_footer_links_column3</identifier>
+         <content><![CDATA[<h6 class="heading">About Us</h6>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms and Conditions</a></li>
+<li><a href="#">Cooperation</a></li>
+<li><a href="#">Partners</a></li>
+<li><a href="#">Join Us</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer links column 4</title>
+         <identifier>block_footer_links_column4</identifier>
+         <content><![CDATA[<h6 class="heading">Customer Service</h6>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Shipping Methods</a></li>
+<li><a href="#">Payment</a></li>
+<li><a href="#">Returns &amp; Refunds</a></li>
+<li><a href="#">Customers</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer links column 5</title>
+         <identifier>block_footer_links_column5</identifier>
+         <content><![CDATA[<h6 class="heading">On Our Blog</h6>
+<ul>
+<li><a href="#">Latest News</a></li>
+<li><a href="#">All about our offer</a></li>
+<li><a href="#">About our new brands</a></li>
+<li><a href="#">New design</a></li>
+<li><a href="#">Join us on Facebook</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer company</title>
+         <identifier>block_footer_company</identifier>
+         <content><![CDATA[<h6 class="heading">Company Info</h6>
+<p class="phone">+001 (000) 555 801</p>
+<address>
+Company Inc.<br/>
+90 Bedford Street<br/>
+New York, NY 041, USA
+</address>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Block</title>
+         <identifier>block_header_nav_dropdown1</identifier>
+         <content><![CDATA[<ul>
+<li>
+
+<h2 class="heading">Fortis Magento Theme</h2>
+<p>Fortis is equipped with a dedicated administrative module, which brings all the features necessary for successful webstore - all at the command of a few key strokes.</p>
+	<a href="http://themeforest.net/item/fortis-flexible-magento-theme/1744309?ref=infortis" style="color:red;">Buy this Magento theme</a>
+
+</li>
+<li class="">
+
+<img src="{{media url='infortis/common/1.jpg'}}" alt="Example" />
+<h3 class="heading">Customizable main menu</h3>
+<p>Switch between 2 styles of the drop-down menu: wide or classic. In wide menu you can display links in 4-8 columns. You can also display your custom content in a drop-down block.</p>
+<a href="{{store url='fortis-magento-theme'}}">
+	<img src="{{media url='infortis/blocks/button-more.png'}}" alt="More Details" />
+</a>
+
+</li>
+<li class="">
+
+<img src="{{media url='infortis/common/2.jpg'}}" alt="Example" />
+<h3 class="heading">Brand logo for products</h3>
+<p>It can also be a link to any page, e.g. link to a category with products from that brand, link to the search results or any CMS page (editable from admin panel).</p>
+<a href="{{store url='fortis-magento-theme'}}">
+	<img src="{{media url='infortis/blocks/button-more.png'}}" alt="More Details" />
+</a>
+
+</li>
+<li class="last">
+
+<img src="{{media url='infortis/common/3.jpg'}}" alt="Example" />
+<h3 class="heading">Editable image size</h3>
+<p>Size of product image on product page can be edited in the admin panel. Specify any size you like, images don't have to be square - keep the aspect ratio.</p>
+<a href="{{store url='fortis-magento-theme'}}">
+	<img src="{{media url='infortis/blocks/button-more.png'}}" alt="More Details" />
+</a>
+
+</li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>CMS page bottom</title>
+         <identifier>block_cms_page_bottom</identifier>
+         <content><![CDATA[Static CMS block displayed at the bottom of CMS pages.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>CMS page top</title>
+         <identifier>block_cms_page_top</identifier>
+         <content><![CDATA[Static CMS block displayed at the top of CMS pages.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Home banner</title>
+         <identifier>block_home_banner</identifier>
+         <content><![CDATA[<div class="col-1-4 item first">
+<a href="#"><img class="image-hover" src="{{media url='infortis/home/banners/banner-1.gif'}}" alt="Sample banner" /></a>
+</div>
+<div class="col-1-4 item">
+<a href="#"><img src="{{media url='infortis/home/banners/banner-2.gif'}}" alt="Sample banner" /></a>
+</div>
+<div class="col-2-4 item last">
+<a href="#"><img src="{{media url='infortis/home/banners/banner-3.gif'}}" alt="Sample banner" /></a>
+</div>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Edgebox right</title>
+         <identifier>block_edgebox_right</identifier>
+         <content><![CDATA[<div class="custom-content">
+	<img src="{{media url='infortis/common/1.jpg'}}" alt="Example" />
+	<h5 class="heading">Sample static CMS block</h5>
+	<p>There are more than 30 CMS blocks (in almost every part of the store) to display your  custom content. Just enable those blocks and insert your content. No coding, everything edited from admin panel</p>
+	<a href="#">Dummy link</a>
+</div>
+
+<div class="side-edgebox-title"><img src="{{media url='infortis/blocks/right-edgebox-label.png'}}" /></div>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Edgebox bottom right</title>
+         <identifier>block_edgebox_bottom_right</identifier>
+         <content><![CDATA[<a title="You could put here a Live Support link or some additional help info" href="#"><img src="{{media url='infortis/blocks/block_edgebox_bottom_right.png'}}" alt="Example Live Cupport" /></a>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Edgebox left</title>
+         <identifier>block_edgebox_left</identifier>
+         <content><![CDATA[<div class="custom-content">
+	<img src="{{media url='infortis/common/2.jpg'}}" alt="Example" />
+	<h5 class="heading">Sample static CMS block</h5>
+	<p>There are 36 static CMS blocks (in almost every part of the store) to display your custom content. Just enable those blocks and insert your content. No coding, everything edited from admin panel</p>
+	<a href="#">Read more</a>
+</div>
+<div class="side-edgebox-title"><img src="{{media url='infortis/blocks/left-edgebox-label.png'}}" /></div>]]></content>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Product replace related</title>
+         <identifier>block_product_replace_related</identifier>
+         <content><![CDATA[<img src="{{media url='infortis/blocks/block_product_replace_related.jpg'}}" alt="Alttext" title="Static CMS block displayed when you want to replace related products with your content." />]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Product replace up-sell</title>
+         <identifier>block_product_replace_upsell</identifier>
+         <content><![CDATA[Static CMS block displayed when you want to replace up-sell products with your content.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Header top links</title>
+         <identifier>block_header_top_links</identifier>
+         <content><![CDATA[<ul class="">
+<li class="first"><a href="#">Sample</a></li>
+<li><a href="#">Header</a></li>
+<li class="last"><a href="#">Links</a></li>
+</ul>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Header top help</title>
+         <identifier>block_header_top_help</identifier>
+         <content><![CDATA[<div class="phone" title="You can put here a phone number or some additional help info" style="margin-right:5px;">
+    <strong>Call Us +001 555 801</strong>
+</div>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Home slide 1</title>
+         <identifier>block_slide1</identifier>
+         <content><![CDATA[	<img src="{{media url='infortis/_home/slideshow/01.jpg'}}" alt="Sample slide" />
+
+	<a href="{{store url='fortis-magento-theme'}}" style="position:absolute; left:301px; bottom:112px;">
+		<img src="{{media url='infortis/blocks/button-more.png'}}" alt="More Details" />
+	</a>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Home slide 2</title>
+         <identifier>block_slide2</identifier>
+         <content><![CDATA[<img src="{{media url='infortis/_home/slideshow/02.jpg'}}" alt="Theme Admin module" />]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Right callout</title>
+         <identifier>block_callout_right</identifier>
+         <content><![CDATA[<a href="#" style="display:block;margin-bottom:20px;" title="Static CMS block displayed in the right sidebar. Put your content here.">
+	<img src="{{media url='infortis/blocks/block_callout_right.jpg'}}" alt="Sample callout" />
+</a>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Home slide 3</title>
+         <identifier>block_slide3</identifier>
+         <content><![CDATA[<img src="{{media url='infortis/_home/slideshow/03.jpg'}}" alt="Sample slide" />]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Footer Below Bottom</title>
+         <identifier>block_footer_below_bottom</identifier>
+         <content><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec sem ante, eget pulvinar lectus. Vestibulum ullamcorper, erat in iaculis aliquam, dolor erat accumsan mauris, vitae gravida libero magna sit amet augue. Quisque tincidunt tempus erat sed tincidunt. Aenean id dui pharetra mauris eleifend sodales. In rutrum sagittis metus, vehicula feugiat leo mattis ut. Fusce at arcu ut dui vestibulum aliquet. Duis eget dolor sit amet purus commodo fermentum ac a est. Nullam viverra quam vel eros luctus sit amet posuere augue pharetra. Maecenas sollicitudin libero.]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Block 2</title>
+         <identifier>block_header_nav_dropdown2</identifier>
+         <content><![CDATA[Add your content here...]]></content>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Mini cart info</title>
+         <identifier>block_mini_cart_above_products</identifier>
+         <content><![CDATA[<a href="{{store url='electronics/cameras'}}" title="Customizable static block for promo informations">Check our latest super promotions!</a>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Block 4</title>
+         <identifier>block_header_nav_dropdown4</identifier>
+         <content><![CDATA[Sample content...]]></content>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+      <cms_block>
+         <title>Custom Block 3</title>
+         <identifier>block_header_nav_dropdown3</identifier>
+         <content><![CDATA[Sample content...]]></content>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+      </cms_block>
+   </blocks>
+</root>

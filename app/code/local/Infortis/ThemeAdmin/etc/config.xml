@@ -5,13 +5,12 @@
  * @package		Infortis_ThemeAdmin
  * @author		Infortis
  * @copyright	Copyright 2012 Infortis
- * @version:    1.3.0
  */
 -->
 <config>
     <modules>
         <Infortis_ThemeAdmin>
-            <version>1.3.0</version>
+            <version>1.5.0</version>
         </Infortis_ThemeAdmin>
     </modules>
     <!--<frontend>
@@ -23,6 +22,28 @@
             </updates>
         </layout>
     </frontend>-->
+	<!--<frontend>
+		<routers>
+			<themeadmin>
+				<use>standard</use>
+				<args>
+					<module>Infortis_ThemeAdmin</module>
+					<frontName>themeadmin</frontName>
+				</args>
+			</themeadmin>
+		</routers>
+	</frontend>-->
+	<admin>
+		<routers>
+			<themeadmin>
+				<use>admin</use>
+				<args>
+					<module>Infortis_ThemeAdmin</module>
+					<frontName>themeadmin</frontName>
+				</args>
+			</themeadmin>
+		</routers>
+	</admin>
     <global>
         <models>
             <themeadmin>
@@ -70,12 +91,6 @@
 				<upsell_enabled>1</upsell_enabled>
 				<replace_upsell>0</replace_upsell>
 			</products>
-			<images>
-				<product_main_width>265</product_main_width>
-				<product_main_height>265</product_main_height>
-				<product_thumbnail_width>56</product_thumbnail_width>
-				<product_thumbnail_height>56</product_thumbnail_height>
-			</images>
 			<footer>
 				<links_column_auto_width>1</links_column_auto_width>
 			</footer>

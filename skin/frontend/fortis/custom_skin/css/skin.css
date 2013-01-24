@@ -1,4 +1,3 @@
-/**
- * In this file you can override default CSS styling of any element of the theme.
- * You can also add your own styling.
- */
+.cms-center{
+	margin: 0 auto;
+}

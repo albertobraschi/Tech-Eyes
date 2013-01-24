@@ -28,13 +28,13 @@
 <?php if ($isSpecial == true): ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/sale.png"); ?>" alt="<?php echo $this->__('Sale'); ?>" class="sticker sticker-top-right" />
 <?php endif; ?>
-<?php if ($_product->getrebate_name()) : ?>
+<?php if ($_product->getrebate()) : ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/rebate.png"); ?>" alt="<?php echo $this->__('Rebate'); ?>" class="sticker sticker-top-right" />
 <?php endif; ?>                        
 <?php if ($_product->getbestseller()) : ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/best.png"); ?>" alt="<?php echo $this->__('BestSeller'); ?>" class="sticker sticker-top-left" />
 <?php endif; ?>
-<?php if ($_product->getgift_name()) : ?>
+<?php if ($_product->getgift()) : ?>
 	<img src="<?php echo $this->getSkinUrl("images/stickers/gift_ribbon.png"); ?>" alt="<?php echo $this->__('Free Gift'); ?>" class="sticker sticker-bottom-right" />
 <?php endif; ?>                        
                         

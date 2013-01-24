@@ -28,18 +28,37 @@
  */
 class TBT_Bss_Block_CatalogSearch_Result  extends Mage_CatalogSearch_Block_Result
 {
-	protected function _toHtml() {
-		$html = parent::_toHtml();
-		
-		//@nelkaake -a 16/11/10: Attempts to append the DYM code to the end of the rendered code of this block
-		// if there were no results in the list.
-		if(!$this->getResultCount() && Mage::getStoreConfigFlag('bss/dym/use_rewrite')) { 
-			$injection = $this->getChildHtml('bss_dym');
-			$html = $html . $injection;
-		}
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->setHeaderText(Mage::helper('bss')->__("Product search results for '%s'", Mage::helper('catalogsearch')->getEscapedQueryText()));
+        $this->setNoResultText(Mage::helper('bss')->__("Your search returns no product results."));
+
+        return $this;
+    }
+
+    protected function _toHtml()
+    {
+        $html = '';
+        // skip product search if disabled in configuration section
+        if (Mage::getStoreConfigFlag('bss/special/catalog')) {
+            $html = parent::_toHtml();
+
+            //@nelkaake -a 16/11/10: Attempts to append the DYM code to the end of the rendered code of this block
+            // if there were no results in the list.
+            if(!$this->getResultCount() && Mage::getStoreConfigFlag('bss/dym/use_rewrite')) {
+                $injection = $this->getChildHtml('bss_dym');
+                $html = $html . $injection;
+            }
+
+        }
+        // if enabled in configuration section, search through CMS pages
+        if (Mage::getStoreConfigFlag('bss/special/cms')) {
+            $injection = $this->getChildHtml('bss_cms_result');
+            $html = $html . $injection;
+        }
+
 		return $html;
-		
 	}
-	
 
 }

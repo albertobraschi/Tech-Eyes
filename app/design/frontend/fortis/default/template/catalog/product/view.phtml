@@ -73,11 +73,10 @@
         <div class="product-top-wrapper">
 			<div class="product-top">
 				<div class="product-top-inner clearer">
-                
-					<?php if ($rightBoxEnabled = $themeHelper->getCfg('products/product_right_box_enabled')): ?>
+                					<?php if ($rightBoxEnabled = $themeHelper->getCfg('products/product_right_box_enabled')): ?>
                         <div class="product-attributes">
     
-                            <?php echo $this->getChildHtml('product_attributes_placeholder'); //Placeholder for brands ?>
+                            <?php echo $this->getChildHtml('product_secondary_top_placeholder'); //Placeholder for brands ?>
                             
                             <?php if ($tmp_html = $this->getChildHtml('i_block_product_right_bottom')): ?>
                                 <div class="product-right-bottom-wrapper"><?php echo $tmp_html; ?></div>
@@ -87,11 +86,11 @@
                                     <?php echo ''.$_product->getIncludereplace().'</span>'?>   
                                  </div>
                         </div> <!-- end: product-attributes -->
-                    <?php endif; ?>
-                    
+                    <?php endif; ?>                    
                     <?php
                     	//Count image box width and "product-shop" width based on image width
-						$newImgWidth = trim($themeHelper->getCfg('images/product_main_width'));
+						$newImgWidth = intval(Mage::helper('infortis_cloudzoom')->getCfg('images/main_width'));
+
 						$defImgWidth = 265;					//Default image width
 						$imgBoxWidth = $defImgWidth + 12;	//Default image box ("product-img-box" class) width
 						$centerBoxWidth = 397;				//Default central box ("product-shop" class) width

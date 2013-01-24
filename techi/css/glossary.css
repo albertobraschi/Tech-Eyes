@@ -1,0 +1,48 @@
+/*
+Skin Name: Tech Eyes
+Description: This is styling for NV Glossary
+Version: 1.0
+Author: Curtis Seaton
+Author URI: http://infin80design.com
+*/
+body{
+	background-image: url(../img/texture.png);
+}
+.page_wrapper {
+	margin:0 auto; 
+	position:relative; 
+	padding:0;
+}
+.selectors {
+	text-align:center;
+	margin:20px auto;
+	border-bottom:1px solid #ef4939;
+	max-width:960px;
+}
+.selectors a {
+	font-family:'OstrichSansMedium';
+	font-weight: normal;
+	text-decoration:none;
+	color:#ef4939;
+	font-size:34px;
+	margin:10px;
+}
+.selectors a.active,
+.selectors a:hover {
+	color:#313131;
+}
+
+h3 a{
+	color:#fa9d11;
+    font-family: 'Gilda Display', serif;
+}
+#glossary{
+    margin: 0 auto;
+	width: 960px;
+	position: relative;
+}
+#glossary p{
+	text-align:justify;
+    font-family: 'Gilda Display', serif;
+    position: relative;
+}

@@ -8,6 +8,6 @@ class Infortis_Brands_Block_Brands extends Mage_Core_Block_Template
 	
 	public function getCurrentProductObject()
 	{
-		return Mage::registry('current_product'); //TODO: check if it's 100% correct!
+		return Mage::registry('current_product');
 	}
 }

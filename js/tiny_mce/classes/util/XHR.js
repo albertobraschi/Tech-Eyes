@@ -12,14 +12,6 @@
  * This class enables you to send XMLHTTPRequests cross browser.
  * @class tinymce.util.XHR
  * @static
- * @example
- * // Sends a low level Ajax request
- * tinymce.util.XHR.send({
- *    url : 'someurl',
- *    success : function(text) {
- *       console.debug(text);
- *    }
- * });
  */
 tinymce.create('static tinymce.util.XHR', {
 	/**

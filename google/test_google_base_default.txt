@@ -1,0 +1,1 @@
+id	title	description	link	image_link	additional_image_link	price	sale_price	sale_price_effective_date	currency	availability	shipping_weight	expiration_date	brand	condition	product_type	google_product_category	payment_accepted

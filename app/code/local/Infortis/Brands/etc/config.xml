@@ -47,6 +47,8 @@
 				<attr_id>manufacturer</attr_id>
 				<image_extension>png</image_extension>
 				<link_search_enabled>1</link_search_enabled>
+				<page_base_path></page_base_path>
+				<append_category_suffix>0</append_category_suffix>
 			</general>
 		</brands>
 	</default>

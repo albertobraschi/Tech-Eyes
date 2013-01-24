@@ -27,7 +27,28 @@ class TBT_Bss_Helper_Data extends Mage_Core_Helper_Abstract {
         return $this;
     }
   
-    
+    public function extractTextFromPage($html, $limit = 0)
+    {
+        $search=array(
+            '@&lt;script.*?&gt;.*?&lt;/script&gt;@si',
+            '@&lt;style.*?&gt;.*?&lt;/style&gt;@si'
+        );
+        $replace=array('','');
+        $result = trim(preg_replace($search,$replace,$html));
+        $result = preg_replace("#\s+#si", " ", trim(strip_tags($result)));
+        // Convert all HTML entities to their applicable characters
+        $result = html_entity_decode($result, ENT_QUOTES, "UTF-8");
+
+        // if limit is set only return first $limit words from content
+        if ($limit) {
+            $words = array();
+            $words = explode(" ", $result, $limit+1);
+
+            $words[$limit] = "...";
+            $result = implode(" ", $words);
+        }
+
+        return $result;
+    }
     
 }
-?>

@@ -32,7 +32,7 @@
 <?php endif; ?>
 
 <?php if ($_product->isAvailable() == false): ?>
-    <p class="availability out-of-stock"><?php echo $this->__('') ?> <span><?php echo $this->__('Call for Order') ?></span></p>
+    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
     <?php echo $this->getPriceHtml($_product) ?>
 <?php endif; ?>
 

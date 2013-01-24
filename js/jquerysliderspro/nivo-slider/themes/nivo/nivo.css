@@ -63,16 +63,16 @@ Author URI: http://dev7studios.com
 	border:0;
 }
 .theme-nivo a.nivo-nextNav {
-	background-position:-43px 0;
+	/*background-position:-43px 0;
 	right:390px;
-    top:350px;
+    top:350px;*/
 }
 .theme-nivo a.nivo-nextNav:hover {
 	background-position:-43px -43px;
 }
 .theme-nivo a.nivo-prevNav {
-	left:390px;
-    top:350px;
+	/*left:390px;
+    top:350px;*/
 }
 .theme-nivo a.nivo-prevNav:hover {
 	background-position:0 -43px;

@@ -73,7 +73,13 @@ class TBT_Bss_Model_CatalogSearch_Mysql4_Fulltext_Collection
      */
     public function addSearchFilter($query) {
         try {
-        	$query = Mage::getModel('bss/catalogSearch_query_cleaner')->replaceBasicSpecialChars($query);
+            // if query is a synonym for other query use the appropriate query text
+            if ($queryText = $this->_getQuery()->getSynonymFor()) {
+                $query = Mage::getModel('bss/catalogSearch_query_cleaner')->replaceBasicSpecialChars($queryText);
+            } else {
+                $query = Mage::getModel('bss/catalogSearch_query_cleaner')->replaceBasicSpecialChars($query);
+            }
+
         	$this->search_query = $query;
         	
             //return parent::addSearchFilter($query);

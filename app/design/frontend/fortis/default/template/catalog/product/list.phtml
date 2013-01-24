@@ -138,9 +138,11 @@
     <?php //List item height callculation
 		$gridMinHeight = intval($themeHelper->getCfg('category_grid/grid_item_min_height'));
 	?>
+    <ul class="products-grid spec-grid spec-grid<?php echo $_columnCount;?>col grid-actions-absolute">
     <?php $i=0; foreach ($_productCollection as $_product): ?>
+      
         <?php if ($i++%$_columnCount==0): ?>
-        <ul class="products-grid spec-grid spec-grid<?php echo $_columnCount;?>col grid-actions-absolute">
+        
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>" <?php if($gridMinHeight) echo 'style="min-height:'.$gridMinHeight.'px;"'; ?>>
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags ($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
@@ -168,9 +170,10 @@
                 </div>
             </li>
         <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
-        </ul>
+        
         <?php endif ?>
         <?php endforeach ?>
+        </ul>
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 

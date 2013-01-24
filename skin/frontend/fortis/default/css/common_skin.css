@@ -242,3 +242,74 @@
 
 /* Newsletter */
 .footer-skin-light #subscribe-form .input-text { color:#000; }
+
+/* Effects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Product image (and other elements)
+-------------------------------------------------------------- */
+.product-image img {
+	transition:			opacity 300ms ease-in-out;
+	-moz-transition:	opacity 300ms ease-in-out;
+	-webkit-transition:	opacity 300ms ease-in-out;
+	-o-transition:		opacity 300ms ease-in-out;
+}
+.product-image img:hover { opacity:0.8; }
+
+
+/* All links
+-------------------------------------------------------------- */
+a {
+	transition:			color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-moz-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-webkit-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-o-transition:		color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+a:hover {
+	opacity:1;
+	transition:			opacity 300ms;
+	-moz-transition:	opacity 300ms;
+	-webkit-transition:	opacity 300ms;
+	-o-transition:		opacity 300ms;
+}
+
+/* Top links
+-------------------------------------------------------------- */
+.user-menu > ul > li {
+	transition:			background-color 300ms ease-in-out;
+	-moz-transition:	background-color 300ms ease-in-out;
+	-webkit-transition:	background-color 300ms ease-in-out;
+	-o-transition:		background-color 300ms ease-in-out;
+}
+.user-menu > ul > li:hover {
+/*	opacity:1;
+	transition:			opacity 300ms ease-in-out;
+	-moz-transition:	opacity 300ms ease-in-out;
+	-webkit-transition:	opacity 300ms ease-in-out;
+	-o-transition:		opacity 300ms ease-in-out;*/
+}
+.user-menu > ul > li > a {
+	transition:			color 300ms ease-in-out;
+	-moz-transition:	color 300ms ease-in-out;
+	-webkit-transition:	color 300ms ease-in-out;
+	-o-transition:		color 300ms ease-in-out;
+}
+.user-menu > ul > li:hover > a {
+	opacity:1;
+	transition:			opacity 300ms;
+	-moz-transition:	opacity 300ms;
+	-webkit-transition:	opacity 300ms;
+	-o-transition:		opacity 300ms;
+}
+
+
+/* Product/item slider
+-------------------------------------------------------------- */
+.itemslider-wrapper .browse-button {
+	opacity:0;
+	transition:			opacity 300ms ease-in-out;
+	-moz-transition:	opacity 300ms ease-in-out;
+	-webkit-transition:	opacity 300ms ease-in-out;
+	-o-transition:		opacity 300ms ease-in-out;
+}
+.itemslider-wrapper:hover .browse-button { opacity:1; }

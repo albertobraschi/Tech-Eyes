@@ -1,0 +1,99 @@
+<root>
+   <pages>
+      <cms_page>
+         <title>SAMPLE Home Page</title>
+         <identifier>sample-home-page</identifier>
+         <content><![CDATA[{{block type="themeadmin/product_list_featured" category_id="12" product_count="8" is_random="0" column_count="4" template="catalog/product/list_featured_slider.phtml"}}
+
+<div class="home-banner-wrapper clearer">{{block id='block_home_banner'}}</div>
+
+{{block type="catalog/product_new" products_count="5" column_count="4" template="catalog/product/new.phtml"}}]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_page>
+      <cms_page>
+         <title>SAMPLE custom page</title>
+         <identifier>sample-custom-page</identifier>
+         <content><![CDATA[<p>Fortis is a high quality Magento theme with administrative module, suitable for every type of store. It was designed with focus on user experience and usability, to make Magento shopping quick, easy and fun.</p>
+
+<p>
+</p><h3 style="font-size: 22px; font-weight: bold;"><a style="color:#333;" title="Buy this theme" href="http://themeforest.net/item/fortis-flexible-magento-theme/1744309?ref=infortis">You can <span style="color:#CE001A;">buy it here</span></a></h3>
+<p></p>
+<p>Fortis  is equipped with a dedicated <strong>administrative module</strong>, which brings all the features necessary for successful webstore - all at the command of a few key strokes.</p>
+<p>The theme is built with SEO best practices in mind to help search engines index the content of your store  with ease.</p>
+
+<h2>Create custom sub-themes</h2>
+<p>
+	<p>Unlike many other themes, Fortis lets you create your custom sub-themes (theme variants). You can create season-specific designs to change the look of your store for holidays, Christmas etc.</p>
+	<p>That's very useful and very easy because Fortis is independent from Magento's "default" theme - it's a separate design package (not a variant of Magento's "default" theme). The most important advantages:</p>
+	<ul class="disc">
+		<li>custom sub-themes are <strong>upgrade-proof</strong></li>
+		<li>less code to maintain</li>
+		<li>selected functionality can be shared between many themes</li>
+	</ul>
+</p>
+<br/>
+
+<h2>Key Features of Fortis Theme</h2>
+
+<ul class="disc">
+  <li><strong>Brand logo</strong> on product page. It can be a link to any page (category with products from that brand, search results or any CMS page)</li>
+  <li><strong>Customizable image size</strong> on product page. Specify any size you like, images don't have to be square - you can keep the aspect ratio</li>
+  <li><strong>Keep the aspect ratio</strong> of product images on category page</li>
+  <li><strong>3 or 4 columns</strong> of products in category view</li>
+  <li><strong>Cloud Zoom and Lightbox </strong>to enlarge product images. Use one of those methods or both at a time</li>
+  <li><strong>Home page slideshow</strong> - fully customizable, easy to use. 27 transition effects, 30 easing methods, editable speed of movement and speed of transition and much more</li>
+  <li><strong>Wide drop-down menu</strong> - custom number of columns (4, 5, 6, 7 or 8 )</li>
+  <li><strong>2 menu styles - </strong>wide drop-down or classic drop-down menu</li>
+  <li><strong>Custom content as a drop-down </strong>block in the main menu</li>
+  <li><strong>40+ CMS blocks (content placeholders)</strong> in almost every part of the store, ready to display custom content. Insert your content into product page, shopping cart, checkout, header, footer, CMS pages etc. Everything edited from admin panel</li>
+  <li><strong>One-click import</strong> - import CMS blocks with  sample content from our demo</li>
+  <li><strong>"New" and "sale" labels</strong> - mark your products with eye-catchung labels</li>
+  <li><strong>Products Sliders</strong> for Up-sell Products and Related Products. Now you can select as much related and up-sell products as you want </li>
+  <li><strong>Featured products slider</strong> - display selected products on any page. Configure the number of products, scrolling speed, automatic or manual scrolling</li>
+  <li><strong>Random products</strong> - display random products in featured products slider</li>
+  <li><strong>Custom tab for individual attributes </strong>on product page - create and display custom product attributes</li>
+  <li><strong>2 tabs for custom content </strong>on product page, ready to display any static content: info about shipping, returns, sales, promotions or any other general info</li>
+  <li><strong>Replace Related Products and  Up-sell Products</strong> blocks with custom content. Replace completely or replace only if the product does not have any related/up-sell products. Or disable those blocks completely with just one click.</li>
+</ul>
+<br/>
+
+<h2>Other Features</h2>
+<ul class="disc">
+  <li>Display your custom link in the top Links block. You can set the path, anchor and title text</li>
+  <li>Enable/disable link to the home page in the main navigation menu. You can use a text or an image as an anchor</li>
+  <li>Enable/disable "Sign Up" link in the Top Links block. It will help new customers to find the registration form</li>
+  <li>You can replace Related Products block with custom static CMS block. There are two options: always replace or replace only if the product does not have any related products.</li>
+  <li>You can replace Up-sell Products block with custom static CMS block. There are two options: always replace or replace only if the product does not have any up-sell products.</li>
+  <li>Drop-down shopping cart in the header</li>
+  <li>Tabbed product data and reviews on product page</li>
+  <li>Large footer block with variable number of columns: 1 to 5. Column width can be calculated automatically (editable from admin panel). Put there your links, latest news or any other content</li>
+  <li>Facebook Like button and other social services bookmarks: you can add them using one of the static blocks on product page</li>
+  <li>Additional links in the header and in the footer</li>
+  </ul>
+<br/>
+
+<h2>Performance</h2>
+<ul class="disc">
+	<li>Images merged into CSS sprites. This method is proven to greatly reduce the amount of HTTP request and <strong>improve page load time</strong></li>
+	<li>Optimized, well-structured and commented PHP, HTML and CSS</li>
+</ul>
+<br/>
+
+<h2>General</h2>
+<ul class="disc">
+	<li>Applicable for multi-language, multi-store installations</li>
+	<li>Clean and simple design</li>
+	<li>Every little detail is styled</li>
+	<li>PSD files supplied: layered and well-structured for easy customization</li>
+	<li>Extensive user guide documentation</li>
+</ul>
+<br/>
+
+<h2>Compatibility</h2>
+<p>Compatible with Magento: 1.5.0.1, 1.5.1.0, 1.6.1.0, 1.6.2.0, 1.7.0.0, 1.7.0.1, 1.7.0.2</p>]]></content>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+      </cms_page>
+   </pages>
+</root>

@@ -48,14 +48,14 @@ class TBT_Bss_Model_Mysql4_Dym_Autocorrect extends TBT_Bss_Model_Mysql4_Dym_Abst
 		$partial_soundex_parts = array();
 		foreach ($query_parts as $qp) {
 			if(trim($qp) == "") continue;
-			$partial_soundex_parts[] = substr(soundex($qp), 0);
+			$partial_soundex_parts[] = $this->_sqlSoundex($conn, $qp);
 		}
 		//echo "<BR /><PRE>Beginning query: {$query} <BR />";
 		
 		
 		//echo "<BR />Partial Parts: <BR />";
 		//print_r($partial_soundex_parts);
-		
+		//echo "<PRE>";
 				
 		$all_word_matches = $this->_getWordMatches($conn, $query_parts, $partial_soundex_parts);
 		/*
@@ -68,10 +68,17 @@ class TBT_Bss_Model_Mysql4_Dym_Autocorrect extends TBT_Bss_Model_Mysql4_Dym_Abst
 		
 		$new_query = $this->_getMostProbablePhrase($query, $all_word_matches);
 		//echo "<BR />NEW query: {$new_query} <BR />";
+		//echo "</PRE>";
         
         return $new_query;
 	}
 	
+	protected function _sqlSoundex($conn, $str) {
+	    $sql = $conn->quoteInto(" SELECT SOUNDEX(?); ", $str);
+	    $soundex_str = $conn->fetchOne($sql);
+	    
+	    return $soundex_str;
+	}
 	
 	/**
 	 *
@@ -199,7 +206,7 @@ class TBT_Bss_Model_Mysql4_Dym_Autocorrect extends TBT_Bss_Model_Mysql4_Dym_Abst
 			
 			
 			// Step #1: Find all possible word matches for the word soundex
-			$possible_words = $this->_getWordsForMatches($word_matches, $partial_soundex_part);
+			$possible_words = $this->_getWordsForMatches($word_matches, $partial_soundex_part, $query_parts[$query_part_index]);
 			
 			// Step #2: Use the most 
 			
@@ -218,28 +225,60 @@ class TBT_Bss_Model_Mysql4_Dym_Autocorrect extends TBT_Bss_Model_Mysql4_Dym_Abst
 	 * @param unknown_type $word_matches
 	 * @return unknown
 	 */
-	protected function _getWordsForMatches($word_matches, $partial_soundex_part) {
+	protected function _getWordsForMatches($word_matches, $partial_soundex_part, $query_part) {
 		$possible_words = array();
+		
+		//echo "query_part:"; print_r($query_part);
+		//echo "word_matches:"; print_r($word_matches);
+		//echo "partial_soundex_part:"; print_r($partial_soundex_part);
 		
 		// #1 Find and weigh all words
 		foreach($word_matches as $word_match) {
 			$word_parts = explode(' ', $word_match['product_name']);
+			
 			$pns_match_search_index = strpos($word_match['pns'], $partial_soundex_part);
+			
 			$pns_match_subsection = substr($word_match['pns'], 0, $pns_match_search_index+strlen($partial_soundex_part));
+			//echo "pns_match_subsection:{$pns_match_subsection};" . "\n";
+			
 			$pns_match_count =  substr_count($pns_match_subsection, "|");
-			if(isset($word_parts[$pns_match_count])) {
-				$word = $word_parts[$pns_match_count];
-				if(!isset($possible_words[$word])) {
-					$possible_words[$word] = array('word'=>$word, 'weight'=>0, 'product_id' => $word_match['product_id']);
-				}
-				$possible_words[$word]['weight'] += 1;
+			//echo "pns_match_count:{$pns_match_count};" . "\n";
+			
+			if(!isset($word_parts[$pns_match_count])) {
+			    continue; // We didn't find the word in the phrase's soundex key (ie PNS), so just continue on. We shouldn't hit here pretty much ever so it's more of a failsafe.
 			}
+			
+			$word = $word_parts[$pns_match_count];
+			
+			if(isset($possible_words[$word])) {
+			    continue; // we've already ranked this word.
+			}
+			
+			// Rank the word using levenshtein
+			$possible_words[$word] = array('word'=>$word, 'weight'=>0, 'product_id' => $word_match['product_id']);
+			$possible_words[$word]['weight'] = $this->_getLevenschteinRank($query_part, $word);
 		}
 		
+		//echo "Possible workds:"; print_r($possible_words);
 		// #2 Create a priority array
 		$possible_words = $this->_getSortedByWeight($possible_words);
 		
 		return $possible_words;
+	}
+	
+	/**
+	 * Returns back a rank with Levenschtein. A '0' indicates that all letters were off, and a number equal to
+	 * the length of the query string indicates that all letters were the same.
+	 * Algorithm is case incensitive
+	 * @param unknown_type $query
+	 * @param unknown_type $challenger
+	 */
+	protected function _getLevenschteinRank($query, $challenger) {
+		$levenshtein_distance = levenshtein( strtolower($query), strtolower($challenger) );
+		$levenshtein_rank = max(0, strlen($query) - $levenshtein_distance);
+		
+		//echo "levenshtein rank between {$query} and {$challenger} is {$levenshtein_rank}.\n";
+		return $levenshtein_rank;
 	}
 	
 	/**

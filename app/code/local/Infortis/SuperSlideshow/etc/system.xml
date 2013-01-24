@@ -1,15 +1,9 @@
 <?xml version="1.0"?>
 <config>
-	<tabs>
-        <infortis translate="label">
-            <label>Infortis Extensions</label>
-            <sort_order>200</sort_order>
-        </infortis>
-    </tabs>
     <sections>
         <superslideshow translate="label">
 			<label>Home Page Slideshow</label>
-			<tab>infortis</tab>
+			<tab>fortis</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>300</sort_order>
 			<show_in_default>1</show_in_default>
