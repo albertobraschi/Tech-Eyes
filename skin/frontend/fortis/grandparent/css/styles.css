@@ -205,7 +205,7 @@ input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { 
 	-webkit-border-fit:lines; /* <- Safari & Google Chrome Fix */ 
-	overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer;
+	overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; 
 
 }
 .account-login button.button , .std button.button ,.products-grid button.button , .account-create button.button{
@@ -2084,7 +2084,8 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .spec-grid {
-	width:937px; /* 697 = 720 - padding-right - padding-left */
+	min-width: 937px; /* 697 = 720 - padding-right - padding-left */
+	max-width: 100%;
 	padding:8px 11px 0 12px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
 	border:none;
 	
@@ -2099,10 +2100,10 @@ tr.summary-details-excluded { font-style:italic; }
 	-moz-border-radius:0 0 2px 2px; -webkit-border-radius:0 0 2px 2px; border-radius:0 0 2px 2px;
 }
 .spec-grid .item {
-	width:140px;
-	height: 280px;
-	padding:15px 22px 22px 19px; /* padding = 15px. Added 7px (shadow width) to right and bottom padding. */
-	margin:0 8px 0 0; /* margin-right = 15px. Subtracted 7px (shadow width) */
+	width: 12.8% ;
+	min-height:280px;
+	padding: 15px 1% 1% 19px;
+	margin: 0px 1% 0px 0px;
 	border:none;
 	
 	background:url(../images/img/grid-item-shadow.png) left bottom no-repeat;
@@ -2118,7 +2119,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Fix for right aligned stickers:
    move sticker 7px left (shadow width). Subtract 2px, because the label sticks out 2px */
-.spec-grid .item .sticker-top-right { right:-3px; }
+.spec-grid .item .sticker-top-right { right:-3px; width: 70px; height: 70px; }
 /*.spec-grid .item .sticker-bottom-right { right:5px;}*/
 
 /* Special grid: 3 columns
@@ -2154,7 +2155,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .grid-wide.spec-grid {
-	width:937px; /* 937 = 960 - padding-right - padding-left */
+	width:98%; /* 937 = 960 - padding-right - padding-left */
 }
 
 /* Special grid, full width: 4 columns
@@ -2291,6 +2292,13 @@ tr.summary-details-excluded { font-style:italic; }
 .itemslider-wrapper .browse-button,
 .itemslider-wrapper .tab-pager { z-index:50; }
 .col-main .std #itemslider {width="100%"}
+/**********************Homepage CSS For Expansion/Responsive/**********************/
+.featured-products-block-container ul li img {width:100%; height: 100%;}
+.slide ul li img {width:100%; height:auto;}
+.featured-products-block-container ul li button {display:none;}
+
+
+
 
 
 
@@ -2544,6 +2552,10 @@ a.email2friend {
 	height:27px;
 	text-indent:-9999em;
 	overflow:hidden;
+	position: relative;
+    top: -20px;
+    left: -20px;
+}
 }
 
 a.link-compare { background-position:0 0; }
@@ -4606,20 +4618,28 @@ end of old CSS - JJ Mas*/
 .brand #one{
     padding-top:13px;
 }
-.view-all{margin:10px 0 0 845px;position:relative; top:10px;}
+.view-all{margin: 10px 0px 0px 90%;}
 
 .brand{
-    width: 960px; 
+    width: 100%; 
     background: -webkit-linear-gradient(top, #eee, #fff);
     background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
     margin-top:20px;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
 }
-.brand ul{margin-top: 10px; padding-bottom:10px;}
+.brand h3 {margin-top: -20px; color: #066CC3; font-family: open sans; font-weight: 600; float:left; position: relative; top: 10px; left:15px;}
+.brand .view-all {position: relative; left: -10px; top: 10px;}
+.brand ul{margin-top: 10px; padding-bottom:10px;  margin-left:auto;
+    margin-right: auto;}
+
 .brand ul li{
-	display:inline;
+	display:inline-block;
 	margin: 0 13px 0 14px;
+	width: 21%;
 }
 .productsection-2 h3{
 	margin-top:25px;
