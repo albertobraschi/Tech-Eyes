@@ -2066,7 +2066,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .grid-wide.products-grid {
-	width:958px; /* 958 = 960 - borders */
+	width:98%; /* 958 = 960 - borders */
 }
 
 /* Grid, full width: 4 columns
@@ -2086,18 +2086,20 @@ tr.summary-details-excluded { font-style:italic; }
 .spec-grid {
 	min-width: 937px; /* 697 = 720 - padding-right - padding-left */
 	max-width: 100%;
-	padding:8px 11px 0 12px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
+	padding: 15px 1% 1% 19px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
 	border:none;
-	
 	background-color:#eee;
 }
-.spec-grid.first {
+
+
+.spec-grid.first  {
 	padding-top:15px;
 	-moz-border-radius:2px 2px 0 0; -webkit-border-radius:2px 2px 0 0; border-radius:2px 2px 0 0;
 }
 .spec-grid.last {
-	border-bottom:8px solid #eee; /* border = 15px. Subtracted 7px (shadow width) */
+	border-bottom:8px solid #eee; 
 	-moz-border-radius:0 0 2px 2px; -webkit-border-radius:0 0 2px 2px; border-radius:0 0 2px 2px;
+	display: inline-block;
 }
 .spec-grid .item {
 	width: 12.8% ;
@@ -2120,6 +2122,9 @@ tr.summary-details-excluded { font-style:italic; }
 /* Fix for right aligned stickers:
    move sticker 7px left (shadow width). Subtract 2px, because the label sticks out 2px */
 .spec-grid .item .sticker-top-right { right:-3px; width: 70px; height: 70px; }
+.spec-grid .item .sticker-top-left { right:-3px; width: 70px; height: 70px; }
+.spec-grid .item .sticker-bottom-right { right:-3px; width: 70px; height: 70px; }
+.spec-grid .item .sticker-bottom-left { right:-3px; width: 70px; height: 70px; }
 /*.spec-grid .item .sticker-bottom-right { right:5px;}*/
 
 /* Special grid: 3 columns
@@ -2132,7 +2137,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid: 4 columns
 -------------------------------------------------------------- */
-.spec-grid4col .item { width:141px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
+.spec-grid4col .item { width:12.8%; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
 .spec-grid4col .product-image { width:141px; /*height:141px;*/ }
 .spec-grid4col .add-to-links { visibility:hidden; }
 .spec-grid4col .item:hover .add-to-links { visibility:visible; }
@@ -2142,6 +2147,20 @@ tr.summary-details-excluded { font-style:italic; }
 .spec-grid4col.grid-actions-absolute .item { padding-bottom:78px;  }
 /* Bottom space equals bottom padding of the item (when "actions" box position != absolute) */
 .spec-grid4col.grid-actions-absolute .actions { position:absolute; bottom:17px; width:141px; }
+
+/* Special grid: 6 columns
+-------------------------------------------------------------- */
+.spec-grid6col .item { width:12.8%; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
+.spec-grid6col .product-image { width:100%; /*height:141px;*/ }
+.spec-grid6col .add-to-links { visibility:hidden; }
+.spec-grid6col .item:hover .add-to-links { visibility:visible; }
+.spec-grid6col .add-to-links li { float:none; }
+.spec-grid6col .add-to-links a.link-compare { margin-top:3px; margin-left:0; }
+
+.spec-grid6col.grid-actions-absolute .item { padding-bottom:78px;  }
+/* Bottom space equals bottom padding of the item (when "actions" box position != absolute) */
+.spec-grid6col.grid-actions-absolute .actions { position:absolute; bottom:17px; width:141px; }
+
 
 /* Special grid - additional classes
 -------------------------------------------------------------- */
@@ -2155,7 +2174,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .grid-wide.spec-grid {
-	width:98%; /* 937 = 960 - padding-right - padding-left */
+	width:97.3%; /* 937 = 960 - padding-right - padding-left */
 }
 
 /* Special grid, full width: 4 columns
@@ -2174,8 +2193,8 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Special grid, full width: 5 columns
 -------------------------------------------------------------- */
-.grid-wide.spec-grid5col .item { width:154px; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
-.grid-wide.spec-grid5col .product-image { width:154px; height:154px; }
+.grid-wide.spec-grid5col .item { width:16.4%; padding:10px 17px 17px 10px; /* padding = 10px. Added 7px (shadow width) to right and bottom padding. */ min-height:270px; }
+.grid-wide.spec-grid5col .product-image { width:100%; height:auto; }
 .grid-wide.spec-grid5col .add-to-links { visibility:hidden; }
 .grid-wide.spec-grid5col .item:hover .add-to-links { visibility:visible; }
 .grid-wide.spec-grid5col .add-to-links li { float:none; }
@@ -2247,6 +2266,7 @@ tr.summary-details-excluded { font-style:italic; }
 	max-width:100%;
 	min-width: 960px;
 	margin:0 auto;
+	background: #eee;
 }
 .itemslider {
 	position:relative;
@@ -2686,7 +2706,7 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 -------------------------------------------------------------- */
 .sticker { border:none; position:absolute; z-index:99; /* Gteater than Cloud Zoom image */ }
 .sticker-top-right { top:-2px; right:-2px; }
-.sticker-bottom-right { top:85px; right:-2px; }
+.sticker-bottom-right { top:70px; right:-2px; }
 .sticker-bottom-left { bottom:-2px; left:-2px; }
 .sticker-top-left { top:-2px; left:-2px; }
 
@@ -4418,7 +4438,7 @@ h1,
 }
 /*********** TECH DEALS**************/
 #techdeals , #techdeals-2{
-	margin-left: 100px;
+	margin-left: 190px;
 	margin-top: 20px;
 }
 #techdeals li {
@@ -4482,12 +4502,12 @@ h1,
 }
 .dealslast1{
 	position: absolute;
-	left: 769px;
+	left: 860px;
 	top: 375px;	
 }
 .dealslast2{
 position: absolute;
-	left: 769px;
+	left: 860px;
 	top: 725px;
 }
 /* original CSS Before I changed it to account for the bigger Blocks 12.6.12

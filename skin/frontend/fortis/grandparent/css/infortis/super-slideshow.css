@@ -4,7 +4,7 @@
 */
 .slideshow-wrapper {
 	position:relative;
-	width:960px;
+	max-width:100%;
 	margin:0 auto 20px;
 }
 ul.slideshow {
@@ -13,12 +13,12 @@ ul.slideshow {
 	padding:0;
 	/* Slideshow: */
 	position:relative;
-	width:960px;
+	max-width:100%;
 	height:420px;
 }
 .slideshow .slide {
 	display:block;
-	width:960px;
+	max-width:100%;
 	height:420px;
 	left:0;
 	top:0;
@@ -71,7 +71,7 @@ ul.slideshow {
 .the-slideshow .slideshow .slide { display:none; overflow:hidden; }
 .the-slideshow .slideshow .slide.first { display:block; }
 
-.the-slideshow .slideshow .slide img {}
+.the-slideshow .slideshow .slide img {width:100%;}
 
 /* Elements in slides
 -------------------------------------------------------------- */

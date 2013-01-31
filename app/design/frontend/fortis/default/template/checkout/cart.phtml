@@ -152,6 +152,7 @@
 <div class="cart-bottom-box cart-wide-box">
     	<!-- related product start from here-->
 <div class="cart-related-wrapper">
+    <h3>You may also like:</h3>  
                   <?php
             $array_added_product = array();
             $total_product= "";
@@ -184,12 +185,8 @@
     <?php
         $product_per_row=3; //how many product show in a row
     ?>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
-  <tr>
-    <td  width="596" align="left" valign="middle" class="tdcolor" colspan="<?php echo $product_per_row; ?>" style="border:1px solid #786571; border-bottom:none;">You may also like:</td>
-  </tr>
-  
-  
+    <!--Start of Cart Accessories-->
+<ul class="cart-accessories">
     <?php
         $product_counter=0;
         foreach ($_product->getData('related_product_ids') as $r_productid) {
@@ -202,36 +199,22 @@
     <?php
         }
     ?>
-        <td align="left" valign="top" style="border:1px solid #786571;">
-                <table width="200" border="0" cellspacing="0" cellpadding="0" style=" <?php //if((($product_counter+1)%$product_per_row)!=0){ echo "border-right:2px solid #9900CC;"; } ?>">
-                   <tr>
-                      <td width="90" align="left" valign="top">
+        <li class="accessory-wrapper">
                           <a href="<?php echo $_product->getProductUrl() ?>" style="text-decoration:none;">
-                            <img src="<? echo Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(90, 90); ?>" alt="<?php echo $this->htmlEscape($_product['name']); ?>" border="0" width="90" />
+                            <img src="<? echo Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(90, 90); ?>" class="product-image" alt="<?php echo $this->htmlEscape($_product['name']); ?>" border="0" width="90" />
                         </a>
-                      </td>
-                      <td width="9">&nbsp;
-                          
-                      </td>
-                      <td width="87" align="left" valign="top">
-                          <a href="<?php echo $_product->getProductUrl() ?>" style="text-decoration:none; font-size:14px; color:#333333; ">
+                        <div class="link">
+                          <a href="<?php echo $_product->getProductUrl() ?>">
                             <br />
                             <?php echo $_product->getName()?>
                         </a>
-                        <div style="font-size:14px; color:#990000;">
+                        <br />
                         <?php $price_mine= (float) $_product->getPrice();
                                $price_mine= number_format($price_mine,2);
-                        
                          ?>
-                            <?php echo "$". $price_mine; ?>
+                            <?php echo "$". $price_mine;  ?>
                         </div>
-                      </td>
-                   </tr>
-                   
-                </table>
-        </td>
-    
-    
+        </li>
     <?php
         $product_counter++;
         if(($product_counter%$product_per_row)==0){
@@ -244,9 +227,9 @@
     <?php
         }
     ?>
-</table>                        
+</ul>                        
     
-                </div>
+</div>
    <!-- related product end here-->            
 </div>
         </div> <!-- end: left-column -->

@@ -2157,7 +2157,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .grid-wide.products-grid {
-	width:958px; /* 958 = 960 - borders */
+	width:98%; /* 958 = 960 - borders */
 }
 
 /* Grid, full width: 4 columns
@@ -2175,7 +2175,7 @@ tr.summary-details-excluded { font-style:italic; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .spec-grid {
-	width:697px; /* 697 = 720 - padding-right - padding-left */
+	width:100%; /* 697 = 720 - padding-right - padding-left */
 	padding:8px 8px 0 15px; /* padding (except bottom) = 15px. Subtracted 7px (shadow width) from right and top padding */
 	border:none;
 	
@@ -4533,7 +4533,7 @@ h1,
 }
 /*********** TECH DEALS**************/
 #techdeals , #techdeals-2{
-	margin-left: 100px;
+	margin-left: 190px;
 	margin-top: 20px;
 }
 #techdeals li {
@@ -4597,12 +4597,12 @@ h1,
 }
 .dealslast1{
 	position: absolute;
-	left: 769px;
+	left: 860px;
 	top: 375px;	
 }
 .dealslast2{
 position: absolute;
-	left: 769px;
+	left: 860px;
 	top: 725px;
 }
 /* original CSS Before I changed it to account for the bigger Blocks 12.6.12
