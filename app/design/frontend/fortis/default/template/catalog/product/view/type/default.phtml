@@ -31,20 +31,64 @@
 	<div class="mclear"></div>
 <?php endif; ?>
 
-<?php if ($_product->isAvailable() == false): ?>
-    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
-    <?php echo $this->getPriceHtml($_product) ?>
-<?php endif; ?>
+<!-- Stock Status -->
+<div class="stock status">
+<?php 
+	$manageStock = $_product->getStockItem()->getManageStock();
 
+	$inventoryQuantity = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty();
 
-<?php /* Magento 1.6.1.0 default file content: ?>
-<?php $_product = $this->getProduct() ?>
+	if ($manageStock == 1) // If 'Manage Stock' is set to YES
+		{
+		// If 'Qty' is less than or equal to zero
+			if($inventoryQuantity <= 0) { ?> 
+				 <div class="availability out-of-stock">
+				 	<span>
+				 	<?php 
+				 		echo $this->__('Out of Stock'); ?>
+				 	</span> 
+				 </div>
+			<?php } else { ?>
+			<div class="availability in-stock">
+				<span>
+					<?php 
+					echo $this->__('In Stock'); ?>
+				</span>
+			</div> 
+		<?php } 
+		}
+	else {  // check if 'fulfillment is set to 'Drop Ships'
+			if ($_product->getAttributeText('fulfillment') == 'Coming Son')
+				{ ?>
+				 <div class="availability drop-ships">
+				 	<span>
+				 	<?php 
+				 		echo $this->_('Coming Soon') ?>
+				 	</span> 
+				 </div>
 
-<?php if ($_product->isAvailable()): ?>
-    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p>
+				<?php }
+				// check if 'fulfillment' is set to 'Stock Backordered' 
+			elseif ($_product->getAttributeText('fulfillment') == "Stock Backordered")
+			 	{ ?>
+			 	 <div class="availability backordered">
+				 	<span>
+				 	<?php 
+				 		echo $this->__('Stock Backordered') ?>
+				 	</span> 
+				 </div>
+
+			 <?php }
+			else { echo "In stock"; } // safe default
+		}
+	?>
+	</div>
+<!-- // Stock Status -->
+
+<!-- the default behaviour of Magento which is NOT being used
+		 is commented below -->
+<?php /* if ($_product->isAvailable()): ?>
+   <div class="availability in-stock"><span><?php echo $this->__('Stock') ?></span></div>
 <?php else: ?>
-    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
-<?php endif; ?>
-<?php echo $this->getChildHtml('product_type_data_extra') ?>
-<?php echo $this->getPriceHtml($_product) ?>
-<?php */?>
+    <div class="availability out-of-stock"> <span><?php echo $this->__('Stock') ?></span></div>
+<?php endif;  */ ?>

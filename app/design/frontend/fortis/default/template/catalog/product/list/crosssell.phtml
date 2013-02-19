@@ -1,25 +1,124 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * - Removed whole <ol> block and replaced with tabs
+ * - Changed image size: 50x50 to 56x56
+ * - Checkbox movead after product name link
+ * - Removed JS script: decorateList
+ */
+ ?>
 <?php if($this->getItems()->getSize()): ?>
-<div class="block-related-wrapper">
-  <div class=" block block-related block-related-tabbed">
-   <div class="pane">
-    <div class="block-title"><strong><span><?php echo $this->__('Customer Choices') ?></span></strong></div>
+	<?php
+		$_productCollection = $this->getItems();
+		$_collectionSize = $_productCollection->count();
+		$_columnCount = 6; //Max number of products in a row
+		$_paneCount = ceil($_collectionSize / $_columnCount); //Current number of rows (which means: number of tabs and panes)
+	    $_i = 0;
+    ?>
+<div id="crosssell">
+ <div class="block-related-wrapper">
+  <div class="block block-related block-related-tabbed">
+    <div class="block-title">
+    	<strong><span><?php echo $this->__('Customers Choices') ?></span></strong>
+	</div>
+	<?php /*?><div class="large-tabs-wrapper clearer">
+	<div class="large-tabs-left large-tabs-bg"></div>
+	<div class="large-tabs large-tabs-bg">
+    	<strong><span><?php echo $this->__('Related Products') ?></span></strong>
+	</div>
+	<div class="large-tabs-right large-tabs-bg"></div>
+</div><?php */?>
     <div class="block-content">
-    <?php foreach ($this->getItems() as $_item): ?>
-      <ol class="mini-products-list">
-        <li class="item">
-         <div class="product">
-            <a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(75); ?>" width="56" height="56" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
-            <div class="product-details">
-                <h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>
+        <div class="tabs-wrapper">
+            <?php if($_paneCount > 1): ?>
+            	<a class="forward browse-button" id="crosssell-tabs-forward">next</a>
+				<a class="backward browse-button disabled" id="crosssell-tabs-backward">previous</a>
+                <div class="tabs tab-pager clearer" id="crosssell-tabs">
+                	<?php for($_t=0; $_t<$_paneCount; $_t++) echo '<a href="#">'.($_t+1).'</a>'; ?>
+				</div>
+            <?php endif; ?>
+        	<div class="tabs-panes">
+				<?php foreach($_productCollection as $_item): ?>
+                	<?php if ($_i++ % $_columnCount == 0): //Open new pane and list of products ?>
+                    <div class="pane">
+                       <ol class="mini-products-list">
+					<?php endif; ?>
+                        <li class="item">
+                         <div class="product">
+                           <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(56) ?>" width="56" height="56" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+                         <div class="product-details">
+                           <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></p>
                 <?php echo $this->getPriceHtml($_item, true) ?>
+                            </div>
+                        </div>   
+                      </li>
+                    <?php if ($_i % $_columnCount == 0 || $_i == $_collectionSize): //Close the pane and list of products ?>
+                       </ol>
+                    </div>
+					<?php endif ?>
+                <?php endforeach ?>
             </div>
-         </div>   
-        </li>
-      </ol>
-    <?php endforeach; ?>
+         </div>
+                 <script type="text/javascript">
+        	jQuery(function() {
+				var countTabs = jQuery("#crosssell-tabs").children().length;
+				
+				jQuery("#crosssell-tabs-backward").click(function() {
+					var currIndex = jQuery("#crosssell-tabs").data("tabs").getIndex();
+					if(currIndex > 0)
+						jQuery("#crosssell-tabs").data("tabs").prev();
+
+					currIndex = jQuery("#crosssell-tabs").data("tabs").getIndex();
+					if(currIndex == 0)
+					{
+						jQuery("#crosssell-tabs-backward").addClass("disabled");
+						jQuery("#crosssell-tabs-forward").removeClass("disabled");
+					}
+					else
+						jQuery("#crosssell-tabs-forward").removeClass("disabled");
+				});
+				
+				jQuery("#crosssell-tabs-forward").click(function() {
+					jQuery("#crosssell-tabs").data("tabs").next();
+					
+					var currIndex = jQuery("#crosssell-tabs").data("tabs").getIndex();
+					if(currIndex == countTabs - 1)
+					{
+						jQuery("#crosssell-tabs-forward").addClass("disabled");
+						jQuery("#crosssell-tabs-backward").removeClass("disabled");
+					}
+					else
+						jQuery("#crosssell-tabs-backward").removeClass("disabled");
+				});
+        	});
+        </script>
+
     </div>
-    <script type="text/javascript">decorateList('crosssell-products-list', 'none-recursive')</script>
-   </div>
-  </div>
-</div>
 <?php endif; ?>
+ </div>
+</div>

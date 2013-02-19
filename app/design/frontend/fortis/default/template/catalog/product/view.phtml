@@ -66,10 +66,7 @@
 					echo '<div class="block-related-wrapper"><div class="product-replace-related-wrapper">' . $replaceRelated_html . '</div></div>';
 		}
 		?>
-       </form>
        </div> 
-                        
-
         <div class="product-top-wrapper">
 			<div class="product-top">
 				<div class="product-top-inner clearer">
@@ -109,7 +106,7 @@
                   <?php if ($_product->getrebate_name()) : ?>
                     <div class="rebate">
                           <img src="../media/wysiwyg/rebate.jpg" alt="rebate"/>
-                          <h2><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h2>
+                          <h3><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h3>
                           <p><?php echo '<span>'.$_product->getRebate_details().'</span>' ?></p>
                        </div>
                   <?php endif; ?>
@@ -121,7 +118,7 @@
                     </div>
                   <?php endif; ?>
                        <div class="sku">
-                          <?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?>
+                          <h2><?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?></h2>
                        </div>
                        <div class="export">
 			             <?php echo ' <span>'.$_product->getExport().'</span>'?>
@@ -189,21 +186,21 @@
 <?php if ($_product->getitar()) : ?>
                         <div class="itar">
                           <img src="../media/wysiwyg/itar.png" alt="itar"/>
-                            <h2>ITAR Restricted Product</h2>
+                            <h3>ITAR Restricted Product</h3>
                               <p>By completing transaction, I acknowledge, understand, and agree to the <a href="http://techeyes.com/index.php/company-policies/?___store=default#answer5" target="_blank">Export Policy</a>.  As a U.S. citizen/person, I do not intend to export this product.</p>
                        </div>
 <?php endif; ?>
 <?php if ($_product->getger()) : ?>
                        <div class="ger">
                         <img src="/media/wysiwyg/warning.png" alt="" />
-                         <h2>Government Export Regulations(GER):</h2>
+                         <h3>Government Export Regulations(GER):</h3>
                           <p>This product may be regulated for export by the U.S. Department of Sate of the U.S. Department of Commerce.  Please see <a href="http://techeyes.com/index.php/company-policies/?___store=default#answer5" target="_blank">Export Policy</a> for further information.</p>
                        </div>
 <?php endif; ?>
 <?php if ($_product->getgr()) : ?>
                        <div class="gr">
                         <img src="/media/wysiwyg/warning.png" alt="" />
-                         <h2>Government Restrictions:</h2>
+                         <h3>Government Restrictions:</h3>
                           <p>This product may be regulated for sale to U.S. Armed Forces, Law Enforcement, or other qualified entities and personal.  For verification purposes, our risk control team will be in touch with you regarding qualifications and documentations.  Some Federal, State, or Local laws and regulations may apply.
                        </div>
 <?php endif; ?>
@@ -225,10 +222,9 @@
         		<div class="container2-wrapper"><?php echo $container2_html; ?></div>
         	<?php endif; ?>
         <?php endif; ?>
-          <div id="group">
         	<?php echo $this->getChildHtml('groupedproductspro') ?>
-          </div>
         <?php echo $this->getChildHtml('crosssell_products') ?>
+    </form>
     <script type="text/javascript">
     //<![CDATA[
         var productAddToCartForm = new VarienForm('product_addtocart_form');

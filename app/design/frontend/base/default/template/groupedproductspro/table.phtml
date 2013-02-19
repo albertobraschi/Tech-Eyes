@@ -26,7 +26,9 @@
 <?php $_associatedProducts = $this->getAssociatedProducts(); ?>
 <?php $_hasAssociatedProducts = count($_associatedProducts) > 0; ?>
 <?php echo $this->getChildHtml('product_type_data_extra') ?>
+<div id="group">
 <table class="data-table grouped-items-table sortable" id="super-product-table">
+    
     <?php echo str_repeat('<col />', count($this->getTableAttributes())) ?>
     <?php if ($_product->isSaleable()): ?>
     <?php if ($this->showQuantityFields()): ?>
@@ -135,9 +137,11 @@
        <tr>
            <td colspan="<?php if ($_product->isSaleable()): ?>4<?php else : ?>3<?php endif; ?>"><?php echo $this->__('No options of this product are available.') ?></td>
        </tr>
+       
     <?php endif; ?>
     </tbody>
 </table>
+</div>
 <script type="text/javascript">
 // Row styling
 TableKit.options.rowEvenClass = 'even';

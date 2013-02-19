@@ -2811,24 +2811,22 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 .products-list .desc li { background:url(../images/img/bullet.png) 0 4px no-repeat; padding-left:13px; }
 
 .export	span{color:#ff0000;}
-.sku span{
-	font-weight: bold;
-}
+
 #pricematch img{padding-bottom:3px; width:100%;}
 .itar,.ger,.gr{
     border: #FFAB19 1px solid;
 	padding: 3px;
 	margin-bottom: 5px;
 }
-.itar h2 , .rebate h2{
+.itar h3 , .rebate h3{
 	color: #FFAB19;
 	margin-left: 30px;
 	margin-top: -19px;
 }
-.ger h2,.gr h2{
+.ger h3,.gr h3{
     color: #FFAB19;
 	margin-left: 30px;
-	margin-top: -19px;
+	margin-top: -18px;
 }
 .rebate {border:#24D600 1px solid;margin-bottom:5px;padding:3px}
 
@@ -2839,9 +2837,10 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 	color: #002A54;
 }
 .gift{border:#790089 1px solid;margin-bottom:5px;padding:3px; min-height:80px;}
-.product-shop .gift span a , .product-shop h2{
+.product-shop .gift span a , .product-shop h3{
 	color: #FFAB19;
-	font-size: 16px;
+	font-weight:500;
+	font-size: 15px;
 }
 .gift img{
 	margin-top:3px;
@@ -4598,12 +4597,12 @@ h1,
 .dealslast1{
 	position: absolute;
 	left: 860px;
-	top: 375px;	
+	top: 430px;	
 }
 .dealslast2{
 position: absolute;
 	left: 860px;
-	top: 725px;
+	top: 780px;
 }
 /* original CSS Before I changed it to account for the bigger Blocks 12.6.12
 #techdeals , #techdeals-2{

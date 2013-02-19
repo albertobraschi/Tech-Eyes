@@ -33,11 +33,10 @@
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
         <?php endif; ?>
-
-    <div id="offer">
+<div id="offer">
 <a href="/make-an-offer">
 <?php $buttonTitle = $this->__('Make An Offer'); ?>
-  <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart"><span><span><?php echo $buttonTitle ?></span></span></button></a>
+  <button type="button" title="<?php echo $buttonTitle ?>" class="button offer btn-cart"><span><span><?php echo $buttonTitle ?></span></span></button></a>
         <?php echo $this->getChildHtml('', true, true) ?>
 </div>
         <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitlefirst ?></span></span></button>
@@ -48,4 +47,31 @@
     <?php if ($_product->getAfter_rebate()) : ?>
 	  <?php echo 'After Rebate<br><span>'.$_product->getAfter_rebate().'</span>' ?>
     <?php endif; ?>
-   </div>  
+   </div> 
+     <div class='popbox'>
+    <a class='open' href='#'>
+      <img src='plus.png' style='width:14px;position:relative;'> Click Here!
+    </a>
+
+    <div class='collapse'>
+      <div class='box'>
+        <div class='arrow'></div>
+        <div class='arrow-border'></div>
+
+        <form action="http://gristmill.createsend.com/t/j/s/nklki/" method="post" id="subForm">
+          <p><small>Please complete the form to sign up for the <a href="http://gristmill.io" target="_blank">Gristmill.io</a> mailing list!</small></p>
+          <div class="input">
+            <input type="text" name="cm-name" id="name" placeholder="Name" />
+          </div>
+          <div class="input">
+            <input type="text" name="cm-nklki-nklki" id="nklki-nklki" placeholder="Email" />
+          </div>
+          <div class="input">
+            <textarea name="cm-f-tlhll" id="Message" placeholder="Comments"></textarea>
+          </div>
+          <input type="submit" value="Get In Touch" /> <a href="#" class="close">Cancel</a>
+        </form>
+
+      </div>
+    </div>
+  </div>

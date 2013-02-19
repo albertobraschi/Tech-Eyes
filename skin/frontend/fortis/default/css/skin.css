@@ -3,7 +3,6 @@
  */
 
 .sample-class { color:#000; }
-.cms-center{width:960px; margin: 0 auto;}
 .home-banner-wrapper img{width:100%;}
 
 /* =============================================================================
@@ -19,4 +18,25 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
 	color: #fff;
+}
+.sku h2{font-size: 12px; color: #000;}
+.sku h2 span{font-size:14px;}
+#group{
+	max-height: 325px;
+	overflow: scroll;
+}
+.block-layered-nav dt{
+	font-weight: bold;
+	padding: 5px 10px 2px;
+	color: #222;
+	background: #eee;
+	text-align: center;
+}
+.availability.out-of-stock span{
+	font-size: 15px;
+	position: relative;
+	top:-10px;
+}
+.availability.in-stock span{
+	font-size:15px;
 }
