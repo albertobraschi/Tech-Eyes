@@ -26,6 +26,7 @@ class VladimirPopov_WebForms_Model_Mysql4_Results_Collection
 			$results = $this->getConnection()->fetchAll($query);
 			foreach($results as $result){
 				$item->setData('field_'.$result['field_id'],trim($result['value']));
+                $item->setData('key_'.$result['field_id'],$result['key']);
 			}
 			
 			$item->setData('ip',long2ip($item->getCustomerIp()));
@@ -37,5 +38,34 @@ class VladimirPopov_WebForms_Model_Mysql4_Results_Collection
 		return $this;
 	}
 	
+	public function addFieldFilter($field_id,$value){
+		$cond = "results_values_$field_id.value like '%".trim(str_replace("'","\\'",$value))."%'";
+		$field = Mage::getModel('webforms/fields')->load($field_id);
+		if(is_array($value)){
+			if(strstr($field->getType(), 'date')){
+				if($value['from']) $value['from'] = "'".date($field->getDbDateFormat(), strtotime($value['orig_from']))."'";
+				if($value['to']) $value['to'] = "'".date($field->getDbDateFormat(), strtotime($value['orig_to']))."'";
+			}
+			if($value['from']){
+				$cond = "results_values_$field_id.value >= $value[from]";
+			}
+			if($value['to']){
+				$cond = "results_values_$field_id.value <= $value[to]";
+			}
+			if($value['from'] && $value['to']){
+				$cond = "results_values_$field_id.value >= $value[from] AND results_values_$field_id.value <= $value[to]";
+			}
+		} 
+		
+		$this->getSelect()
+			->join(array('results_values_'.$field_id => $this->getTable('webforms/results_values')),'main_table.id = results_values_'.$field_id.'.result_id',array('main_table.*'))
+			->group('main_table.id')
+			;
+		
+		$this->getSelect()
+			->where("results_values_$field_id.field_id = $field_id AND $cond");
+					
+		return $this;
+	}
 }  
 ?>

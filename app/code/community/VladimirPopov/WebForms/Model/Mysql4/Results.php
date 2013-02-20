@@ -1,11 +1,7 @@
 <?php
 /**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2011 Vladimir Popov
+ * @copyright  	Copyright (c) 2012 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Model_Mysql4_Results
@@ -35,15 +31,38 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 					$value = implode("\n",$value);
 				}
 				$field = Mage::getModel('webforms/fields')->load($field_id);
+				if(strstr($field->getType(), 'date') && strlen($value)>0){
+					$date = new Zend_Date();
+					$date->setDate($value, $field->getDateFormat(), Mage::app()->getLocale()->getLocaleCode());
+					if($field->getType() == 'datetime')
+						$date->setTime($value, $field->getDateFormat(), Mage::app()->getLocale()->getLocaleCode());
+					$value = date($field->getDbDateFormat(), $date->getTimestamp());
+				}
+				if($field->getType() == 'select/contact' && is_numeric($value)){
+					$value = $field->getContactValueById($value);
+				}
+
+                // create key
+                $key = "";
+                if($field->getType() == 'file' || $field->getType() == 'image'){
+                    $key = Mage::helper('webforms')->randomAlphaNum(6);
+                    if($object->getData('key_'.$field_id))
+                        $key = $object->getData('key_'.$field_id);
+                }
+                $object->setData('key_'.$field_id,$key);
+
 				$select = $this->_getReadAdapter()->select()
 					->from($this->getTable('webforms/results_values'))
 					->where('result_id = ?', $object->getId())
-					->where('field_id = ?', $field_id);	
+					->where('field_id = ?', $field_id);
+
 				$result_value = $this->_getReadAdapter()->fetchAll($select);
-				if(!empty($result_value[0])){
+
+                if(!empty($result_value[0])){
 					$this->_getWriteAdapter()->update($this->getTable('webforms/results_values'),array(
-						"value" => $value,
-						),						
+						    "value" => $value,
+                            "key"   => $key
+					    ),
 						"id = ". $result_value[0]['id']
 					);
 					
@@ -52,6 +71,7 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 						"result_id" => $object->getId(),
 						"field_id" => $field_id,
 						"value" => $value,
+                        "key"   => $key
 					));
 				}
 			}
@@ -64,7 +84,6 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 	
 	protected function _afterLoad(Mage_Core_Model_Abstract $object){
 		$webform = Mage::getModel('webforms/webforms')->load($object->getData('webform_id'));
-		$fields_to_fieldsets = $webform->getFieldsToFieldsets();
 
 		$select = $this->_getReadAdapter()->select()
 			->from($this->getTable('webforms/results_values'))
@@ -73,6 +92,7 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 		
 		foreach($values as $val){
 			$object->setData('field_'.$val['field_id'],$val['value']);
+            $object->setData('key_'.$val['field_id'],$val['key']);
 		}
 		
 		$object->setData('ip',long2ip($object->getCustomerIp()));
@@ -84,11 +104,15 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 	
 	protected function _afterDelete(Mage_Core_Model_Abstract $object){
 		//delete values
-		$values = $this->_getReadAdapter()->delete($this->getTable('webforms/results_values'),
+		$this->_getReadAdapter()->delete($this->getTable('webforms/results_values'),
 			'result_id = '. $object->getId()
 		);	
 		$dir =  Mage::getBaseDir('media') . DS . 'webforms' . DS . $object->getId() ;
 		$this->rrmdir($dir);
+		
+		//clear messages
+		$messages = Mage::getModel('webforms/message')->getCollection()->addFilter('result_id',$object->getId());
+		foreach($messages as $message) $message->delete();
 		
 		Mage::dispatchEvent('webforms_result_delete',array('result'=>$object));
 		
@@ -108,5 +132,4 @@ class VladimirPopov_WebForms_Model_Mysql4_Results
 		rmdir($dir); 
 		} 
    } 
-}  
-?>
+}

@@ -12,7 +12,9 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results extends Mage_Adminhtml_Bloc
 	public function __construct(){
 		$this->_controller = 'adminhtml_results';
 		$this->_blockGroup = 'webforms';
-		$webform = Mage::getModel('webforms/webforms')->load($this->getRequest()->getParam('webform_id'));
+		$webform = Mage::getModel('webforms/webforms')
+			->setStoreId($this->getRequest()->getParam('store'))
+			->load($this->getRequest()->getParam('webform_id'));
 		if(!Mage::registry('webform_data')){
 			Mage::register('webform_data',$webform);
 		}

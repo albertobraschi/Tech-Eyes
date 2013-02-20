@@ -1,1 +1,7 @@
-<input type='text' name='<?php echo $this->getFieldName()?>' id='<?php echo $this->getFieldId()?>' class='<?php echo $this->getFieldClass()?>' style='<?php echo $this->getFieldStyle()?>' value="<?php echo htmlspecialchars($this->getFieldValue())?>"/>
+<?php $hint = htmlspecialchars(trim($this->getField()->getHint())); ?>
+<?php if($this->getFieldValue()) $hint = false;?>
+<input type='text' name='<?php echo $this->getFieldName()?>' id='<?php echo $this->getFieldId()?>'
+       class='<?php echo $this->getFieldClass()?>' style='<?php echo $this->getFieldStyle()?>'
+       value="<?php if ($hint) echo $hint; else echo htmlspecialchars($this->getFieldValue());?>"
+       <?php if ($this->getField()->getDisabled()) { ?> disabled <?php } ?>
+       <?php if($hint){?>onfocus="if (this.value == '<?php echo $hint?>') {this.value = '';}" onblur="if (this.value == '') {this.value = '<?php echo $hint?>';}"<?php } ?>/>

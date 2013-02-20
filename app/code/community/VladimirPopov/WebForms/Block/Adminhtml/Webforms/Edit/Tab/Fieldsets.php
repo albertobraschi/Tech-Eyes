@@ -1,14 +1,14 @@
 <?php
 /**
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2012 Vladimir Popov
+ * @copyright  	Copyright (c) 2013 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fieldsets
 	extends Mage_Adminhtml_Block_Widget_Grid
 {
 	
-	public function _prepareLayout(){
+	protected function _prepareLayout(){
 		
 		parent::_prepareLayout();
 	}
@@ -25,19 +25,19 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fieldsets
 		$this->setDefaultDir('asc');
 		$this->setUseAjax(true);
 		$this->setSaveParametersInSession(true);
-		$this->setFilterVisibility(false);
 	}
 	
 	public function getGridUrl(){
-		return $this->getUrl('*/adminhtml_fieldsets/grid',array('id'=> $this->getRequest()->getParam('id')));
+		return $this->getUrl('*/adminhtml_fieldsets/grid',array('id'=> $this->getRequest()->getParam('id'),'store'=>$this->getRequest()->getParam('store')));
 	}
 
 	public function getRowUrl($row){
-		return $this->getUrl('*/adminhtml_fieldsets/edit', array('id' => $row->getId(), 'webform_id' => $this->getRequest()->getParam('id')));
+		return $this->getUrl('*/adminhtml_fieldsets/edit', array('id' => $row->getId(), 'webform_id' => $this->getRequest()->getParam('id'),'store'=>$this->getRequest()->getParam('store')));
 	}
 	
-	public function _prepareCollection(){
-		$collection = Mage::getModel('webforms/fieldsets')->getCollection()->addFilter('webform_id', $this->getRequest()->getParam('id'));
+	protected function _prepareCollection(){
+		$store = $this->getRequest()->getParam('store');
+		$collection = Mage::getModel('webforms/fieldsets')->setStoreId($store)->getCollection()->addFilter('webform_id', $this->getRequest()->getParam('id'));
 		$this->setCollection($collection);
 		return parent::_prepareCollection();
 	}
@@ -79,6 +79,46 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fieldsets
 		Mage::dispatchEvent('webforms_adminhtml_webforms_tab_fieldsets_prepare_columns',array('grid'=>$this));
 				
 		return parent::_prepareColumns();
+	}
+	
+	protected function _prepareMassaction()
+	{
+		if((float)substr(Mage::getVersion(),0,3)<=1.3 && Mage::helper('webforms')->getMageEdition() != 'EE') return $this;
+		
+		$this->setMassactionIdField('id');
+		$this->getMassactionBlock()->setFormFieldName('id');
+		
+		$this->getMassactionBlock()->addItem('delete', array(
+			 'label'=> Mage::helper('webforms')->__('Delete'),
+			 'url'  => $this->getUrl('*/adminhtml_fieldsets/massDelete', array('webform_id' => $this->getParam('id'))),
+			 'confirm' => Mage::helper('webforms')->__('Are you sure to delete selected elements?')
+		));
+		
+		$statuses = Mage::getModel("webforms/webforms")->getAvailableStatuses();
+		
+		$this->getMassactionBlock()->addItem('status', array(
+			 'label'=> Mage::helper('catalog')->__('Change status'),
+			 'url'  => $this->getUrl('*/adminhtml_fieldsets/massStatus', array('webform_id' => $this->getParam('id'),'store'=>$this->getRequest()->getParam('store'))),
+			 'additional' => array(
+					'visibility' => array(
+						 'name' => 'status',
+						 'type' => 'select',
+						 'class' => 'required-entry',
+						 'label' => Mage::helper('webforms')->__('Status'),
+						 'values' => $statuses
+					 )
+			 )
+		));
+				
+		$this->getMassactionBlock()->addItem('duplicate', array(
+			 'label'=> Mage::helper('webforms')->__('Duplicate'),
+			 'url'  => $this->getUrl('*/adminhtml_fieldsets/massDuplicate',array('webform_id' => $this->getParam('id'))),
+			 'confirm' => Mage::helper('webforms')->__('Are you sure to duplicate selected fieldsets?')
+		));
+		
+		Mage::dispatchEvent('webforms_adminhtml_webforms_grid_prepare_massaction',array('grid'=>$this));
+
+		return $this;
 	}
 }  
 ?>

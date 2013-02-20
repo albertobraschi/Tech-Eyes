@@ -20,6 +20,11 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Information
 	{
 		$model = Mage::getModel('webforms/webforms');
 		$form = new Varien_Data_Form();
+		$renderer = $this->getLayout()->createBlock('webforms/adminhtml_element_field');
+		$form->setFieldsetElementRenderer($renderer);
+		$form->setFieldNameSuffix('form');
+		$form->setDataObject(Mage::registry('webforms_data'));
+		
 		$this->setForm($form);
 		$fieldset = $form->addFieldset('webforms_form',array(
 			'legend' => Mage::helper('webforms')->__('Form Information')
@@ -29,7 +34,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Information
 			'label' => Mage::helper('webforms')->__('Name'),
 			'class' => 'required-entry',
 			'required' => true,
-			'name' => 'webform_name'
+			'name' => 'name'
 		));
 		
 		$fieldset->addField('code','text',array(
@@ -59,7 +64,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Information
 			$editor_type='editor';
 			$style = 'height:20em; width:50em;';
 			$config = $wysiwygConfig;
-			$renderer = $this->getLayout()->createBlock('adminhtml/widget_form_renderer_fieldset_element');
+			//$renderer = $this->getLayout()->createBlock('adminhtml/widget_form_renderer_fieldset_element');
 		}
 		
 		$descField = $fieldset->addField('description',$editor_type,array(
@@ -97,7 +102,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Information
 		$fieldset->addField('is_active', 'select', array(
 			'label'     => Mage::helper('webforms')->__('Status'),
 			'title'     => Mage::helper('webforms')->__('Status'),
-			'name'      => 'webform_is_active',
+			'name'      => 'is_active',
 			'required'  => false,
 			'options'   => $model->getAvailableStatuses(),
 		));

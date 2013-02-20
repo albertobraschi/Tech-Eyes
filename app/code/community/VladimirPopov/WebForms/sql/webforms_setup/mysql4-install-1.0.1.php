@@ -1,5 +1,9 @@
 <?php
 /**
+ * Feel free to contact me via Facebook
+ * http://www.facebook.com/rebimol
+ *
+ *
  * @author 		Vladimir Popov
  * @copyright  	Copyright (c) 2011 Vladimir Popov
  */
@@ -106,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `{$this->getTable('webforms/results_values')}` (
 
 if((float)substr(Mage::getVersion(),0,3)<=1){
 	$installer->run("
-	INSERT INTO `$webforms_table` VALUES(1, 'Contact Us', '<p>You can use this extension to create and manage web-forms on your sites.</p>', '<p>Thank you for contacting me.</p>', 0, 1, 1, '', 0, '2011-06-27 09:54:10', '2011-06-28 04:28:04', 1);
+	INSERT INTO `$webforms_table` VALUES(1, 'Contact Us', '<p>You can use this extension to create and manage web-forms on your sites.</p>', '<p>Thank you for contacting me.</p>\r\n<p>You should get notification e-mail to the address you specified in the form.</p>\r\n<p>If you wonder how survey results are proccessed. Its exported to Excel XML file from administration panel, then analyzed in Excel application.</p>', 0, 1, 1, '', 0, '2011-06-27 09:54:10', '2011-06-28 04:28:04', 1);
 
 	INSERT INTO `{$this->getTable('webforms/fields')}` VALUES(1, 1, 1, 'First name', 'text', 'standard', '{{firstname}}', 0, 'validate-alpha', '', 10, 1, '2011-06-27 09:58:43', '2011-06-27 10:03:03', 1);
 	INSERT INTO `{$this->getTable('webforms/fields')}` VALUES(2, 1, 1, 'Last name', 'text', 'standard', '{{lastname}}', 0, 'validate-alpha', '', 20, 1, '2011-06-27 10:16:03', '2011-06-27 10:16:03', 1);
@@ -130,7 +134,7 @@ if((float)substr(Mage::getVersion(),0,3)<=1){
 	$webform->setData(array(
 		'name' => 'Contact Us',
 		'description' => "<p>You can use this extension to create and manage web-forms on your sites.</p>",
-		'success_text' => "<p>Thank you for contacting me.</p>",
+		'success_text' => "<p>Thank you for contacting me.</p>\r\n<p>You should get notification e-mail to the address you specified in the form.</p>\r\n<p>If you wonder how survey results are proccessed. Its exported to Excel XML file from administration panel, then analyzed in Excel application.</p>",
 		'registered_only' => 0,
 		'send_email' => 1,
 		'approve' => 0,

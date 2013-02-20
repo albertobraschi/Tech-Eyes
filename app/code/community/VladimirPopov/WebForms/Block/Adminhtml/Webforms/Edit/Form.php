@@ -14,7 +14,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_WebForms_Edit_Form
 	protected function _prepareForm(){
 		$form = new Varien_Data_Form(array(
 			'id' => 'edit_form',
-			'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))),
+			'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'),'store' => $this->getRequest()->getParam('store'))),
 			'method' => 'post',
 		));
 		

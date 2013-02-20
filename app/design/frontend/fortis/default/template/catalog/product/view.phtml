@@ -105,7 +105,7 @@
                     <div class="product-shop<?php if($rightBoxEnabled==false) echo ' no-right-border'; ?>"<?php if($newImgWidth) echo " style=\"width:{$centerBoxWidth}px;\"";?>>
                   <?php if ($_product->getrebate_name()) : ?>
                     <div class="rebate">
-                          <img src="../media/wysiwyg/rebate.jpg" alt="rebate"/>
+                          <img src="/media/wysiwyg/rebate.jpg" alt="rebate"/>
                           <h3><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h3>
                           <p><?php echo '<span>'.$_product->getRebate_details().'</span>' ?></p>
                        </div>
@@ -132,7 +132,7 @@
                             </div>
                         <?php endif;?>
                        <div id="pricematch">
-                          <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="../media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
+                          <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="/media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
                        </div>
                         <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
                         	<div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
@@ -185,7 +185,7 @@
                         <?php echo $this->getChildHtml('other'); ?>
 <?php if ($_product->getitar()) : ?>
                         <div class="itar">
-                          <img src="../media/wysiwyg/itar.png" alt="itar"/>
+                          <img src="/media/wysiwyg/itar.png" alt="itar"/>
                             <h3>ITAR Restricted Product</h3>
                               <p>By completing transaction, I acknowledge, understand, and agree to the <a href="http://techeyes.com/index.php/company-policies/?___store=default#answer5" target="_blank">Export Policy</a>.  As a U.S. citizen/person, I do not intend to export this product.</p>
                        </div>

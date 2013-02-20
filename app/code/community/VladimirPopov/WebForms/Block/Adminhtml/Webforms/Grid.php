@@ -5,7 +5,7 @@
  *
  *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2012 Vladimir Popov
+ * @copyright  	Copyright (c) 2011 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Grid
@@ -18,7 +18,6 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Grid
 		$this->setDefaultDir('desc');
 		$this->setSaveParametersInSession(true);
 		$this->setUseAjax(true);
-		$this->setVarNameFilter('product_filter');
 	}
 	
 	public function getGridUrl()
@@ -39,7 +38,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Grid
 	protected function _prepareColumns()
 	{
 		$this->addColumn('id',array(
-			'header' => Mage::helper('webforms')->__('Id'),
+			'header' => Mage::helper('webforms')->__('ID'),
 			'align'	=> 'right',
 			'width'	=> '50px',
 			'index'	=> 'id',
@@ -142,6 +141,12 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Grid
 						 'values' => $statuses
 					 )
 			 )
+		));
+		
+		$this->getMassactionBlock()->addItem('duplicate', array(
+			 'label'=> Mage::helper('webforms')->__('Duplicate'),
+			 'url'  => $this->getUrl('*/*/massDuplicate'),
+			 'confirm' => Mage::helper('webforms')->__('Are you sure to duplicate selected web-forms?')
 		));
 		
 		Mage::dispatchEvent('webforms_adminhtml_webforms_grid_prepare_massaction',array('grid'=>$this));

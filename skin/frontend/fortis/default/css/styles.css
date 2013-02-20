@@ -219,7 +219,6 @@ button.button {
 button.button span {
 	/*background:url(../images/img/btn-big-red.png) no-repeat 0 -35px;*/
 	background-color:#ddd;
-	float:left;
 	display:block;
 	height:35px;
 	padding:0 0 0 8px;
@@ -244,20 +243,11 @@ button.button span span {
 	line-height:35px;
 }
 /*button.button:hover span span { background-position:100% -70px; }*/
-#offer{margin-bottom:8px;}
-#offer .btn-cart span {
+.offer span {
 	background-image:url(../images/img/header-gray-vd.png);
-	height:35px;
-	padding:5px 11px 0 12px;
-	line-height:20px;
-	color:#fff;
 }
-#offer .btn-cart:hover span {
+.offer:hover span {
 	background-image:url(../images/img/header-gray-d.png);
-	height:35px;
-	padding:5px 11px 0 12px;
-	line-height:20px;
-	color:#fff;
 }
 .add-to-box .button{margin-top:5px;}
 
@@ -1048,7 +1038,7 @@ tr.summary-details-excluded { font-style:italic; }
    Set floating because there can be more than one list in a row. */
 .user-menu ul { float:left; }
 #custom{
-	margin-right: -30px;
+	margin-right: -20px;
 }
 .user-menu > ul > li {
 	float:left;
@@ -2063,8 +2053,10 @@ tr.summary-details-excluded { font-style:italic; }
 /*******************WIDGETS***********************************/
 .widget-title{
 	background-image:url(../images/img/large-tabs-bg.png);
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	
 }
 .widget-title h2{
 	margin:0 auto;
@@ -2661,8 +2653,7 @@ a.email2friend:hover { background-position: -54px -27px; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .add-to-cart label { float:left; margin:8px 5px 0 0; font-weight:bold; color:#666; }
-.add-to-cart .qty { float: left; margin: 5px 5px 0 0; }
-.add-to-cart button.button { float:left; }
+.add-to-cart button.button {  }
 .add-to-cart .paypal-logo { clear:left; margin:0; padding:10px 0 0; text-align:right; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 60px 5px 0; }
 .product-view .add-to-cart .paypal-logo { margin:0; }

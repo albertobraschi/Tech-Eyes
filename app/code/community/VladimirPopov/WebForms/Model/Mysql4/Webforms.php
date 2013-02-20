@@ -9,8 +9,14 @@
  */
 
 class VladimirPopov_WebForms_Model_Mysql4_Webforms
-	extends Mage_Core_Model_Mysql4_Abstract
+	extends VladimirPopov_WebForms_Model_Mysql4_Abstract
 {
+	const ENTITY_TYPE = 'form';
+
+	public function getEntityType(){
+		return self::ENTITY_TYPE;
+	}
+	
 	public function _construct(){
 		$this->_init('webforms/webforms','id');
 	}
@@ -42,7 +48,7 @@ class VladimirPopov_WebForms_Model_Mysql4_Webforms
 	protected function _afterLoad(Mage_Core_Model_Abstract $object)
 	{		
 		Mage::dispatchEvent('webforms_after_load',array('webform' => $object));
-		
+				
 		return parent::_afterLoad($object);
 	}
 

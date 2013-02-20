@@ -1,11 +1,7 @@
 <?php
 /**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2011 Vladimir Popov
+ * @copyright  	Copyright (c) 2013 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Fieldsets_Edit_Form
@@ -15,13 +11,20 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fieldsets_Edit_Form
 	protected function _prepareLayout()
 	{
 		parent::_prepareLayout();
-		
+
 		$model = Mage::getModel('webforms/fieldsets');
+		
 		$form = new Varien_Data_Form(array(
 			'id' => 'edit_form',
-			'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))),
+			'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'),'store'=>$this->getRequest()->getParam('store'))),
 			'method' => 'post',
 		));
+		
+		$renderer = $this->getLayout()->createBlock('webforms/adminhtml_element_field');
+		$form->setFieldsetElementRenderer($renderer);
+		$form->setFieldNameSuffix('fieldset');
+		$form->setDataObject(Mage::registry('fieldsets_data'));
+		
 		$fieldset = $form->addFieldset('fieldset_information',array(
 			'legend' => Mage::helper('webforms')->__('Information')
 		));
@@ -48,13 +51,25 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fieldsets_Edit_Form
 			'options'   => Mage::getModel('webforms/webforms')->getAvailableStatuses(),
 		));
 		
-		$fieldset->addField('webform_id', 'hidden', array(
+		$form->addField('webform_id', 'hidden', array(
 			'name'      => 'webform_id',
 			'value'   => 1,
 		));
 		
-		$fieldset->addField('saveandcontinue','hidden',array(
+		$form->addField('saveandcontinue','hidden',array(
 			'name' => 'saveandcontinue'
+		));
+		
+		$fieldset = $form->addFieldset('fieldset_result',array(
+			'legend' => Mage::helper('webforms')->__('Results / Notifications')
+		));
+
+		$fieldset->addField('result_display', 'select', array(
+			'label'     => Mage::helper('webforms')->__('Display'),
+			'title'     => Mage::helper('webforms')->__('Display'),
+			'name'      => 'result_display',
+			'note' => Mage::helper('webforms')->__('Display fieldset name in result / notification messages'),
+			'values'   => Mage::getModel('webforms/fieldsets_display')->toOptionArray(),
 		));
 		
 		if (!$model->getId()) {

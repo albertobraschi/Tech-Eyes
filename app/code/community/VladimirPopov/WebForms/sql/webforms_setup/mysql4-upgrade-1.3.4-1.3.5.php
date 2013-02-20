@@ -28,4 +28,3 @@ ALTER TABLE  `{$this->getTable('webforms/results')}` CHANGE  `customer_ip`  `cus
 ");
 
 $installer->endSetup();
-?>

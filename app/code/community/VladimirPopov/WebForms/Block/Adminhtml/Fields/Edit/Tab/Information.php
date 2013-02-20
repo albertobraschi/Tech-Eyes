@@ -20,6 +20,11 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 	{
 		$model = Mage::getModel('webforms/fields');
 		$form = new Varien_Data_Form();
+		$renderer = $this->getLayout()->createBlock('webforms/adminhtml_element_field');
+		$form->setFieldsetElementRenderer($renderer);
+		$form->setFieldNameSuffix('field');
+		$form->setDataObject(Mage::registry('field'));
+
 		$this->setForm($form);
 		$fieldset = $form->addFieldset('webforms_form',array(
 			'legend' => Mage::helper('webforms')->__('Information')
@@ -32,7 +37,23 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 			'name' => 'name'
 		));
 		
-		$fieldset->addField('result_label','text',array(
+		$fieldset->addField('comment','textarea',array(
+			'label' => Mage::helper('webforms')->__('Comment'),
+			'required' => false,
+			'name' => 'comment',
+			'style' => 'height:10em;',
+			'note' => Mage::helper('webforms')->__('This text will appear under the input field'),
+			'wysiwyg' => true,
+		));
+
+        $fieldset->addField('hint','text',array(
+            'label' => Mage::helper('webforms')->__('Hint'),
+            'required' => false,
+            'name' => 'hint',
+            'note' => Mage::helper('webforms')->__('Hint message will appear in the input and disappear on the focus'),
+        ));
+
+        $fieldset->addField('result_label','text',array(
 			'label' => Mage::helper('webforms')->__('Result label'),
 			'required' => false,
 			'name' => 'result_label',
@@ -53,7 +74,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 			'options'   => $model->getFieldTypes(),
 		));
 	
-		$fieldsetsOptions  = Mage::registry('webforms_data')->getFieldsetsOptionsArray();
+		$fieldsetsOptions  = Mage::registry('webforms_data')/*->setStoreId($this->getRequest()->getParam('store'))*/->getFieldsetsOptionsArray();
 		if(count($fieldsetsOptions)>1){
 			$fieldset->addField('fieldset_id', 'select', array(
 				'label'     => Mage::helper('webforms')->__('Field set'),
@@ -68,7 +89,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 			'label' => Mage::helper('webforms')->__('Field value(s)'),
 			'required' => false,
 			'name' => 'value',
-			'note' => Mage::helper('webforms')->__('Select values should be separated with new line (start with ^ to check default).<br />Default values: <i>{{firstname}}, {{lastname}}, {{email}} etc</i> - logged in customer information'),
+			'note' => Mage::helper('webforms')->__('Select values should be separated with new line (start with ^ to check default).<br />Default values: <i>{{firstname}}, {{lastname}}, {{email}} etc</i> - logged in customer information<br/>Select/Contact values format:<br/><i>Name &lt;mailbox@mysite.com&gt;</i>'),
 		));
 		
 		$fieldset->addField('email_subject', 'select', array(
@@ -104,12 +125,12 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 			'options'   => Mage::getModel('webforms/webforms')->getAvailableStatuses(),
 		));
 		
-		$fieldset->addField('webform_id', 'hidden', array(
+		$form->addField('webform_id', 'hidden', array(
 			'name'      => 'webform_id',
 			'value'   => 1,
 		));
 		
-		$fieldset->addField('saveandcontinue','hidden',array(
+		$form->addField('saveandcontinue','hidden',array(
 			'name' => 'saveandcontinue'
 		));
 
@@ -123,12 +144,12 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fields_Edit_Tab_Information
 		{
 			$form->setValues(Mage::getSingleton('adminhtml/session')->getWebFormsData());
 			Mage::getSingleton('adminhtml/session')->setWebFormsData(null);
-		} elseif(Mage::registry('fields_data')){
-			$form->setValues(Mage::registry('fields_data')->getData());
+		} elseif(Mage::registry('field')){
+			$form->setValues(Mage::registry('field')->getData());
 		} 
 		
 		// set default field values
-		if(!Mage::registry('fields_data')->getId()){
+		if(!Mage::registry('field')->getId()){
 			$form->setValues(array(
 				'webform_id' => $this->getRequest()->getParam('webform_id'),
 				'position' => 10

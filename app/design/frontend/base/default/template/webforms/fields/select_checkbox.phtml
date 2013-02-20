@@ -1,4 +1,4 @@
-<ul style='padding:10px'>
+<ul class="list-select">
 
 <?php
 $validate = '';
@@ -15,7 +15,7 @@ foreach($this->getFieldOptions() as $i=>$option){
 		}
 	}
 	if(!empty($option["value"])){
-		$label = $option["value"];
+		$label = $option["label"];
 		if($option["image_src"]){
 			$label = "<img src='{$option['image_src']}'/>";
 		}

@@ -45,6 +45,13 @@ class VladimirPopov_WebForms_Block_Adminhtml_WebForms_Edit_Tabs
 				'title' => Mage::helper('webforms')->__('Fields'),
 				'content' => $this->getLayout()->createBlock('webforms/adminhtml_webforms_edit_tab_fields')->toHtml(),
 			));
+
+            if(count(Mage::registry('webforms_data')->getLogic()))
+                $this->addTab('logic', array(
+                    'label' => Mage::helper('webforms')->__('Logic'),
+                    'title' => Mage::helper('webforms')->__('Logic'),
+                    'content' => $this->getLayout()->createBlock('webforms/adminhtml_webforms_edit_tab_logic')->toHtml(),
+                ));
 		}
 		
 		if($this->getRequest()->getParam('tab')){

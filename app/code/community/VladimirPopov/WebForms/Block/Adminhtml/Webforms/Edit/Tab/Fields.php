@@ -1,14 +1,18 @@
 <?php
 /**
+ * Feel free to contact me via Facebook
+ * http://www.facebook.com/rebimol
+ *
+ *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2012 Vladimir Popov
+ * @copyright  	Copyright (c) 2011 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fields
 	extends Mage_Adminhtml_Block_Widget_Grid
 {
 	
-	public function _prepareLayout(){
+	protected function _prepareLayout(){
 		parent::_prepareLayout();
 	}
 	
@@ -24,19 +28,18 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fields
 		$this->setDefaultDir('asc');
 		$this->setUseAjax(true);
 		$this->setSaveParametersInSession(true);
-		$this->setFilterVisibility(false);
 	}
 	
 	public function getGridUrl(){
-		return $this->getUrl('*/adminhtml_fields/grid',array('id'=> $this->getRequest()->getParam('id')));
+		return $this->getUrl('*/adminhtml_fields/grid',array('id'=> $this->getRequest()->getParam('id'),'store'=>$this->getRequest()->getParam('store')));
 	}
 	
 	public function getRowUrl($row){
-		return $this->getUrl('*/adminhtml_fields/edit', array('id' => $row->getId(), 'webform_id' => $this->getRequest()->getParam('id')));
+		return $this->getUrl('*/adminhtml_fields/edit', array('id' => $row->getId(), 'webform_id' => $this->getRequest()->getParam('id'), 'store' => $this->getRequest()->getParam('store')));
 	}
 	
-	public function _prepareCollection(){
-		$collection = Mage::getModel('webforms/fields')->getCollection()->addFilter('webform_id', $this->getRequest()->getParam('id'));
+	protected function _prepareCollection(){
+		$collection = Mage::getModel('webforms/fields')->setStoreId($this->getRequest()->getParam('store'))->getCollection()->addFilter('webform_id', $this->getRequest()->getParam('id'));
 		$this->setCollection($collection);
 		return parent::_prepareCollection();
 	}
@@ -60,14 +63,13 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fields
 		));
 		
 		$fieldsetsOptions  = Mage::registry('webforms_data')->getFieldsetsOptionsArray();
-		if(count($fieldsetsOptions)>1) {
-			$this->addColumn('fieldset_id', array(
-				'header'    => Mage::helper('webforms')->__('Field Set'),
-				'index'     => 'fieldset_id',
-				'type'      => 'options',
-				'options'   => $fieldsetsOptions,
-			));
-		}
+		
+		$this->addColumn('fieldset_id', array(
+			'header'    => Mage::helper('webforms')->__('Field Set'),
+			'index'     => 'fieldset_id',
+			'type'      => 'options',
+			'options'   => $fieldsetsOptions,
+		));
 		
 		$this->addColumn('type', array(
 			'header'    => Mage::helper('webforms')->__('Type'),
@@ -106,5 +108,61 @@ class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Edit_Tab_Fields
 		return parent::_prepareColumns();
 	}
 	
+	protected function _prepareMassaction()
+	{
+		if((float)substr(Mage::getVersion(),0,3)<=1.3 && Mage::helper('webforms')->getMageEdition() != 'EE') return $this;
+		
+		$this->setMassactionIdField('id');
+		$this->getMassactionBlock()->setFormFieldName('id');
+		
+		$this->getMassactionBlock()->addItem('delete', array(
+			 'label'=> Mage::helper('webforms')->__('Delete'),
+			 'url'  => $this->getUrl('*/adminhtml_fields/massDelete', array('webform_id' => $this->getParam('id'))),
+			 'confirm' => Mage::helper('webforms')->__('Are you sure to delete selected elements?')
+		));
+		
+		$statuses = Mage::getModel("webforms/webforms")->getAvailableStatuses();
+		
+		$this->getMassactionBlock()->addItem('status', array(
+			 'label'=> Mage::helper('catalog')->__('Change status'),
+			 'url'  => $this->getUrl('*/adminhtml_fields/massStatus', array('webform_id' => $this->getParam('id'),'store'=>$this->getRequest()->getParam('store'))),
+			 'additional' => array(
+					'visibility' => array(
+						 'name' => 'status',
+						 'type' => 'select',
+						 'class' => 'required-entry',
+						 'label' => Mage::helper('webforms')->__('Status'),
+						 'values' => $statuses
+					 )
+			 )
+		));
+		
+		$fieldsetsOptions = Mage::registry('webforms_data')->getFieldsetsOptionsArray();
+		if(count($fieldsetsOptions)>1) {
+			$this->getMassactionBlock()->addItem('fieldset', array(
+				 'label'=> Mage::helper('catalog')->__('Change field set'),
+				 'url'  => $this->getUrl('*/adminhtml_fields/massFieldset', array('webform_id' => $this->getParam('id'),'store'=>$this->getRequest()->getParam('store'))),
+				 'additional' => array(
+						'visibility' => array(
+							 'name' => 'fieldset',
+							 'type' => 'select',
+							 'class' => 'required-entry',
+							 'label' => Mage::helper('webforms')->__('Field Set'),
+							 'values' => $fieldsetsOptions
+						 )
+				 )
+			));
+		}
+		
+		$this->getMassactionBlock()->addItem('duplicate', array(
+			 'label'=> Mage::helper('webforms')->__('Duplicate'),
+			 'url'  => $this->getUrl('*/adminhtml_fields/massDuplicate', array('webform_id' => $this->getParam('id'))),
+			 'confirm' => Mage::helper('webforms')->__('Are you sure to duplicate selected fields?')
+		));
+		
+		Mage::dispatchEvent('webforms_adminhtml_webforms_grid_prepare_massaction',array('grid'=>$this));
+
+		return $this;
+	}
 }  
 ?>

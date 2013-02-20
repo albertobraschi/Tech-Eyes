@@ -1,9 +1,5 @@
 <?php
 /**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
  * @author 		Vladimir Popov
  * @copyright  	Copyright (c) 2012 Vladimir Popov
  */
@@ -22,15 +18,16 @@ class VladimirPopov_WebForms_IndexController extends Mage_Core_Controller_Front_
 	
 	public function iframeAction()
 	{
-		$webform = Mage::getModel('webforms/webforms')->load(Mage::app()->getRequest()->getPost("webform_id"));
+		$webform = Mage::getModel('webforms/webforms')
+			->setStoreId(Mage::app()->getStore()->getId())
+			->load(Mage::app()->getRequest()->getPost("webform_id"));
 
-		$success = false;
 		$result = array("success" => false, "errors" => array());
 		if(Mage::app()->getRequest()->getPost('submitWebform_'.$webform->getId())){
 			$result["success"] = $webform->savePostResult();
 			if($result["success"]){
 				$result["success_text"] = $webform->getSuccessText();
-				if((float)substr(Mage::getVersion(),0,3)>1.3)
+				if((float)substr(Mage::getVersion(),0,3)>1.3 || Mage::helper('webforms')->getMageEdition() == 'EE')
 					$result["success_text"] = Mage::helper('cms')->getPageTemplateProcessor()->filter($webform->getSuccessText());
 				if($webform->getRedirectUrl()){
 					if(strstr($webform->getRedirectUrl(),'://'))	

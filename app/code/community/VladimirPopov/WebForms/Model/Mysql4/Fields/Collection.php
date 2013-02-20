@@ -17,5 +17,21 @@ class VladimirPopov_WebForms_Model_Mysql4_Fields_Collection
 		$this->_init('webforms/fields');
 	}
 	
+	protected function _afterLoad()
+	{
+		$store_id = $this->getResource()->getStoreId();
+		if($store_id){
+			foreach($this as $item){
+				$store = Mage::getModel('webforms/store')->search($store_id,$this->getResource()->getEntityType(), $item->getId());
+				$store_data = $store->getStoreData();
+				if($store_data){
+					foreach($store_data as $key=>$val){
+						$item->setData($key,$val);					
+					}
+				}
+			}
+		}
+		return parent::_afterLoad();
+	}
 }  
 ?>

@@ -1,27 +1,21 @@
 <?php
-/**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
- * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2011 Vladimir Popov
- */
-
 class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 	extends Mage_Adminhtml_Block_Widget_Grid
 {
 	public function __construct(){
 		parent::__construct();
-		$this->setId('webformsGrid');
+		$this->setId('webforms_results_grid_'.$this->getRequest()->getParam('webform_id'));
 		$this->setDefaultSort('created_time');
 		$this->setDefaultDir('desc');
 		$this->setSaveParametersInSession(true);
 		$this->setUseAjax(true);
 		$this->setVarNameFilter('product_filter');
-		$this->setFilterVisibility(false);
 	}
 	
+	public function getRowUrl($row){
+		return $this->getUrl('*/*/reply', array('id' => $row->getId(),'webform_id'=> $row->getWebformId()));
+	}
+
 	public function getGridUrl()
 	{
 		return $this->getUrl('*/*/grid', array('_current'=>true));
@@ -34,7 +28,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 	}
 	
 	protected function _filterCustomerCondition($collection,$column){
-		if (!$value = trim($column->getFilter()->getValue())) {
+		if (!$value = $column->getFilter()->getValue()) {
 			return;
 		}
 		while(strstr($value,"  ")){
@@ -71,7 +65,19 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 	
 	protected function _prepareCollection()
 	{
-		$collection = Mage::getModel('webforms/results')->getCollection()->addFilter('webform_id',$this->getRequest()->getParam('webform_id'));
+		$store = $this->getRequest()->getParam('store');
+		$collection = Mage::getModel('webforms/results')->getCollection()
+			->addFilter('webform_id',$this->getRequest()->getParam('webform_id'));
+		if($store)
+			$collection->addFilter('store_id',$store);
+
+        if($this->_isExport){
+            $Ids = (array)Mage::app()->getRequest()->getParam('internal_id');
+            if(count($Ids)){
+                $collection->addFilter('id',array('in' => $Ids));
+            }
+        }
+
 		$this->setCollection($collection);
 
 		Mage::dispatchEvent('webforms_block_adminhtml_results_grid_prepare_collection',array('grid'=>$this));
@@ -81,14 +87,21 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 	
 	protected function _prepareColumns()
 	{
+        $renderer = 'VladimirPopov_WebForms_Block_Adminhtml_Results_Renderer_Id';
+        if($this->_isExport){
+            $renderer = false;
+        }
 		$this->addColumn('id',array(
-			'header' => Mage::helper('webforms')->__('Id'),
+			'header' => Mage::helper('webforms')->__('ID'),
 			'align'	=> 'right',
 			'width'	=> '50px',
 			'index'	=> 'id',
+			'renderer' => $renderer
 		));
 		
-		$fields = Mage::getModel('webforms/fields')->getCollection()
+		$fields = Mage::getModel('webforms/fields')
+			->setStoreId($this->getRequest()->getParam('store'))
+			->getCollection()
 			->addFilter('webform_id',$this->getRequest()->getParam('webform_id'));
 		$fields->getSelect()->order('position asc');
 		
@@ -110,18 +123,28 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 					'header' => $field_name,
 					'index' => 'field_'.$field->getId(),
 					'sortable' => false,
-					'filter' => false,
+					'filter_condition_callback' => array($this, '_filterFieldCondition'),
 					'renderer' => 'VladimirPopov_WebForms_Block_Adminhtml_Results_Renderer_Value'
 				);
 				if($this->_isExport){
 					$config['renderer'] = false;
 				} else {
+					if($field->getType() == 'image'){
+						$config['filter'] = false;
+						$config['width'] =  Mage::getStoreConfig('webforms/images/grid_thumbnail_width').'px';
+					}
 					if(strstr($field->getType(),'select')){
 						$config['type'] = 'options';
 						$config['options'] = $field->getSelectOptions();
 					}
 					if($field->getType() == 'number' || $field->getType() == 'stars'){
 						$config['type'] = 'number';
+					}
+					if($field->getType() == 'date'){
+						$config['type'] = 'date';
+					}
+					if($field->getType() == 'datetime'){
+						$config['type'] = 'datetime';
 					}
 				}
 				$config = new Varien_Object($config);
@@ -151,6 +174,7 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 				'store_all'     => true,
 				'store_view'    => true,
 				'sortable'      => false,
+				'filter'		=> false,
 				'filter_condition_callback'	=> array($this, '_filterStoreCondition'),
 			));
 		}
@@ -162,7 +186,6 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 				'type'      => 'options',
 				'options'   => Array("1"=>$this->__('Yes'),"0"=>$this->__('No')),
 			));
-			
 		}
 		
 		$this->addColumn('ip',array(
@@ -179,6 +202,16 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 			'type'      => 'datetime',
 		));
 		
+		$this->addColumn('action',
+			array(
+				'header'    =>  Mage::helper('webforms')->__('Action'),
+				'width'     => '60',
+				'filter'    => false,
+				'sortable'  => false,
+				'renderer'	=> 'VladimirPopov_WebForms_Block_Adminhtml_Results_Renderer_Action',
+				'is_system' => true,
+		));
+
 		$this->addExportType('*/*/exportCsv', Mage::helper('webforms')->__('CSV'));
 		$this->addExportType('*/*/exportXml', Mage::helper('webforms')->__('Excel XML'));
 
@@ -217,10 +250,29 @@ class VladimirPopov_WebForms_Block_Adminhtml_Results_Grid
 				 'confirm' => Mage::helper('webforms')->__('Disapprove selected results?'),
 			));
 		}
+		
+		$this->getMassactionBlock()->addItem('reply', array(
+			 'label'=> Mage::helper('webforms')->__('Reply'),
+			 'url'  => $this->getUrl('*/*/reply',array('webform_id'=>$this->getRequest()->getParam('webform_id'))),
+			 'confirm' => Mage::helper('webforms')->__('Reply to selected results?'),
+		));
 
 		Mage::dispatchEvent('webforms_adminhtml_results_grid_prepare_massaction',array('grid'=>$this));
-	
+		
 		return $this;
 	}
+
+	public function _toHtml()
+	{
+		$html = parent::_toHtml();
+		// add store switcher
+		if (!Mage::app()->isSingleStoreMode() && $this->getRequest()->getParam('webform_id') && !$this->getRequest()->getParam('ajax')) {
+			$store_switcher = $this->getLayout()->createBlock('adminhtml/store_switcher','store_switcher');			
+			$store_switcher->setUseConfirm(false);
+			$html = $store_switcher->toHtml().$html;	
+		}
+		return $html;
+	}
+
 }
 ?>

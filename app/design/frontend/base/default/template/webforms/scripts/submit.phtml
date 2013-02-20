@@ -38,6 +38,7 @@ iframe.observe('load',function(){
 				Effect.Fade('webform_<?php echo $this->getWebform()->getId()?>_success_text',{
 					duration:0.5, from:0, to:1
 				});
+				if(<?php echo (int)$this->getData('scroll_to')?>) $('webform_<?php echo $this->getWebform()->getId()?>_success_text').scrollTo();
 			}
 			
 		});
@@ -49,7 +50,7 @@ iframe.observe('load',function(){
 		if(json.errors && typeof(json.errors) == "string"){
 			Dialog.alert(json.errors.unescapeHTML(),{
 				title: "<?php echo $this->__('Error(s) occured')?>",
-				className: "magento",
+				className: "alphacube",
 				width:300, 
 				buttonClass: "button",
 				okLabel: "<?php echo $this->__('Close')?>",

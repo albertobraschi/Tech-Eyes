@@ -19,11 +19,11 @@ foreach(Mage::registry('results') as $result){
 		foreach($fieldset['fields'] as $field){
 			$text = trim($result->getData('field_'.$field->getId()));
 			$filename = $text;
-			if(strlen($text)>0){
+			if(strlen($text)>0 && $field->getResultDisplay() != 'off'){
 ?>
 		<div class="webforms-results-row">
 		
-<?php if(strlen($field->getResultLabel())>1){?>
+<?php if(strlen($field->getResultLabel())>1 && $field->getResultDisplay() != 'value'){?>
 			<div class="webforms-results-label"><?php echo $field->getResultLabel()?> : </div>
 <?php }?>
 

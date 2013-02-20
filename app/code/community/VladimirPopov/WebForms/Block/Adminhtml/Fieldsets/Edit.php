@@ -1,16 +1,19 @@
 <?php
 /**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2011 Vladimir Popov
+ * @copyright  	Copyright (c) 2013 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Fieldsets_Edit
 	extends Mage_Adminhtml_Block_Widget_Form_Container
 {
+	
+	protected function _prepareLayout(){
+
+		parent::_prepareLayout();
+
+	}
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -43,5 +46,18 @@ class VladimirPopov_WebForms_Block_Adminhtml_Fieldsets_Edit
 		}
 	}
 
+	public function getFormHtml()
+	{
+		$html = parent::getFormHtml();
+		// add store switcher
+		if (!Mage::app()->isSingleStoreMode() && $this->getRequest()->getParam('id')) {
+			$store_switcher = $this->getLayout()->createBlock('adminhtml/store_switcher','store_switcher');
+			$store_switcher->setDefaultStoreName($this->__('Default Values'));
+			
+			$html = $store_switcher->toHtml().$html;
+			
+		}
+		return $html;
+	}
 }  
 ?>

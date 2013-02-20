@@ -1,11 +1,7 @@
 <?php
 /**
- * Feel free to contact me via Facebook
- * http://www.facebook.com/rebimol
- *
- *
  * @author 		Vladimir Popov
- * @copyright  	Copyright (c) 2011 Vladimir Popov
+ * @copyright  	Copyright (c) 2013 Vladimir Popov
  */
 
 class VladimirPopov_WebForms_Block_Adminhtml_Webforms_Renderer_Action extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
