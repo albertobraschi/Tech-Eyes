@@ -113,41 +113,45 @@
                  <li class="user-menu-item user-menu-deals">
                    <a href="/techdeals">Tech Deals</a>
                  <li>
-                  <li id="compare" class="user-menu-item user-menu-cart"><?php 
+                 <li id="compare" class="user-menu-item user-menu-cart"><?php 
                      $_helper = $this->helper('catalog/product_compare');
                      $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
-                  ?>
+                                                                           ?>
                      <div class="block block-list block-compare">
                        <div class="block-title" onclick="popWin('<?php echo $_helper->getListUrl() ?>','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')">
-                        <strong><span><?php echo $this->__('Compare Products') ?>
-                         <?php if($_helper->getItemCount() > 0): ?> 
-                         <small><?php echo $this->__('(%d)', $_helper->getItemCount()) ?></small>
-                         <?php endif; ?>
-                         <div id="head-compare">
-    <a href="<?php echo $_helper->getClearListUrl() ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove all products from your comparison?') ?>');"><?php echo $this->__('Clear All') ?></a>
-                         </div>
-                      </span></strong>
-                    </div></li>
+                        <strong>
+                         <span>
+                          <?php echo $this->__('Compare Products') ?>
+                           <?php if($_helper->getItemCount() > 0): ?> 
+                            <small><?php echo $this->__('(%d)', $_helper->getItemCount()) ?></small>
+                           <?php endif; ?>
+                        <div id="head-compare">
+                         <a href="<?php echo $_helper->getClearListUrl() ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove all products from your comparison?') ?>');"><?php echo $this->__('Clear All') ?></a>
+                        </div>
+                      </span>
+                     </strong>
+                    </div>
+                  </li>
                 </ul>
-                <?php //<?php echo $this->getChildHtml('topLinks') ?>
-				<?php // If customer is not logged in: show "Sign Up" link, if enabled ?>
-                <?php if (Mage::getSingleton('customer/session')->isLoggedIn() == false): ?>
-                    <?php if ($themeHelper->getCfg('header/links_signup_enabled')): ?>
-                        <ul>
-                            <li class="user-menu-item user-menu-signup">
-                                <a href="<?php echo Mage::getURL('') ?>customer/account/create/"><?php echo $this->__('Sign Up') ?></a>
-                            </li>
-                        </ul>
-                    <?php endif?>
-                <?php endif?>
+              <?php //<?php echo $this->getChildHtml('topLinks') ?>
+		      <?php // If customer is not logged in: show "Sign Up" link, if enabled ?>
+              <?php if (Mage::getSingleton('customer/session')->isLoggedIn() == false): ?>
+              <?php if ($themeHelper->getCfg('header/links_signup_enabled')): ?>
                 <ul>
-                	<li id="mini-cart" class="user-menu-item user-menu-cart">
-						<?php echo $this->getChildHtml('cart_sidebar') ?>
-                	</li>
+                  <li class="user-menu-item user-menu-signup">
+                     <a href="<?php echo Mage::getURL('') ?>customer/account/create/"><?php echo $this->__('Sign Up') ?></a>
+                  </li>
+                </ul>
+              <?php endif?>
+              <?php endif?>
+                <ul>
+                   <li id="mini-cart" class="user-menu-item user-menu-cart">
+				     <?php echo $this->getChildHtml('cart_sidebar') ?>
+                   </li>
                 </ul>
             </div>
         </div> <!-- end: header-right -->
-        </div> <!-- end: header-container2 -->
+      </div> <!-- end: header-container2 -->
     </div> <!-- end: header -->
     <?php echo $this->getChildHtml('topMenu') ?>
 </div> <!-- end: header-container -->
