@@ -151,11 +151,6 @@
     </div> <!-- end: header -->
     <?php echo $this->getChildHtml('topMenu') ?>
 </div> <!-- end: header-container -->
-    <div id="ad">
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top_ad')->toHtml() ?>
-</div>
-
-	
 <?php // Additional static CMS blocks ?>
 <?php if ($tmp_html = $this->getChildHtml('i_block_edgebox_right')): ?> <?php //Predefined CMS block ?>
 	<div class="edgebox side-edgebox right-edgebox">

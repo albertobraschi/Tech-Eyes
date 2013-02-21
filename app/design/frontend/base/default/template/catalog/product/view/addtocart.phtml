@@ -30,15 +30,12 @@
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
        <?php if(!$_product->isGrouped()): ?>
-       <div class="qty">
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
         <?php endif; ?>
-       </div>
 <div id="offer">
-<a href="#openModal">
 <?php $buttonTitle = $this->__('Make An Offer'); ?>
-  <button type="button" title="<?php echo $buttonTitle ?>" class="button offer btn-cart"><span><span><?php echo $buttonTitle ?></span></span></button></a>
+  <button type="button" title="<?php echo $buttonTitle ?>" onclick="location.href='/make-an-offer'" class="button offer btn-cart"><span><span><?php echo $buttonTitle ?></span></span></button></a>
         <?php echo $this->getChildHtml('', true, true) ?>
 </div>
         <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitlefirst ?></span></span></button>
@@ -50,4 +47,3 @@
 	  <?php echo 'After Rebate<br><span>'.$_product->getAfter_rebate().'</span>' ?>
     <?php endif; ?>
    </div>
-</div> 

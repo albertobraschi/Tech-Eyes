@@ -1,6 +1,13 @@
 /**
  * Skin specific styling
  */
+ /* =============================================================================
+    add to cart
+    ========================================================================== */
+ .add-to-box .button{
+	 float: right;
+	 padding: 1px;
+ }
 
 .sample-class { color:#000; }
 .home-banner-wrapper img{width:100%;}

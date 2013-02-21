@@ -1,4 +1,11 @@
 /**
  * Skin specific styling for IE
  */
-
+#openModal{
+	display: none;
+}
+#after-rebate{
+   float: right;
+   position: relative;
+   top:-125px;
+}

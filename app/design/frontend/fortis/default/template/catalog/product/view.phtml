@@ -328,3 +328,16 @@
         <?php echo $this->getChildHtml('product_additional_data') ?>
 	</div>
 </div>
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" id="cboxClose" class="close">X</a>
+		<h2>Make us an offer!</h2>
+<?php
+echo $this->getLayout()->createBlock('webforms/webforms', 'test', array
+(
+    'webform_id' => 2,
+    'template' => 'webforms/default.phtml',
+))->toHtml();
+?>	
+</div>
+</div>

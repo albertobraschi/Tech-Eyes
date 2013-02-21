@@ -1037,9 +1037,6 @@ tr.summary-details-excluded { font-style:italic; }
 /* "ul" is a list of default Magento links or additional custom links added in header template.
    Set floating because there can be more than one list in a row. */
 .user-menu ul { float:left; }
-#custom{
-	margin-right: -20px;
-}
 .user-menu > ul > li {
 	float:left;
 	margin-left:10px;
@@ -1518,7 +1515,6 @@ tr.summary-details-excluded { font-style:italic; }
 	-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;
 }
 #mini-cart .block-title-white .heading {
-	background:url(../images/img/pix.png) 0 -205px no-repeat;
 	float:left;
 	width:35px;
 	height:32px;
@@ -1685,7 +1681,6 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .header .block .block-title strong span{color: #fff; margin-right: 20px; font-weight:400;font-size:11px; margin-top: -7px;}
 .header .block .block-title:hover{background-color:rgba(255,255,255,0.3); }
-#compare{margin-right:20px;}
 
 
 .block .block-title strong {

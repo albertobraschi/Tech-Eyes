@@ -13,14 +13,15 @@
 			<action method="addJs"><script>infortis/jquery/jquerytools/tools.tooltip-1.2.7.min.js</script></action>
 			<action method="addJs"><script>infortis/jquery/plugins/jquery.cycle.2.999.js</script></action>
 			<action method="addJs"><script>infortis/jquery/plugins/jquery.easing.1.3.js</script></action>
-			<action method="addJs"><script>popbox.js</script></action>
+			<action method="addJs"><script>jquery/text.js</script></action>
+			
 			<!-- Other JS scripts
 			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action> -->
 			
 			<!-- CSS -->
 			<action method="addItem"><type>skin_css</type><name>css/common_skin.css</name><params/></action>
 			<action method="addItem"><type>skin_css</type><name>css/skin.css</name><params/></action>
-			<action method="addItem"><type>skin_css</type><name>css/popbox.css</name><params/></action>
+			
 			<action method="addItem" ifconfig="themeadmin/mainmenu/standard_menu_enabled"><type>skin_css</type><name>css/menu_standard.css</name><params/></action>
 			<action method="addItem" ifconfig="themeadmin/mainmenu/wide_menu_enabled"><type>skin_css</type><name>css/menu_wide.css</name><params/></action>
 			

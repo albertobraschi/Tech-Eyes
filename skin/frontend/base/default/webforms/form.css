@@ -45,6 +45,6 @@ p.webforms-error-message {
 	float:none !important;
 }
 
-ul.form-list, ul.form-list ul{
-	list-style-type: none;
-}
+.list-select{padding:10px !important;}
+
+.form-list li, li.control {list-style:none}
