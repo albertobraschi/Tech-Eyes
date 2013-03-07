@@ -32,6 +32,7 @@
 <?php endif; ?>
 
 <!-- Stock Status -->
+<!-- Stock Status -->
 <div class="stock status">
 <?php 
 	$manageStock = $_product->getStockItem()->getManageStock();
@@ -58,23 +59,23 @@
 		<?php } 
 		}
 	else {  // check if 'fulfillment is set to 'Drop Ships'
-			if ($_product->getAttributeText('fulfillment') == 'Coming Son')
+			if ($_product->getAttributeText('fulfillment') == "Coming Soon")
 				{ ?>
-				 <div class="availability drop-ships">
+				 <div class="availability in-stock">
 				 	<span>
 				 	<?php 
-				 		echo $this->_('Coming Soon') ?>
+				 		echo $this->__('Coming Soon') ?>
 				 	</span> 
 				 </div>
 
 				<?php }
 				// check if 'fulfillment' is set to 'Stock Backordered' 
-			elseif ($_product->getAttributeText('fulfillment') == "Stock Backordered")
+			elseif ($_product->getAttributeText('fulfillment') == "Pre-Order")
 			 	{ ?>
-			 	 <div class="availability backordered">
+			 	 <div class="availability in-stock">
 				 	<span>
 				 	<?php 
-				 		echo $this->__('Stock Backordered') ?>
+				 		echo $this->__('Pre-Order') ?>
 				 	</span> 
 				 </div>
 

@@ -41,10 +41,10 @@
 <div class="product-view" itemscope itemtype="http://schema.org/Product">
     <?php //my:del <div class="product-essential"> ?>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-        <div class="no-display">
+       <div class="no-display">
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
-        </div>
+       </div>
        <div class="cross">
                <?php // Related products
 		$replaceRelated = $themeHelper->getCfg('products/replace_related');
@@ -70,11 +70,9 @@
         <div class="product-top-wrapper">
 			<div class="product-top">
 				<div class="product-top-inner clearer">
-                					<?php if ($rightBoxEnabled = $themeHelper->getCfg('products/product_right_box_enabled')): ?>
+                	<?php if ($rightBoxEnabled = $themeHelper->getCfg('products/product_right_box_enabled')): ?>
                         <div class="product-attributes">
-    
                             <?php echo $this->getChildHtml('product_secondary_top_placeholder'); //Placeholder for brands ?>
-                            
                             <?php if ($tmp_html = $this->getChildHtml('i_block_product_right_bottom')): ?>
                                 <div class="product-right-bottom-wrapper"><?php echo $tmp_html; ?></div>
                             <?php endif; ?>
@@ -87,7 +85,6 @@
                     <?php
                     	//Count image box width and "product-shop" width based on image width
 						$newImgWidth = intval(Mage::helper('infortis_cloudzoom')->getCfg('images/main_width'));
-
 						$defImgWidth = 265;					//Default image width
 						$imgBoxWidth = $defImgWidth + 12;	//Default image box ("product-img-box" class) width
 						$centerBoxWidth = 397;				//Default central box ("product-shop" class) width
@@ -103,37 +100,35 @@
                         <h1 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name')?></h1>
                     </div>
                     <div class="product-shop<?php if($rightBoxEnabled==false) echo ' no-right-border'; ?>"<?php if($newImgWidth) echo " style=\"width:{$centerBoxWidth}px;\"";?>>
-                  <?php if ($_product->getrebate_name()) : ?>
-                    <div class="rebate">
-                          <img src="/media/wysiwyg/rebate.jpg" alt="rebate"/>
-                          <h3><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h3>
-                          <p><?php echo '<span>'.$_product->getRebate_details().'</span>' ?></p>
-                       </div>
-                  <?php endif; ?>
-                  <?php if ($_product->getgift_name()) : ?>
-                    <div class="gift">
-                          <img src=" <?php echo $this->helper('catalog/image')->init($_product, 'gift_image');?>"/>
-                          <h2><?php echo '<span>'.$_product->getGift_name().'</span>' ?></h2>
-                          <p><?php echo '<span>'.$_product->getGift_details().'</span>' ?></p>
-                    </div>
-                  <?php endif; ?>
-                       <div class="sku">
-                          <h2><?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?></h2>
+                      <?php if ($_product->getrebate_name()) : ?>
+                        <div class="rebate">
+                            <img src="/media/wysiwyg/rebate.jpg" alt="rebate"/>
+                            <h3><?php echo '<span>'.$_product->getRebate_name().'</span>' ?></h3>
+                            <p><?php echo '<span>'.$_product->getRebate_details().'</span>' ?></p>
+                        </div>
+                      <?php endif; ?>
+                      <?php if ($_product->getgift_name()) : ?>
+                        <div class="gift">
+                            <img src=" <?php echo $this->helper('catalog/image')->init($_product, 'gift_image');?>"/>
+                            <h2><?php echo '<span>'.$_product->getGift_name().'</span>' ?></h2>
+                            <p><?php echo '<span>'.$_product->getGift_details().'</span>' ?></p>
+                        </div>
+                      <?php endif; ?>
+                        <div class="sku">
+                           <h2><?php echo 'SKU:&nbsp;<span>'.$_product->getSku().'</span>' ?></h2>
                        </div>
                        <div class="export">
-			             <?php echo ' <span>'.$_product->getExport().'</span>'?>
+			               <?php echo ' <span>'.$_product->getExport().'</span>'?>
 			           </div>
-
                         <div><?php echo $this->getReviewsSummaryHtml($_product, false, true); //reviews ?></div>
-                        
                         <?php if ($_product->getShortDescription()): ?>
                             <div class="short-description">
                                 <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                             </div>
                         <?php endif;?>
-                       <div id="pricematch">
-                          <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="/media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
-                       </div>
+                          <div id="pricematch">
+                              <a href="http://techeyes.com/index.php/customer-service/?___store=default#answer5"><img src="/media/infortis/_home/banners/price_match_medium.png" alt="price match"/></a>
+                          </div>
                         <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
                         	<div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
 						<?php endif; ?>
@@ -270,8 +265,6 @@
     //]]>
     </script>
     <!-- here was the end: product-essential -->
-    
-
 	<div class="product-collateral">
     	<?php $info_tabs_html = $this->getChildHtml('info_tabs');
 			if (trim($info_tabs_html)) echo $info_tabs_html; ?>
@@ -291,8 +284,6 @@
             jQuery(".tabs").tabs(".tabs-panes .pane", {rotate: false});
         });
         </script>
-
-      
         <?php
 		//Up-sell products (replace with static CMS block, if enabled)
 		$upsellEnabled = $themeHelper->getCfg('products/upsell_enabled');
@@ -324,7 +315,6 @@
 					echo '<div class="product-replace-upsell-wrapper">' . $replaceUpsell_html . '</div>';
 		}
 		?>
-        
         <?php echo $this->getChildHtml('product_additional_data') ?>
 	</div>
 </div>
@@ -332,12 +322,13 @@
 	<div>
 		<a href="#close" title="Close" id="cboxClose" class="close">X</a>
 		<h2>Make us an offer!</h2>
-<?php
-echo $this->getLayout()->createBlock('webforms/webforms', 'make an offer', array
+		<?php
+echo $this->getLayout()->createBlock('webforms/webforms', 'my_webform_block', array
 (
     'webform_id' => 2,
     'template' => 'webforms/default.phtml',
 ))->toHtml();
-?>	
-</div>
+?>
+
+    </div>
 </div>

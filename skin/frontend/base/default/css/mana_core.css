@@ -27,6 +27,7 @@
     font-weight:bold;
     text-align:center;
     z-index:20100;
+    opacity: 0.7;
     }
 .m-popup {
     position: absolute;
@@ -36,9 +37,9 @@
 .m-popup-overlay {
     position: absolute;
     background: ;
-    filter: alpha(opacity = 0); /* percent */
-    -moz-opacity: 0;
-    -khtml-opacity: 0;
-    opacity: 0;
+    filter: alpha(opacity = 0.7); /* percent */
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
     z-index: 10000;
 }

@@ -17,7 +17,7 @@ if(strpos($link_temp,'?fb_comment_id')){
 <?php $isHiddenComment = $this->helper('fbcomment')->isHiddenComment()?>
 <?php if(!$isHiddenComment){?>
 	<div class="box-collateral fbcomment">
-    	<h2><?php echo $this->__('Comments') ?></h2>
+    	<h3><?php echo $_product, $_product->getName(), '&nbsp;Reviews'?></h3>
 	<?php }?>
 
 <?php if(!$isHiddenLike || !$isHiddenComment){?>    

@@ -4,13 +4,22 @@
  /* =============================================================================
     add to cart
     ========================================================================== */
- .add-to-box .button{
-	 float: right;
-	 padding: 1px;
+ .add-to-cart button.button{
+	 margin-top: 20px;
+ }
+ a img:hover{
+	 opacity: 1;
+ }
+ #offer{
+	 margin-top: 24px;
  }
 
 .sample-class { color:#000; }
 .home-banner-wrapper img{width:100%;}
+
+/* After Rebate Price */
+.product-shop #after-rebate{font-size:11px; color:#999999; position: relative; left: 60px; top:-85px;}
+.product-shop #after-rebate span{ font-size:13px; color: #CE001A;}
 
 /* =============================================================================
    Cart Page Cross Sells
@@ -67,21 +76,32 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 	pointer-events: none;
+	display: none;
 }
 .modalDialog:target {
 	opacity:1;
 	pointer-events: auto;
+	display: block;
 }
 
 .modalDialog > div {
-	width: 70%;
+	width: 50%;
 	position: relative;
 	margin: 1% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
 	background: rgba(255,255,255,1);
+	background-color: #FFFFFF;
 	height: 90%;
 	overflow: scroll;
+}
+#webform_2_form{
+}
+
+.modalDialog .left-company{
+	float:right;
+	width: 30%;
+	margin-top: -54%;
 }
 .close {
 	line-height: 25px;
@@ -92,4 +112,29 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
+}
+/* =============================================================================
+   Facebook Coments
+   ========================================================================== */
+.fbcomment h3{
+	font-size: 16px;
+	margin-top: 3px;
+}
+/* =============================================================================
+   Grandparent Pages
+   ========================================================================== */
+.right-ads{
+    float: right;
+	margin-top: -393px;
+}
+.right-ads li{
+	margin-top: 3.9%;
+}
+/* =============================================================================
+   Grandparent Structure
+   ========================================================================== */
+.slide-wrap{
+	width: 56%;
+	height: auto;
+	margin-bottom: 15px;
 }

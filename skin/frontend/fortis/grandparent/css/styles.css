@@ -1495,6 +1495,7 @@ tr.summary-details-excluded { font-style:italic; }
 	height:32px;
 	margin:0 2px 0 3px;
 	text-indent:-9999px;
+	background:url(../images/img/pix.png) 0 -205px no-repeat;
 	overflow:hidden;
 }
 #mini-cart .block-title .empty { margin-right:5px; }
@@ -4141,10 +4142,9 @@ a:hover .chart {background: url(../images/chart_button_hover.png) no-repeat;}
 /*Site seals*/
 .footer_seals{
    margin: auto 0;
-   width: 960px;
 }
 .footer_seals ul{
-	width:720px;
+	width:420px;
 	margin: auto;
 }
 .footer_seals ul li{
@@ -4599,15 +4599,17 @@ end of old CSS - JJ Mas*/
     background: -ms-linear-gradient(top, #eeeeee, #ffffff);
     background: -o-linear-gradient(top, #eeeeee, #ffffff);
 	width: 100%; 
-	height: 250px; 
+	height: auto; 
 	margin-bottom: 15px;
+	text-align: justify;
+	padding: 10px;
 }
-#content-box p{
+/*#content-box p{
 	float:right;
 	text-align: justify;
 	width: 340px;
 	margin: 15px 15px 0 0;
-}
+}*/
 #content-box iframe{
 	float:left;
 	margin: 19px 0 0 12px;

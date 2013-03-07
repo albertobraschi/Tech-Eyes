@@ -152,7 +152,7 @@
 <div class="cart-bottom-box cart-wide-box">
     	<!-- related product start from here-->
 <div class="cart-related-wrapper">
-    <h3>You may also like:</h3>  
+    
                   <?php
             $array_added_product = array();
             $total_product= "";
@@ -181,9 +181,10 @@
                  }
                     $_product->setRelatedProductIds($ids);
                     }
-                ?>    
+                ?>  
+                    
     <?php
-        $product_per_row=3; //how many product show in a row
+        $product_per_row=8; //how many product show in a row
     ?>
     <!--Start of Cart Accessories-->
 <ul class="cart-accessories">
@@ -192,10 +193,11 @@
         foreach ($_product->getData('related_product_ids') as $r_productid) {
         $_product = Mage::getModel('catalog/product')->load($r_productid);
     ?>
+    
     <?php
         if(($product_counter%$product_per_row)==0){
     ?>
-    <tr>
+    <h3>You may also like:</h3> 
     <?php
         }
     ?>
@@ -219,7 +221,6 @@
         $product_counter++;
         if(($product_counter%$product_per_row)==0){
     ?>
-    </tr>
     <?php
         }
     ?>

@@ -16,3 +16,17 @@ button.btn-checkout span span .img-checkout { display:none; }
 
 /* Enforce floating for second level links block */
 #nav ul.level0 > li { float:left !important; }
+
+#openModal{
+	display: none;
+}
+#offer{
+	display: none;
+}
+#offer-ie{
+	display: inline-block !important;
+}
+ #offer-ie{
+	 margin-top: 18px;
+	 float: left;
+ }

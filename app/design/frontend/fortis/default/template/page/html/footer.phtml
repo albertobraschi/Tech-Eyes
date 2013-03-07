@@ -225,3 +225,8 @@ TechEyes,LLC. All rights reserved.</p></p>
 <?php /*?><script type="text/javascript">
 jQuery(".footer-social-wrapper .show-icons a, .footer-payment-wrapper img").tooltip({ effect:'fade', predelay:300 });
 </script><?php */?>
+<?php
+if ( extension_loaded('newrelic') ) {
+echo newrelic_get_browser_timing_footer();
+}
+?>
