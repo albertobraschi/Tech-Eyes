@@ -125,10 +125,14 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
    ========================================================================== */
 .right-ads{
     float: right;
-	margin-top: -393px;
+	margin-top: -34%;
+	width: 42%;
 }
 .right-ads li{
-	margin-top: 3.9%;
+	margin-top: 2.8%;
+}
+.right-ads li a img{
+	width: 100%;
 }
 /* =============================================================================
    Grandparent Structure
@@ -137,4 +141,7 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	width: 56%;
 	height: auto;
 	margin-bottom: 15px;
+}
+.slide-wrap img{
+	width: 100%;
 }

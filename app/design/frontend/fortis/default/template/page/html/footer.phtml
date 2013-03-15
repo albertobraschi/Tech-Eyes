@@ -148,15 +148,15 @@
     </div> <!-- end: footer-main -->
     
     <div class="footer-bottom mclear">
-        <p class="footer-copyright"><p>&copy; Copyright 2012-
-<script language="JavaScript" type="text/javascript">
+      &copy; Copyright 2012-
+<script type="text/javascript">
     now = new Date
     theYear=now.getYear()
     if (theYear < 1900)
     theYear=theYear+1900
     document.write(theYear)
 </script>
-TechEyes,LLC. All rights reserved.</p></p>
+TechEyes,LLC. All rights reserved.
         <div class="store-switcher"><?php echo $this->getChildHtml('store_switcher'); ?></div>
 		<?php if ($tmp_html = $this->getChildHtml('i_block_footer_payment')): ?> <?php //Predefined CMS block ?>
         	<div class="footer-payment-wrapper"><?php echo $tmp_html; ?></div>
