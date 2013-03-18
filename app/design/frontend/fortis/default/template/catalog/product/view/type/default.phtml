@@ -70,7 +70,7 @@
 
 				<?php }
 				// check if 'fulfillment' is set to 'Stock Backordered' 
-			elseif ($_product->getAttributeText('fulfillment') == "Pre-Order")
+			elseif($_product->getAttributeText('fulfillment') == "Pre-Order")
 			 	{ ?>
 			 	 <div class="availability in-stock">
 				 	<span>
@@ -78,9 +78,17 @@
 				 		echo $this->__('Pre-Order') ?>
 				 	</span> 
 				 </div>
-
 			 <?php }
-			else { echo "In stock"; } // safe default
+			if ($_product->getAttributeText('fulfillment') == "usually ships")
+				{ ?>
+				 <div class="availability in-stock">
+				 	<span>
+				 	<?php 
+				 		echo $this->__('Usually ships in 7-14 business days') ?>
+				 	</span> 
+				 </div>
+			<?php }
+			else { echo "Call for Quote"; } // safe default
 		}
 	?>
 	</div>
