@@ -1142,7 +1142,6 @@ tr.summary-details-excluded { font-style:italic; }
 .header .form-search .search-autocomplete {
 	left:0 !important;
     top:29px !important;
-    z-index:999;
 	position:relative;
 	z-index:2000;
 }
@@ -1211,7 +1210,7 @@ tr.summary-details-excluded { font-style:italic; }
 	margin:0;
 	position:relative; /* Dropdown custom block position is relative to this element */
 	
-	z-index:2000; /*TODO: check other 'z-index' values in main menu*/
+	z-index:1000; /*TODO: check other 'z-index' values in main menu*/
 }
 
 /* All Levels

@@ -20,7 +20,13 @@
 /* After Rebate Price */
 .product-shop #after-rebate{font-size:11px; color:#999999; position: relative; left: 60px; top:-85px;}
 .product-shop #after-rebate span{ font-size:13px; color: #CE001A;}
-
+/* =============================================================================
+   search bar
+   ========================================================================== */
+.line-through{
+	text-decoration: line-through;
+	color: #ddd;
+}
 /* =============================================================================
    Cart Page Cross Sells
    ========================================================================== */
@@ -134,6 +140,19 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 .right-ads li a img{
 	width: 100%;
 }
+.tri-banners li{
+	display: inline-block;
+	margin-top: 10px;
+	width: 32.7%;
+	height: 120px;
+}
+.tri-banners li.first{
+	margin-right: 8px;
+}
+.tri-banners li.last{
+	margin-left: 8px;
+}
+
 /* =============================================================================
    Grandparent Structure
    ========================================================================== */
