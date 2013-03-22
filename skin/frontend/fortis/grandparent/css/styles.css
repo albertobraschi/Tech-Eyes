@@ -2307,7 +2307,7 @@ tr.summary-details-excluded { font-style:italic; }
 .itemslider-wrapper .tab-pager { z-index:50; }
 .col-main .std #itemslider {width="100%"}
 /**********************Homepage CSS For Expansion/Responsive/**********************/
-.featured-products-block-container ul li img {width:100%; height: 100%;}
+.featured-products-block-container ul li img {width:100%; height: auto;}
 .slide ul li img {width:100%; height:auto;}
 .featured-products-block-container ul li button {display:none;}
 
@@ -4681,14 +4681,9 @@ end of old CSS - JJ Mas*/
 	margin-left:auto;
 	margin-right: auto;
 }
-
-#sub-categories ul {
-}
-
 #sub-categories li {
 	display: inline-block;
 	width: 18%;
-	background-color: #fff;
 	margin-right: 16px;
 	margin-bottom: 10px;
 	padding-top: 10px;
@@ -4697,7 +4692,7 @@ end of old CSS - JJ Mas*/
 	
 }
 #sub-categories li img{
-    width: 70%;
+    width: 100%;
 }
 #sub-categories li a span{
 	margin:25px;
