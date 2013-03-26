@@ -4627,7 +4627,7 @@ end of old CSS - JJ Mas*/
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
     position: relative;
-    top:10px;
+    top:5px;
     padding: 10px 0 5px 15px;
 }
 .brand #one{
@@ -4693,6 +4693,9 @@ end of old CSS - JJ Mas*/
 }
 #sub-categories li img{
     width: 100%;
+}
+#sub-categories li img:hover{
+    opacity: .8;
 }
 #sub-categories li a span{
 	margin:25px;

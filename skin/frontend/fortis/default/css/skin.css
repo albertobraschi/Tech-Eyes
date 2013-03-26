@@ -21,6 +21,12 @@
 .product-shop #after-rebate{font-size:11px; color:#999999; position: relative; left: 60px; top:-85px;}
 .product-shop #after-rebate span{ font-size:13px; color: #CE001A;}
 /* =============================================================================
+   Category Page
+   ========================================================================== */
+.category-image img{
+	width: 100%;
+}
+/* =============================================================================
    search bar
    ========================================================================== */
 .line-through{
@@ -162,5 +168,8 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	margin-bottom: 15px;
 }
 .slide-wrap img{
+	width: 100%;
+}
+.predator-banner img{
 	width: 100%;
 }
