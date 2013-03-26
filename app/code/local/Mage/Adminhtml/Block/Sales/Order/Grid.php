@@ -101,6 +101,7 @@ protected function _prepareColumns()
             'index' => 'created_at',
             'type' => 'datetime',
             'width' => '100px',
+            'filter_index'=>'main_table.created_at', // This parameter helps to resolve above error
         ));
 
         $this->addColumn('billing_name', array(
