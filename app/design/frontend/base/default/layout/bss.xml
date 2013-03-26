@@ -2,6 +2,9 @@
 <layout>
                                    
     <catalogsearch_result_index>
+        <reference name="header">
+            <block type="core/template" name="top.search" as="topSearch" template="bss/cms/form.mini.phtml"/>
+        </reference>
         <reference name="search.result">
             <block type="bss/dym" name="bss_dym" as="bss_dym" template="bss/dym.phtml" />
             <block type="bss/cms_result" name="bss_cms_result" as="bss_cms_result" template="bss/cms/result.phtml" />
