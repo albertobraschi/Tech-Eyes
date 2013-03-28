@@ -315,7 +315,7 @@ button.btn-checkout span {
 	
 	background-color:#bf2330; /*#a52832*/
 	height:35px;
-	padding:0 0 0 8px;
+	padding:0 0 0 5px;
 	line-height:20px;
 	color:#fff;
 }
@@ -792,7 +792,8 @@ p.required { font-size:10px; text-align:right; color:#ee001c; }
 .data-table tbody.odd tr.border td,
 .data-table tbody.even tr.border td {} /*border-bottom-width:1px;*/
 .data-table th .tax-flag { white-space:nowrap; font-weight:normal; }
-.sortcol , .a-center , .nosort{border: 1px solid #e7e7e7;}
+.sortcol , .a-center , .nosort{border: 1px solid #e7e7e7;text-align: center;}
+
 
 /* Shopping cart total summary row expandable to details
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

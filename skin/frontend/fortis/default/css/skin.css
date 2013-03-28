@@ -13,12 +13,14 @@
  #offer{
 	 margin-top: 24px;
  }
-
+.quanity{
+	float: right;
+}
 .sample-class { color:#000; }
 .home-banner-wrapper img{width:100%;}
 
 /* After Rebate Price */
-.product-shop #after-rebate{font-size:11px; color:#999999; position: relative; left: 60px; top:-85px;}
+.product-shop #after-rebate{font-size:11px; color:#999999; position: relative; left: 100px; top:-85px;}
 .product-shop #after-rebate span{ font-size:13px; color: #CE001A;}
 /* =============================================================================
    Category Page
