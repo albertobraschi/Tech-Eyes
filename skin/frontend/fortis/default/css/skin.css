@@ -67,6 +67,10 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 	position: relative;
 	top:-10px;
 }
+.availability.out-of-stock span span{
+	top: 0 !important;
+	color: #fda500;
+}
 .availability.in-stock span{
 	font-size:15px;
 	margin: 0px 0px 0px 25px;
