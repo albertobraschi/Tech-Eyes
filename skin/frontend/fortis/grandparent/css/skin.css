@@ -3,3 +3,64 @@
  */
 
 .sample-class { color:#000; }
+
+/* =============================================================================
+   Grand parent Col w/ Left
+   ========================================================================== */
+.col2-left-layout .spec-grid .item {
+	width: 140px;
+}
+.col2-left-layout .spec-grid4col .add-to-links li{
+	display: inline-block;
+}
+.category-image{
+	margin-top: 15px;
+}
+.category-image img{
+	width: 100%;
+}
+.home-banner-wrapper img{width: 100%;}
+/* =============================================================================
+   Grandparent Pages
+   ========================================================================== */
+.right-ads{
+    float: right;
+	margin-top: -34%;
+	width: 42%;
+}
+.right-ads li{
+	margin-top: 2.8%;
+}
+.right-ads li a img{
+	width: 100%;
+}
+.tri-banners li{
+	display: inline-block;
+	margin-top: 10px;
+	width: 32.7%;
+	height: 120px;
+}
+.tri-banners li img{
+	width: 100%;
+}
+.tri-banners li.first{
+	margin-right: 7px;
+}
+.tri-banners li.last{
+	margin-left: 6px;
+}
+
+/* =============================================================================
+   Grandparent Structure
+   ========================================================================== */
+.slide-wrap{
+	width: 56%;
+	height: auto;
+	margin-bottom: 15px;
+}
+.slide-wrap img{
+	width: 100%;
+}
+.predator-banner img{
+	width: 100%;
+}

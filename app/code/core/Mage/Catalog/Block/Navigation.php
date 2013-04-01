@@ -284,7 +284,8 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         $html[] = $htmlLi;
 
         $html[] = '<a href="'.$this->getCategoryUrl($category).'"'.$linkClass.'>';
-        $html[] = '<span>' . $this->escapeHtml($category->getName()) . '</span>';
+        $html[] = '<span class="nav-' .$this->_getItemPosition($level).'">' .$this->escapeHtml() .'</span>';
+        $html[] = '<span class="text">' . $this->escapeHtml($category->getName()) . '</span>';
         $html[] = '</a>';
 
         // render children

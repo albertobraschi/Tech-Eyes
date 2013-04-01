@@ -1252,59 +1252,60 @@ tr.summary-details-excluded { font-style:italic; }
 	text-shadow:1px 1px rgba(0,0,0,0.3);
 }
 
-#nav > li > a span:hover { color:#066cc3; background-position: 0px -40px;}
-
-#nav > li > a span { margin:;  }
-
 #nav > li >a span:hover{color:#cccccc;}
 
 #nav > li.parent.active > a , #nav > li.active > a span{ }
+/* =============================================================================
+   Icons
+   ========================================================================== */
 
-.nav-1 , .nav-2 , .nav-3 , .nav-4 , .nav-5 , .nav-6 , .nav-7{
+.nav-2 , .nav-4 , .nav-6 , .nav-8 , .nav-10 , .nav-12 , .nav-14{
 	background: url(../images/nav/menu_sprite.png);
-	margin-top: 20px;
+	margin-top: -44px;
+	text-indent: -9999px;
+	padding-bottom: 42px;
 }
 
-.nav-1{
+.nav-2 {
    background-position:-3.2% 0px;
 }
-.nav-1:hover , .nav-1.active{
+.nav-2:hover , .nav-2.active{
 	background-position:-3.2% -36px;
 }
-.nav-2{
+.nav-4{
    background-position: 11.5% 0px;
 }
-.nav-2:hover , .nav-2.active{
+.nav-4:hover , .nav-4.active{
    background-position: 11.5% -37px;
 }
-.nav-3{
+.nav-6{
    background-position: 28.2% -1px;
 }
-.nav-3:hover , .nav-3.active{
+.nav-6:hover , .nav-6.active{
    background-position: 28.2% -40px;
 }
-.nav-4{
+.nav-8{
    background-position: 43.5% 0px;
 }
-.nav-4:hover , .nav-4.active{
+.nav-8:hover , .nav-8.active{
    background-position: 43.5% -38px;
 }
-.nav-5{ 
+.nav-10{ 
    background-position: 57.6% 0px;
 }
-.nav-5:hover , .nav-5.active{ 
+.nav-10:hover , .nav-10.active{ 
    background-position: 57.6% -38px;
 }
-.nav-6{
+.nav-12{
    background-position: 72.8% 0px;
 }
-.nav-6:hover , .nav-6.active{
+.nav-12:hover , .nav-12.active{
    background-position: 72.8% -37px;
 }
-.nav-7{
+.nav-14{
    background-position: 90.2% 0px;
 }
-.nav-7:hover , .nav-7.active{
+.nav-14:hover , .nav-14.active{
    background-position: 90.2% -39px;
 }
 
