@@ -52,7 +52,7 @@ img.product-image{ float:left;border: 1px solid #e5e5e5;margin: 5px; width: 56px
 .sku h2{font-size: 12px; color: #000;}
 .sku h2 span{font-size:14px;}
 #group{
-	max-height: 325px;
+	max-height: 525px;
 	overflow: scroll;
 }
 .block-layered-nav dt{

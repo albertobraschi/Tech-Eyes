@@ -64,3 +64,39 @@
 .predator-banner img{
 	width: 100%;
 }
+#content-box img{
+	padding: 5px;
+}
+#content-box p{
+	font-size: 13px;
+	text-indent: 7px;
+	margin-top:4px;
+	text-align: justify;
+}
+#content-box h3{
+	padding-top: 5px;
+}
+.mfv-460 {
+    width: 35px;
+    height: 25px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-image: url(https://d1r913ofpcpbjz.cloudfront.net/media/m-image/c/c/texsport.jpg);
+}
+.mfv-460.hovered {
+    background-image: url(https://d1r913ofpcpbjz.cloudfront.net/media/m-image/9/f/textsport-hover.jpg);
+}
+.mfv-460.selected {
+    background-image: url(https://d1r913ofpcpbjz.cloudfront.net/media/m-image/1/7/textsport-select.jpg);
+}
+.mfv-460.selected.hovered {
+    background-image: url(https://d1r913ofpcpbjz.cloudfront.net/media/m-image/c/c/texsport-1.jpg);
+}
+.mfv-460-state {
+    width: 43px;
+    height: 15px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}

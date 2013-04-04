@@ -4601,6 +4601,7 @@ end of old CSS - JJ Mas*/
 	margin-bottom: 15px;
 	text-align: justify;
 	padding: 10px;
+	margin-top: 10px;
 }
 /*#content-box p{
 	float:right;
@@ -4683,7 +4684,7 @@ end of old CSS - JJ Mas*/
 #sub-categories li {
 	display: inline-block;
 	width: 18%;
-	margin-right: 16px;
+	margin-right: 1.5%;
 	margin-bottom: 10px;
 	padding-top: 10px;
 	text-indent: 10px;
